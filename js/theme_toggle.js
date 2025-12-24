@@ -108,3 +108,34 @@
 
   document.addEventListener('DOMContentLoaded', init);
 })();
+
+/* Ripple ligero para botones y listas */
+(function(){
+  const SELECTOR = 'button, .rdm-list--container';
+
+  function prefersReducedMotion(){
+    return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  function createRipple(target, x, y){
+    const rect = target.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height) * 1.2;
+    const ripple = document.createElement('span');
+    ripple.className = 'rdm-ripple-circle';
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${x - rect.left - size / 2}px`;
+    ripple.style.top = `${y - rect.top - size / 2}px`;
+    target.appendChild(ripple);
+    ripple.addEventListener('animationend', () => ripple.remove(), { once: true });
+  }
+
+  function onPointerDown(e){
+    const target = e.target.closest(SELECTOR);
+    if (!target) return;
+    if (target.hasAttribute('disabled')) return;
+    if (prefersReducedMotion()) return;
+    createRipple(target, e.clientX, e.clientY);
+  }
+
+  document.addEventListener('pointerdown', onPointerDown);
+})();

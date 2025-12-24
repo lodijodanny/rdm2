@@ -21,6 +21,18 @@ Autor: Danny Estrada
 @import url(tabs.css);
 
 
+/* Colores base de ripple por tema */
+:root {
+	--rdm-ripple-color: rgba(0, 0, 0, 0.14);
+}
+html[data-theme="light"] {
+	--rdm-ripple-color: rgba(0, 0, 0, 0.14);
+}
+html[data-theme="dark"] {
+	--rdm-ripple-color: rgba(255, 255, 255, 0.20);
+}
+
+
 
 
   /*fondos temprorales para resaltar diseños*/
@@ -129,6 +141,23 @@ html.theme-transition, body.theme-transition {
 .theme-transition em,
 .theme-transition strong {
 	transition: color 400ms ease, background-color 400ms ease, border-color 400ms ease;
+}
+
+/* Ripple: círculo y animación */
+.rdm-ripple-circle {
+	position: absolute;
+	border-radius: 50%;
+	transform: scale(0);
+	opacity: 0.35;
+	background-color: var(--rdm-ripple-color, rgba(0, 0, 0, 0.14));
+	pointer-events: none;
+	animation: rdm-ripple 520ms ease-out forwards;
+	z-index: 1;
+}
+
+@keyframes rdm-ripple {
+	from { transform: scale(0); opacity: 0.35; }
+	to   { transform: scale(1); opacity: 0; }
 }
 
 a{
