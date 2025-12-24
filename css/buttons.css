@@ -13,6 +13,8 @@ button{
     vertical-align: middle;
     cursor: pointer;
     user-select: none;
+    position: relative; /* para overlay */
+    overflow: hidden;   /* recorta overlay con el borde redondeado */
 }
 
 /*Button container*/
@@ -181,4 +183,71 @@ button:hover {
 button:active {
     box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
 }
+
+/* Overlay de estado con pseudo-elemento siguiendo la forma del botón */
+.rdm-button--filled::after,
+.rdm-button--tonal::after,
+.rdm-button--elevated::after,
+.rdm-button--outlined::after,
+.rdm-button--text::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease, background-color 0.15s ease;
+}
+
+/* Filled */
+html[data-theme="light"] .rdm-button--filled:hover::after { background-color: rgba(0,0,0,0.12); opacity: 1; }
+html[data-theme="light"] .rdm-button--filled:active::after { background-color: rgba(0,0,0,0.18); opacity: 1; }
+html[data-theme="dark"]  .rdm-button--filled:hover::after { background-color: rgba(255,255,255,0.18); opacity: 1; }
+html[data-theme="dark"]  .rdm-button--filled:active::after { background-color: rgba(255,255,255,0.24); opacity: 1; }
+
+/* Tonal */
+html[data-theme="light"] .rdm-button--tonal:hover::after { background-color: rgba(0,0,0,0.06); opacity: 1; }
+html[data-theme="light"] .rdm-button--tonal:active::after { background-color: rgba(0,0,0,0.10); opacity: 1; }
+html[data-theme="dark"]  .rdm-button--tonal:hover::after { background-color: rgba(255,255,255,0.10); opacity: 1; }
+html[data-theme="dark"]  .rdm-button--tonal:active::after { background-color: rgba(255,255,255,0.14); opacity: 1; }
+
+/* Elevated */
+html[data-theme="light"] .rdm-button--elevated:hover::after { background-color: rgba(0,0,0,0.06); opacity: 1; }
+html[data-theme="light"] .rdm-button--elevated:active::after { background-color: rgba(0,0,0,0.10); opacity: 1; }
+html[data-theme="dark"]  .rdm-button--elevated:hover::after { background-color: rgba(255,255,255,0.10); opacity: 1; }
+html[data-theme="dark"]  .rdm-button--elevated:active::after { background-color: rgba(255,255,255,0.14); opacity: 1; }
+
+/* Outlined */
+html[data-theme="light"] .rdm-button--outlined:hover::after { background-color: rgba(0,0,0,0.05); opacity: 1; }
+html[data-theme="light"] .rdm-button--outlined:active::after { background-color: rgba(0,0,0,0.09); opacity: 1; }
+html[data-theme="dark"]  .rdm-button--outlined:hover::after { background-color: rgba(255,255,255,0.09); opacity: 1; }
+html[data-theme="dark"]  .rdm-button--outlined:active::after { background-color: rgba(255,255,255,0.13); opacity: 1; }
+
+/* Text */
+html[data-theme="light"] .rdm-button--text:hover::after { background-color: rgba(0,0,0,0.05); opacity: 1; }
+html[data-theme="light"] .rdm-button--text:active::after { background-color: rgba(0,0,0,0.09); opacity: 1; }
+html[data-theme="dark"]  .rdm-button--text:hover::after { background-color: rgba(255,255,255,0.09); opacity: 1; }
+html[data-theme="dark"]  .rdm-button--text:active::after { background-color: rgba(255,255,255,0.13); opacity: 1; }
+
+/* FAB overlays */
+.rdm-button--fab::after,
+.rdm-button--fab-small::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease, background-color 0.15s ease;
+}
+
+html[data-theme="light"] .rdm-button--fab:hover::after { background-color: rgba(0,0,0,0.06); opacity: 1; }
+html[data-theme="light"] .rdm-button--fab:active::after { background-color: rgba(0,0,0,0.10); opacity: 1; }
+html[data-theme="dark"]  .rdm-button--fab:hover::after { background-color: rgba(255,255,255,0.10); opacity: 1; }
+html[data-theme="dark"]  .rdm-button--fab:active::after { background-color: rgba(255,255,255,0.14); opacity: 1; }
+
+html[data-theme="light"] .rdm-button--fab-small:hover::after { background-color: rgba(0,0,0,0.06); opacity: 1; }
+html[data-theme="light"] .rdm-button--fab-small:active::after { background-color: rgba(0,0,0,0.10); opacity: 1; }
+html[data-theme="dark"]  .rdm-button--fab-small:hover::after { background-color: rgba(255,255,255,0.10); opacity: 1; }
+html[data-theme="dark"]  .rdm-button--fab-small:active::after { background-color: rgba(255,255,255,0.14); opacity: 1; }
 
