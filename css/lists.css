@@ -10,6 +10,8 @@ Autor: Danny Estrada
     justify-content: space-between;
     padding: 1em 1em;
     background-color: var(--bg-color1);
+    position: relative; /* para overlay de estado */
+    overflow: hidden;   /* recorta overlay si hay borde redondeado */
 }
 
 /* list media elements */
@@ -123,3 +125,44 @@ Autor: Danny Estrada
         height: 2.5em;
         background-color: var(--bg-color2);
     }
+
+/* Overlay de estado siguiendo el tema (data-theme) */
+.rdm-list--container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease, background-color 0.15s ease;
+}
+
+/* Hover y Active en tema claro (sutil) */
+html[data-theme="light"] .rdm-list--container:hover::after { background-color: rgba(0,0,0,0.06); opacity: 1; }
+html[data-theme="light"] .rdm-list--container:active::after { background-color: rgba(0,0,0,0.10); opacity: 1; }
+
+/* Hover y Active en tema oscuro (sutil) */
+html[data-theme="dark"]  .rdm-list--container:hover::after { background-color: rgba(255,255,255,0.10); opacity: 1; }
+html[data-theme="dark"]  .rdm-list--container:active::after { background-color: rgba(255,255,255,0.14); opacity: 1; }
+
+/* Esquinas redondeadas en primer/último ítem dentro de tarjetas */
+.rdm-card--elevated .rdm-list--container:first-child,
+.rdm-card--filled   .rdm-list--container:first-child,
+.rdm-card--outlined .rdm-list--container:first-child {
+    border-top-left-radius: 0.75em;
+    border-top-right-radius: 0.75em;
+}
+
+.rdm-card--elevated .rdm-list--container:last-child,
+.rdm-card--filled   .rdm-list--container:last-child,
+.rdm-card--outlined .rdm-list--container:last-child {
+    border-bottom-left-radius: 0.75em;
+    border-bottom-right-radius: 0.75em;
+}
+
+/* Caso único elemento: redondear todas las esquinas */
+.rdm-card--elevated .rdm-list--container:only-child,
+.rdm-card--filled   .rdm-list--container:only-child,
+.rdm-card--outlined .rdm-list--container:only-child {
+    border-radius: 0.75em;
+}
