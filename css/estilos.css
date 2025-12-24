@@ -42,6 +42,95 @@ body{
 	margin: 0; 
 }
 
+/* Transición global de tema (suaviza el cambio de colores) */
+html.theme-transition, body.theme-transition {
+	transition: background-color 400ms ease, color 400ms ease, border-color 400ms ease;
+}
+
+.theme-transition .rdm-topbar--small-container,
+.theme-transition .rdm-bottombar--small-container,
+.theme-transition .rdm-navbar--container,
+.theme-transition .rdm-navrail--container,
+.theme-transition .rdm-card--elevated,
+.theme-transition .rdm-card--filled,
+.theme-transition .rdm-card--outlined,
+.theme-transition .rdm-list--container,
+.theme-transition .rdm-button--filled,
+.theme-transition .rdm-button--tonal,
+.theme-transition .rdm-button--elevated,
+.theme-transition .rdm-button--outlined,
+.theme-transition .rdm-button--text,
+.theme-transition .rdm-button--fab,
+.theme-transition .rdm-button--fab-small {
+	transition: background-color 400ms ease, color 400ms ease, border-color 400ms ease, box-shadow 400ms ease;
+}
+
+/* Suaviza cambios en iconos al alternar tema */
+.theme-transition .material-symbols-rounded,
+.theme-transition .material-symbols-outlined {
+	transition: color 400ms ease, background-color 400ms ease;
+}
+
+/* Transiciones para texto (encabezados, párrafos, enlaces, etc.) */
+.theme-transition h1,
+.theme-transition h2,
+.theme-transition h3,
+.theme-transition h4,
+.theme-transition h5,
+.theme-transition h6,
+.theme-transition p,
+.theme-transition a,
+.theme-transition li,
+.theme-transition span,
+.theme-transition small {
+	transition: color 400ms ease;
+}
+
+/* Top bar: asegurar misma velocidad para el texto y su fondo */
+.theme-transition .rdm-topbar--body-headline,
+.theme-transition .rdm-sys-typography--title-large {
+	transition: color 400ms ease, background-color 400ms ease;
+}
+
+/* Regla genérica para todos los wrappers tipográficos */
+.theme-transition [class^="rdm-sys-typography--"],
+.theme-transition [class*=" rdm-sys-typography--"] {
+	transition: color 400ms ease;
+}
+
+/* Lists: headlines y textos de soporte */
+.theme-transition .rdm-list--body-headline,
+.theme-transition .rdm-list--body-suporting-text,
+.theme-transition .rdm-list--trailing-suporting-text {
+	transition: color 400ms ease, background-color 400ms ease;
+}
+
+/* Bottom bar: headline */
+.theme-transition .rdm-bottombar--body-headline {
+	transition: color 400ms ease, background-color 400ms ease;
+}
+
+/* Navigation bar/rail/drawer/tabs: labels */
+.theme-transition .rdm-navbar--destination-body-label-text,
+.theme-transition .rdm-navrail--destination-body-label-text,
+.theme-transition .rdm-navdraw--destination-body-label-text,
+.theme-transition .rdm-tabs--destination-body-label-text {
+	transition: color 400ms ease, background-color 400ms ease;
+}
+
+/* Elementos semánticos comunes de texto/código */
+.theme-transition blockquote,
+.theme-transition code,
+.theme-transition pre,
+.theme-transition kbd,
+.theme-transition samp,
+.theme-transition cite,
+.theme-transition mark,
+.theme-transition em,
+.theme-transition strong {
+	transition: color 400ms ease, background-color 400ms ease, border-color 400ms ease;
+}
+
 a{
 	color: inherit;
 	text-decoration: none;

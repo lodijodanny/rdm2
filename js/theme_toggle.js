@@ -57,12 +57,33 @@
     }
   }
 
+  function setCookieTheme(theme){
+    try {
+      var maxAge = 60 * 60 * 24 * 365; // ~1 año
+      document.cookie = `rdm-theme=${theme};path=/;max-age=${maxAge}`;
+    } catch(e) {}
+  }
+
+  function withTransition(run, duration = 500){
+    const root = document.documentElement;
+    root.classList.add('theme-transition');
+    if (window.__rdmThemeTransTimer) clearTimeout(window.__rdmThemeTransTimer);
+    try {
+      run();
+    } finally {
+      window.__rdmThemeTransTimer = setTimeout(() => {
+        root.classList.remove('theme-transition');
+      }, duration);
+    }
+  }
+
   function toggleTheme(){
     const saved = localStorage.getItem(STORAGE_KEY);
     const current = (saved === 'dark' || saved === 'light') ? saved : getSystemTheme();
     const next = current === 'dark' ? 'light' : 'dark';
     localStorage.setItem(STORAGE_KEY, next);
-    applyTheme(next);
+    setCookieTheme(next);
+    withTransition(() => applyTheme(next));
   }
 
   function init(){
@@ -72,6 +93,8 @@
     iconEl = document.getElementById('themeToggleIcon');
     const saved = localStorage.getItem(STORAGE_KEY);
     const initial = (saved === 'dark' || saved === 'light') ? saved : getSystemTheme();
+    setCookieTheme(initial);
+    // En carga inicial NO activamos transiciones para evitar destello
     applyTheme(initial);
     if (toggleEl) toggleEl.addEventListener('click', toggleTheme);
     else {
