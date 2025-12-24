@@ -32,6 +32,10 @@ html[data-theme="dark"] {
 	--rdm-ripple-color: rgba(255, 255, 255, 0.20);
 }
 
+:root {
+	--rdm-focus-color: var(--md-sys-color-primary);
+}
+
 
 
 
@@ -158,6 +162,17 @@ html.theme-transition, body.theme-transition {
 @keyframes rdm-ripple {
 	from { transform: scale(0); opacity: 0.35; }
 	to   { transform: scale(1); opacity: 0; }
+}
+
+/* Focus ring accesible (solo al tabular) */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.rdm-list--container:focus-visible,
+a:focus-visible .rdm-list--container {
+	outline: 2px solid var(--rdm-focus-color);
+	outline-offset: 2px;
 }
 
 a{
