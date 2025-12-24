@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="css/estilos.css">
 	<!-- Script que cambia los atributos de la top bar al hacer scroll -->
 	<script src="js/topbar_scroll.js"></script>
+	<script src="js/theme_toggle.js"></script>
 </head>
 <body>
 
@@ -27,7 +28,10 @@
 		</div>
 
 		<!-- Top bar action-->
-		<div class="rdm-topbar--action">			
+		<div class="rdm-topbar--action">
+			<div class="rdm-topbar--trailing-icon" id="themeToggle" title="Cambiar tema">
+				<span class="material-symbols-rounded" id="themeToggleIcon">dark_mode</span>
+			</div>
 			<div class="rdm-topbar--avatar" style="background-image: url(img/a1.jpg);">
 				<div class="rdm-sys-typography--title-medium"></div>
 			</div>

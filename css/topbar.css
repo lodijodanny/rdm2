@@ -207,3 +207,32 @@ Autor: Danny Estrada
     height: 0.8em;
     width: 0.8em;
 }
+
+/* Hover/Active según tema manual (data-theme) */
+html[data-theme="light"] .rdm-topbar--leading-navigation-icon .material-symbols-rounded:hover,
+html[data-theme="light"] .rdm-topbar--leading-navigation-icon .material-symbols-outlined:hover,
+html[data-theme="light"] .rdm-topbar--trailing-icon .material-symbols-rounded:hover,
+html[data-theme="light"] .rdm-topbar--trailing-icon .material-symbols-outlined:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="light"] .rdm-topbar--leading-navigation-icon .material-symbols-rounded:active,
+html[data-theme="light"] .rdm-topbar--leading-navigation-icon .material-symbols-outlined:active,
+html[data-theme="light"] .rdm-topbar--trailing-icon .material-symbols-rounded:active,
+html[data-theme="light"] .rdm-topbar--trailing-icon .material-symbols-outlined:active {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme="dark"] .rdm-topbar--leading-navigation-icon .material-symbols-rounded:hover,
+html[data-theme="dark"] .rdm-topbar--leading-navigation-icon .material-symbols-outlined:hover,
+html[data-theme="dark"] .rdm-topbar--trailing-icon .material-symbols-rounded:hover,
+html[data-theme="dark"] .rdm-topbar--trailing-icon .material-symbols-outlined:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="dark"] .rdm-topbar--leading-navigation-icon .material-symbols-rounded:active,
+html[data-theme="dark"] .rdm-topbar--leading-navigation-icon .material-symbols-outlined:active,
+html[data-theme="dark"] .rdm-topbar--trailing-icon .material-symbols-rounded:active,
+html[data-theme="dark"] .rdm-topbar--trailing-icon .material-symbols-outlined:active {
+    background-color: rgba(255, 255, 255, 0.2);
+}

@@ -1,0 +1,87 @@
+/*
+  Toggle de tema claro/oscuro directo:
+  - Alterna entre 'light' y 'dark' al hacer clic.
+  - Inyecta un stylesheet override con las variables :root del tema elegido.
+  - Persiste en localStorage bajo la clave 'rdm-theme'.
+  - Expone el tema actual en `document.documentElement.dataset.theme`.
+*/
+(function(){
+  const STORAGE_KEY = 'rdm-theme';
+  let toggleEl = null;
+  let iconEl = null;
+
+  // Lista base de variables de color a reasignar
+  const VAR_KEYS = [
+    'primary','on-primary','primary-container','on-primary-container',
+    'secondary','on-secondary','secondary-container','on-secondary-container',
+    'tertiary','on-tertiary','tertiary-container','on-tertiary-container',
+    'error','error-container','on-error','on-error-container',
+    'background','on-background','surface','on-surface',
+    'surface-variant','on-surface-variant','outline',
+    'inverse-on-surface','inverse-surface','inverse-primary',
+    'shadow','surface-tint','outline-variant','scrim'
+  ];
+
+  function getSystemTheme(){
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function readToken(name){
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  }
+
+  function setRootVar(name, value){
+    document.documentElement.style.setProperty(name, value);
+  }
+
+  function applyTheme(theme){
+    const t = theme === 'dark' ? 'dark' : 'light';
+    // Asignar cada variable principal a su token light/dark
+    VAR_KEYS.forEach(key => {
+      const tokenName = `--md-sys-color-${key}-${t}`;
+      const mainName = `--md-sys-color-${key}`;
+      const tokenValue = readToken(tokenName);
+      if (tokenValue) setRootVar(mainName, tokenValue);
+    });
+    document.documentElement.dataset.theme = t;
+    updateIcon(t);
+  }
+
+  function updateIcon(theme){
+    if (iconEl){
+      iconEl.textContent = theme === 'dark' ? 'dark_mode' : 'light_mode';
+    }
+    if (toggleEl){
+      toggleEl.setAttribute('aria-label', theme === 'dark' ? 'Tema oscuro' : 'Tema claro');
+      toggleEl.title = theme === 'dark' ? 'Cambiar a claro' : 'Cambiar a oscuro';
+    }
+  }
+
+  function toggleTheme(){
+    const saved = localStorage.getItem(STORAGE_KEY);
+    const current = (saved === 'dark' || saved === 'light') ? saved : getSystemTheme();
+    const next = current === 'dark' ? 'light' : 'dark';
+    localStorage.setItem(STORAGE_KEY, next);
+    applyTheme(next);
+  }
+
+  function init(){
+    if (window.__rdmThemeToggleInit) return; // guard contra doble inclusión
+    window.__rdmThemeToggleInit = true;
+    toggleEl = document.getElementById('themeToggle');
+    iconEl = document.getElementById('themeToggleIcon');
+    const saved = localStorage.getItem(STORAGE_KEY);
+    const initial = (saved === 'dark' || saved === 'light') ? saved : getSystemTheme();
+    applyTheme(initial);
+    if (toggleEl) toggleEl.addEventListener('click', toggleTheme);
+    else {
+      // Fallback: delegación por si el elemento aparece dinámicamente
+      document.addEventListener('click', function(e){
+        const t = e.target.closest('#themeToggle');
+        if (t) toggleTheme();
+      });
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+})();
