@@ -1,0 +1,155 @@
+/*
+CSS para ManGoApp
+TEXT FIELDS (MD3-inspired)
+Autor: Danny Estrada / Ajustado por Copilot
+*/
+
+.rdm-textfield--wrapper {
+  display: block;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.rdm-textfield--container {
+  display: block;
+  width: 100%;
+}
+
+/* Filled */
+.rdm-textfield--filled {
+  position: relative;
+  /* MD: extra-small top shape */
+  border-radius: 0.25em 0.25em 0 0;
+  background-color: var(--md-sys-color-surface-variant);
+  color: var(--md-sys-color-on-surface);
+  /* MD: active indicator underline */
+  border-bottom: 0.0625em solid var(--md-sys-color-on-surface-variant);
+  transition: border-color 160ms ease;
+}
+
+/* Outlined */
+.rdm-textfield--outlined {
+  position: relative;
+  /* MD: extra-small shape */
+  border-radius: 0.25em;
+  background-color: transparent;
+  border: 0.0625em solid var(--md-sys-color-outline);
+  color: var(--md-sys-color-on-surface);
+  transition: border-color 160ms ease;
+}
+
+/* Control */
+.rdm-textfield--control {
+  position: relative;
+  padding: 0.5em 0.75em;
+  display: flex;
+  align-items: center;
+}
+.rdm-textfield--control input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  outline: none !important;
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+  font: inherit;
+  padding: 0.5em 0;
+  caret-color: var(--md-sys-color-primary);
+}
+
+/* Label */
+.rdm-textfield--label {
+  position: absolute;
+  left: 0.75em;
+  top: 1.05em;
+  transform-origin: left top;
+  transition: transform 160ms ease, color 160ms ease, background-color 160ms ease;
+  color: var(--md-sys-color-on-surface-variant);
+  pointer-events: none;
+}
+/* etiqueta sobre un fondo para outlined (simula notch) */
+.rdm-textfield--outlined .rdm-textfield--label {
+  background-color: var(--md-sys-color-surface);
+  padding: 0 0.25em;
+  z-index: 1; /* cubrir el borde superior para simular notch */
+}
+
+/* Support text (fuera del contenedor) */
+.rdm-textfield--support {
+  padding: 0.25em 0.75em 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 0.875em; /* ~label/ayuda */
+  margin-top: 0.25em;
+}
+
+/* Estados: focus y con contenido */
+.rdm-textfield--container:focus-within .rdm-textfield--label,
+.rdm-textfield--container .rdm-textfield--control input:not(:placeholder-shown) ~ .rdm-textfield--label {
+  color: var(--md-sys-color-primary);
+  transform: translateY(-0.85em) scale(0.85);
+}
+
+/* Ajuste específico para outlined: notch y posición del label flotante */
+.rdm-textfield--outlined:focus-within .rdm-textfield--label,
+.rdm-textfield--outlined .rdm-textfield--control input:not(:placeholder-shown) ~ .rdm-textfield--label {
+  transform: translateY(-1.55em) scale(0.85);
+  left: 0.6em; /* acercar un poco al borde para notch */
+  padding: 0 0.4em; /* ampliar para tapar borde superior */
+}
+
+/* Resaltar borde/contorno en focus */
+.rdm-textfield--filled:focus-within {
+  border-bottom-color: var(--md-sys-color-primary);
+}
+
+.rdm-textfield--outlined:focus-within {
+  border-color: var(--md-sys-color-primary);
+}
+
+/* Error state (manual): aplicar en wrapper .is-error */
+.rdm-textfield--wrapper.is-error .rdm-textfield--label,
+.rdm-textfield--wrapper.is-error .rdm-textfield--support {
+  color: var(--md-sys-color-error);
+}
+.rdm-textfield--wrapper.is-error .rdm-textfield--outlined {
+  border-color: var(--md-sys-color-error);
+}
+.rdm-textfield--wrapper.is-error .rdm-textfield--filled {
+  border-bottom-color: var(--md-sys-color-error);
+}
+
+/* Disabled */
+.rdm-textfield--control input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Remover estilos por defecto del autofill del navegador */
+.rdm-textfield--control input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0 100px transparent !important;
+  -webkit-text-fill-color: var(--md-sys-color-on-surface) !important;
+  caret-color: var(--md-sys-color-primary) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.rdm-textfield--control input:-webkit-autofill:hover {
+  -webkit-box-shadow: inset 0 0 0 100px transparent !important;
+  -webkit-text-fill-color: var(--md-sys-color-on-surface) !important;
+}
+
+.rdm-textfield--control input:-webkit-autofill:focus {
+  -webkit-box-shadow: inset 0 0 0 100px transparent !important;
+  -webkit-text-fill-color: var(--md-sys-color-on-surface) !important;
+}
+
+/* Placeholder para la técnica :placeholder-shown */
+.rdm-textfield--control input::placeholder {
+  color: transparent;
+}
+
+/* Disabled (opcional básico) */
+.rdm-textfield--container[aria-disabled="true"] {
+  opacity: 0.62;
+  pointer-events: none;
+}

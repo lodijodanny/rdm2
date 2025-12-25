@@ -220,10 +220,22 @@
 			<a href="forms.php">
 				<article class="rdm-list--container">
 					<div class="rdm-list--media">
-						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">text_fields</span></div>
+						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">dynamic_form</span></div>
 					</div>
 					<div class="rdm-list--body">
 						<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Forms</div></div>	
+					</div>
+				</article>
+			</a>
+
+			<!-- Item -->
+			<a href="text_field.php">
+				<article class="rdm-list--container">
+					<div class="rdm-list--media">
+						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">text_fields</span></div>
+					</div>
+					<div class="rdm-list--body">
+						<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Text Field</div></div>
 					</div>
 				</article>
 			</a>
