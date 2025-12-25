@@ -9,7 +9,7 @@ button{
     border-radius: 20em;
     border: none; 
     display: inline-block;
-    transition: all 0.2s ease; 
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease; 
     vertical-align: middle;
     cursor: pointer;
     user-select: none;
