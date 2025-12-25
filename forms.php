@@ -47,7 +47,7 @@
     <h1 class="rdm-sys-typography--display-medium">Filled form</h1>
 
     <!-- Form container -->
-    <form class="rdm-form--container">
+    <form class="rdm-form--container" action="#" method="post" target="_self">
 
         <!-- Form type: filled, elevated, outlined -->
         <div class="rdm-form--filled">
@@ -62,23 +62,26 @@
             <!-- Action section aligment: left, center, right -->
             <div class="rdm-form--action-right">
             <p>
-                <!-- button -->
-                <button class="rdm-button--filled">
+                <!-- reset (tonal recomendado para secundaria) -->
+                <button type="reset" class="rdm-button--text">
                 <div class="rdm-button--container">
                     <div class="rdm-button--media">
-                        <div class="rdm-button--icon"><span class="material-symbols-rounded">add</span></div>
+                        <span class="material-symbols-rounded">clear</span>
                     </div>
                     <div class="rdm-button--body">
-                        <span class="rdm-sys-typography--label-large">Button</span>
+                        <span class="rdm-sys-typography--label-large">Limpiar</span>
                     </div>
                 </div>
                 </button>
 
-                <!-- button -->
-                <button class="rdm-button--filled">
+                <!-- submit (filled primario recomendado) -->
+                <button type="submit" class="rdm-button--filled">
                 <div class="rdm-button--container">
+                    <div class="rdm-button--media">
+                        <span class="material-symbols-rounded">send</span>
+                    </div>
                     <div class="rdm-button--body">
-                        <span class="rdm-sys-typography--label-large">Button</span>
+                        <span class="rdm-sys-typography--label-large">Enviar</span>
                     </div>
                 </div>
                 </button>
@@ -86,6 +89,171 @@
             </p> 
             </div>
 
+        </div>
+    </form>
+
+    <!-- Elevated form -->
+
+    <h1 class="rdm-sys-typography--display-medium">Elevated form</h1>
+
+    <!-- Form container -->
+    <form class="rdm-form--container" action="#" method="post" target="_self">
+
+        <!-- Form type: elevated -->
+        <div class="rdm-form--elevated">
+
+            <!-- Media section -->
+            <div class="rdm-form--media" style="background-image: url(img/1.jpg);">
+                <h1 class="rdm-sys-typography--display-medium">Display</h1>
+            </div>
+
+            <!-- Body section -->
+            <div class="rdm-form--body">
+                <h2 class="rdm-sys-typography--display-small">Headline</h2>
+                <h3 class="rdm-sys-typography--title-large">Subhead</h3>
+                <p class="rdm-sys-typography--body-large">Body large. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptates ullam sunt explicabo et veniam consequuntur eius dolore. Quisquam fuga ipsam optio quibusdam expedita sunt tempora odit totam ab aperiam.</p>
+            </div>
+
+            <!-- Action section aligment: left, center, right -->
+            <div class="rdm-form--action-right">
+                <p>
+                    <!-- reset -->
+                    <button type="reset" class="rdm-button--text">
+                    <div class="rdm-button--container">
+                        <div class="rdm-button--media">
+                            <span class="material-symbols-rounded">refresh</span>
+                        </div>
+                        <div class="rdm-button--body">
+                            <span class="rdm-sys-typography--label-large">Limpiar</span>
+                        </div>
+                    </div>
+                    </button>
+
+                    <!-- submit -->
+                    <button type="submit" class="rdm-button--filled">
+                    <div class="rdm-button--container">
+                        <div class="rdm-button--media">
+                            <span class="material-symbols-rounded">send</span>
+                        </div>
+                        <div class="rdm-button--body">
+                            <span class="rdm-sys-typography--label-large">Enviar</span>
+                        </div>
+                    </div>
+                    </button>
+                
+                </p> 
+            </div>
+            
+        </div>
+    </form>
+
+    <!-- Outlined form -->
+
+    <h1 class="rdm-sys-typography--display-medium">Outlined form</h1>
+
+    <!-- Form container -->
+    <form class="rdm-form--container" action="#" method="post" target="_self">
+
+        <!-- Form type: outlined -->
+        <div class="rdm-form--outlined">
+
+            <!-- Media section -->
+            <div class="rdm-form--media" style="background-image: url(img/1.jpg);">
+                <h1 class="rdm-sys-typography--display-medium">Display</h1>
+            </div>
+
+            <!-- Body section -->
+            <div class="rdm-form--body">
+                <h2 class="rdm-sys-typography--display-small">Headline</h2>
+                <h3 class="rdm-sys-typography--title-large">Subhead</h3>
+                <p class="rdm-sys-typography--body-large">Body large. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptates ullam sunt explicabo et veniam consequuntur eius dolore. Quisquam fuga ipsam optio quibusdam expedita sunt tempora odit totam ab aperiam.</p>
+            </div>
+
+            <!-- Action section aligment: left, center, right -->
+            <div class="rdm-form--action-left">
+                <p>
+                    <!-- reset -->
+                    <button type="reset" class="rdm-button--text">
+                    <div class="rdm-button--container">
+                        <div class="rdm-button--media">
+                            <span class="material-symbols-rounded">refresh</span>
+                        </div>
+                        <div class="rdm-button--body">
+                            <span class="rdm-sys-typography--label-large">Limpiar</span>
+                        </div>
+                    </div>
+                    </button>
+
+                    <!-- submit -->
+                    <button type="submit" class="rdm-button--filled">
+                    <div class="rdm-button--container">
+                        <div class="rdm-button--media">
+                            <span class="material-symbols-rounded">send</span>
+                        </div>
+                        <div class="rdm-button--body">
+                            <span class="rdm-sys-typography--label-large">Enviar</span>
+                        </div>
+                    </div>
+                    </button>
+                
+                </p> 
+            </div>
+            
+        </div>
+    </form>
+
+    <!-- Flat form (sin borde ni sombra) -->
+
+    <h1 class="rdm-sys-typography--display-medium">Flat form</h1>
+
+    <!-- Form container -->
+    <form class="rdm-form--container" action="#" method="post" target="_self">
+
+        <!-- Form type: flat -->
+        <div class="rdm-form--flat">
+
+            <!-- Media section -->
+            <div class="rdm-form--media" style="background-image: url(img/1.jpg);">
+                <h1 class="rdm-sys-typography--display-medium">Display</h1>
+            </div>
+
+            <!-- Body section -->
+            <div class="rdm-form--body">
+                <h2 class="rdm-sys-typography--display-small">Headline</h2>
+                <h3 class="rdm-sys-typography--title-large">Subhead</h3>
+                <p class="rdm-sys-typography--body-large">Body large. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptates ullam sunt explicabo et veniam consequuntur eius dolore. Quisquam fuga ipsam optio quibusdam expedita sunt tempora odit totam ab aperiam.</p>
+            </div>
+
+            <!-- Action section aligment: left, center, right -->
+            <div class="rdm-form--action-left">
+                <p>
+                    <!-- reset -->
+                    <button type="reset" class="rdm-button--text">
+                    <div class="rdm-button--container">
+                        <div class="rdm-button--media">
+                            <span class="material-symbols-rounded">refresh</span>
+                        </div>
+                        <div class="rdm-button--body">
+                            <span class="rdm-sys-typography--label-large">Limpiar</span>
+                        </div>
+                    </div>
+                    </button>
+
+                    <!-- submit -->
+                    <button type="submit" class="rdm-button--filled">
+                    <div class="rdm-button--container">
+                        <div class="rdm-button--media">
+                            <span class="material-symbols-rounded">send</span>
+                        </div>
+                        <div class="rdm-button--body">
+                            <span class="rdm-sys-typography--label-large">Enviar</span>
+                        </div>
+                    </div>
+                    </button>
+                
+                </p> 
+            </div>
+			
         </div>
     </form>
     
