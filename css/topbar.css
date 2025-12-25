@@ -160,9 +160,19 @@ Autor: Danny Estrada
         border-radius: 50em;
         padding: 0.4em;
         margin: -0.4em;
-        transition: color 0.3s ease; 
+        transition: color 0.3s ease, font-variation-settings 0.3s ease; 
         position: relative;
         overflow: hidden;
+    }
+
+    .rdm-topbar--trailing-icon:hover .material-symbols-rounded,
+    .rdm-topbar--trailing-icon:hover .material-symbols-outlined {
+        font-variation-settings: 'FILL' 1;
+    }
+
+    .rdm-topbar--trailing-icon:active .material-symbols-rounded,
+    .rdm-topbar--trailing-icon:active .material-symbols-outlined {
+        font-variation-settings: 'FILL' 1;
     }
 
         /*light theme*/
