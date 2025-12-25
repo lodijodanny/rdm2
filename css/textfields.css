@@ -45,6 +45,17 @@ Autor: Danny Estrada / Ajustado por Copilot
   display: flex;
   align-items: center;
 }
+
+/* Outlined: altura y padding según MD (56 alto, 16/8 padding) */
+.rdm-textfield--outlined .rdm-textfield--control {
+  min-height: 3.5em; /* 56px */
+  padding: 0.5em 1em; /* 8px vertical, 16px horizontal */
+}
+
+/* Filled: ajustar vertical para alinear contenido tras flotación del label */
+.rdm-textfield--filled .rdm-textfield--control {
+  padding: 0.75em 0.75em; /* simétrico arriba/abajo para centrar visualmente */
+}
 .rdm-textfield--control input {
   display: block;
   width: 100%;
@@ -58,13 +69,20 @@ Autor: Danny Estrada / Ajustado por Copilot
   caret-color: var(--md-sys-color-primary);
 }
 
+/* Outlined: el texto queda exactamente centrado verticalmente */
+.rdm-textfield--outlined .rdm-textfield--control input {
+  padding: 0;           /* sin padding para que el alto sea sólo la línea de texto */
+  line-height: 1.5em;   /* altura del texto; el flex del contenedor lo centra */
+}
+
 /* Label */
 .rdm-textfield--label {
   position: absolute;
-  left: 0.75em;
-  top: 1.05em;
+  left: 1em; /* 16px del borde */
+  top: 50%; /* centrado vertical en reposo */
+  transform: translateY(-50%);
   transform-origin: left top;
-  transition: transform 160ms ease, color 160ms ease, background-color 160ms ease;
+  transition: transform 160ms ease, color 160ms ease, background-color 160ms ease, top 160ms ease;
   color: var(--md-sys-color-on-surface-variant);
   pointer-events: none;
 }
@@ -90,12 +108,19 @@ Autor: Danny Estrada / Ajustado por Copilot
   transform: translateY(-0.85em) scale(0.85);
 }
 
+/* Filled: elevar ligeramente más el label flotante para balance visual */
+.rdm-textfield--filled:focus-within .rdm-textfield--label,
+.rdm-textfield--filled .rdm-textfield--control input:not(:placeholder-shown) ~ .rdm-textfield--label {
+  transform: translateY(-1.10em) scale(0.85); /* eleva un poco más para balance con el contenido */
+}
+
 /* Ajuste específico para outlined: notch y posición del label flotante */
 .rdm-textfield--outlined:focus-within .rdm-textfield--label,
 .rdm-textfield--outlined .rdm-textfield--control input:not(:placeholder-shown) ~ .rdm-textfield--label {
-  transform: translateY(-1.55em) scale(0.85);
-  left: 0.6em; /* acercar un poco al borde para notch */
-  padding: 0 0.4em; /* ampliar para tapar borde superior */
+  top: -0.8em; /* notch a ~8px desde el borde superior */
+  transform: scale(0.85); /* sin translate: usamos top para posición */
+  left: 1em; /* 16px desde el borde izquierdo */
+  padding: 0.25em 0.25em; /* 4px arriba/abajo y 4px laterales para el notch */
 }
 
 /* Resaltar borde/contorno en focus */
