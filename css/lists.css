@@ -37,6 +37,12 @@ Autor: Danny Estrada
         font-size: 1.125em;
         align-self: center;
         color: var(--md-sys-color-on-surface-variant);
+        transition: font-variation-settings 0.3s ease;
+    }
+
+    .rdm-list--container:hover .rdm-list--leading-icon .material-symbols-rounded,
+    .rdm-list--container:hover .rdm-list--leading-icon .material-symbols-outlined {
+        font-variation-settings: 'FILL' 1;
     }
 
     /* leading avatar */

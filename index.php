@@ -52,7 +52,7 @@
 			<a href="container.php">
 				<article class="rdm-list--container">
 					<div class="rdm-list--media">
-						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">frame_source</span></div>
+					<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">rectangle</span></div>
 					</div>
 					<div class="rdm-list--body">
 						<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Container</div></div>
@@ -64,7 +64,7 @@
 			<a href="typography.php">
 				<article class="rdm-list--container">
 					<div class="rdm-list--media">
-						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">format_size</span></div>
+					<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">article</span></div>
 					</div>
 					<div class="rdm-list--body">
 						<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Typography</div></div>
@@ -136,7 +136,7 @@
 			<a href="badges.php">
 				<article class="rdm-list--container">
 					<div class="rdm-list--media">
-						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">data_alert</span></div>
+					<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">check_circle</span></div>
 					</div>
 					<div class="rdm-list--body">
 						<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Badges</div></div>
