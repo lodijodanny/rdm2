@@ -16,7 +16,8 @@ Autor: Danny Estrada
 /* Elevation Base */
 .rdm-card--elevated,
 .rdm-card--filled, 
-.rdm-card--outlined {
+.rdm-card--outlined,
+.rdm-card--flat {
   border-radius: 0.75em;
   margin-right: 0.5em;
   box-sizing: border-box;
@@ -42,6 +43,13 @@ Autor: Danny Estrada
   border: solid 0.0625em rgba(0, 0, 0, 0);
 }
 
+/* Flat Card (sin borde ni sombra) */
+.rdm-card--flat {
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  border: solid 0.0625em rgba(0, 0, 0, 0);
+}
+
 /* Outlined Card */
 .rdm-card--outlined {
   background-color: var(--md-sys-color-surface);
@@ -53,7 +61,8 @@ Autor: Danny Estrada
 /* Eliminar el margen derecho del último hijo */
 .rdm-card--container .rdm-card--elevated:last-child,
 .rdm-card--container .rdm-card--filled:last-child,
-.rdm-card--container .rdm-card--outlined:last-child {
+.rdm-card--container .rdm-card--outlined:last-child,
+.rdm-card--container .rdm-card--flat:last-child {
   margin-right: 0;
 }
 

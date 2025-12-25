@@ -199,6 +199,58 @@
         </div>
     </article>
 
+    <!-- Flat card (sin borde ni sombra) -->
+
+    <h1 class="rdm-sys-typography--display-medium">Flat card</h1>
+
+    <!-- Card container -->
+    <article class="rdm-card--container">
+
+        <!-- Card type: flat -->
+        <div class=" rdm-card--flat">
+
+            <!-- Media section -->
+            <div class="rdm-card--media" style="background-image: url(img/1.jpg);">
+                <h1 class="rdm-sys-typography--display-medium">Display</h1>
+            </div>
+
+            <!-- Body section -->
+            <div class="rdm-card--body">
+                <h2 class="rdm-sys-typography--display-small">Headline</h2>
+                <h3 class="rdm-sys-typography--title-large">Subhead</h3>
+                <p class="rdm-sys-typography--body-large">Body large. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptates ullam sunt explicabo et veniam consequuntur eius dolore. Quisquam fuga ipsam optio quibusdam expedita sunt tempora odit totam ab aperiam.</p>
+            </div>
+
+            <!-- Action section aligment: left, center, right -->
+            <div class="rdm-card--action-left">
+                <p>
+                    <!-- button -->
+                    <button class="rdm-button--filled">
+                    <div class="rdm-button--container">
+                        <div class="rdm-button--media">
+                            <div class="rdm-button--icon"><span class="material-symbols-rounded">add</span></div>
+                        </div>
+                        <div class="rdm-button--body">
+                            <span class="rdm-sys-typography--label-large">Button</span>
+                        </div>
+                    </div>
+                    </button>
+
+                    <!-- button -->
+                    <button class="rdm-button--filled">
+                    <div class="rdm-button--container">
+                        <div class="rdm-button--body">
+                            <span class="rdm-sys-typography--label-large">Button</span>
+                        </div>
+                    </div>
+                    </button>
+                
+                </p> 
+            </div>
+			
+        </div>
+    </article>
+
 </main>
 
 </body>
