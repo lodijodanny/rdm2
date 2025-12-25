@@ -66,41 +66,6 @@ Autor: Danny Estrada
         overflow: hidden;
     }
 
-        /*light theme*/
-        @media (prefers-color-scheme: light) { 
-
-            /*Icon state hover*/      
-            .rdm-topbar--leading-navigation-icon .material-symbols-rounded:hover, 
-            .rdm-topbar--leading-navigation-icon .material-symbols-outlined:hover {
-                background-color: rgba(0, 0, 0, 0.1);
-
-            }
-
-            /*Icon state active*/
-            .rdm-topbar--leading-navigation-icon .material-symbols-rounded:active, 
-            .rdm-topbar--leading-navigation-icon .material-symbols-outlined:active {
-                background-color: rgba(0, 0, 0, 0.2);
-            }
-        }
-
-        /*dark theme*/
-        @media (prefers-color-scheme: dark) {
-            /*Icon state hover*/
-            .rdm-topbar--leading-navigation-icon .material-symbols-rounded:hover, 
-            .rdm-topbar--leading-navigation-icon .material-symbols-outlined:hover {
-                background-color: rgba(255, 255, 255, 0.1);
-            }
-
-            /*Icon state active*/
-            .rdm-topbar--leading-navigation-icon .material-symbols-rounded:active, 
-            .rdm-topbar--leading-navigation-icon .material-symbols-outlined:active {
-                background-color: rgba(255, 255, 255, 0.2);
-            }
-
-        }
-
-
-
     /* leading avatar */
     .rdm-topbar--avatar {        
         background-position: center;
@@ -123,14 +88,6 @@ Autor: Danny Estrada
     margin-right: 1.5em;
     background-color: var(--bg-color1);
 }
-
-    /* body headline */
-    .rdm-topbar--body-headline {
-        margin: 0.09em 0em ;        
-        color: var(--md-sys-color-on-surface);
-        background-color: var(--bg-color2);
-        
-    }
 
 /* topbar action elements */
 .rdm-topbar--action {
@@ -174,41 +131,6 @@ Autor: Danny Estrada
     .rdm-topbar--trailing-icon:active .material-symbols-outlined {
         font-variation-settings: 'FILL' 1;
     }
-
-        /*light theme*/
-        @media (prefers-color-scheme: light) { 
-
-            /*Icon state hover*/      
-            .rdm-topbar--trailing-icon .material-symbols-rounded:hover, 
-            .rdm-topbar--trailing-icon .material-symbols-outlined:hover {
-                background-color: rgba(0, 0, 0, 0.1);
-
-            }
-
-            /*Icon state active*/
-            .rdm-topbar--trailing-icon .material-symbols-rounded:active, 
-            .rdm-topbar--trailing-icon .material-symbols-outlined:active {
-                background-color: rgba(0, 0, 0, 0.2);
-            }
-        }
-
-        /*dark theme*/
-        @media (prefers-color-scheme: dark) {
-            /*Icon state hover*/
-            .rdm-topbar--trailing-icon .material-symbols-rounded:hover, 
-            .rdm-topbar--trailing-icon .material-symbols-outlined:hover {
-                background-color: rgba(255, 255, 255, 0.1);
-            }
-
-            /*Icon state active*/
-            .rdm-topbar--trailing-icon .material-symbols-rounded:active, 
-            .rdm-topbar--trailing-icon .material-symbols-outlined:active {
-                background-color: rgba(255, 255, 255, 0.2);
-            }
-
-        }
-
-        
 
         
 
