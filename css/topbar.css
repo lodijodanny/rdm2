@@ -61,7 +61,9 @@ Autor: Danny Estrada
         border-radius: 50em;
         padding: 0.4em;
         margin: -0.4em;
-        transition: all 0.3s ease; 
+        transition: color 0.3s ease; 
+        position: relative;
+        overflow: hidden;
     }
 
         /*light theme*/
@@ -158,7 +160,9 @@ Autor: Danny Estrada
         border-radius: 50em;
         padding: 0.4em;
         margin: -0.4em;
-        transition: all 0.3s ease; 
+        transition: color 0.3s ease; 
+        position: relative;
+        overflow: hidden;
     }
 
         /*light theme*/
@@ -209,30 +213,48 @@ Autor: Danny Estrada
 }
 
 /* Hover/Active según tema manual (data-theme) */
-html[data-theme="light"] .rdm-topbar--leading-navigation-icon .material-symbols-rounded:hover,
-html[data-theme="light"] .rdm-topbar--leading-navigation-icon .material-symbols-outlined:hover,
-html[data-theme="light"] .rdm-topbar--trailing-icon .material-symbols-rounded:hover,
-html[data-theme="light"] .rdm-topbar--trailing-icon .material-symbols-outlined:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+/* State layer sobre iconos sueltos */
+.rdm-topbar--leading-navigation-icon .material-symbols-rounded::after,
+.rdm-topbar--leading-navigation-icon .material-symbols-outlined::after,
+.rdm-topbar--trailing-icon .material-symbols-rounded::after,
+.rdm-topbar--trailing-icon .material-symbols-outlined::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.18s ease, background-color 0.18s ease;
 }
 
-html[data-theme="light"] .rdm-topbar--leading-navigation-icon .material-symbols-rounded:active,
-html[data-theme="light"] .rdm-topbar--leading-navigation-icon .material-symbols-outlined:active,
-html[data-theme="light"] .rdm-topbar--trailing-icon .material-symbols-rounded:active,
-html[data-theme="light"] .rdm-topbar--trailing-icon .material-symbols-outlined:active {
-    background-color: rgba(0, 0, 0, 0.2);
+html[data-theme="light"] .rdm-topbar--leading-navigation-icon .material-symbols-rounded:hover::after,
+html[data-theme="light"] .rdm-topbar--leading-navigation-icon .material-symbols-outlined:hover::after,
+html[data-theme="light"] .rdm-topbar--trailing-icon .material-symbols-rounded:hover::after,
+html[data-theme="light"] .rdm-topbar--trailing-icon .material-symbols-outlined:hover::after {
+    background-color: rgba(0, 0, 0, 0.10);
+    opacity: 1;
 }
 
-html[data-theme="dark"] .rdm-topbar--leading-navigation-icon .material-symbols-rounded:hover,
-html[data-theme="dark"] .rdm-topbar--leading-navigation-icon .material-symbols-outlined:hover,
-html[data-theme="dark"] .rdm-topbar--trailing-icon .material-symbols-rounded:hover,
-html[data-theme="dark"] .rdm-topbar--trailing-icon .material-symbols-outlined:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+html[data-theme="light"] .rdm-topbar--leading-navigation-icon .material-symbols-rounded:active::after,
+html[data-theme="light"] .rdm-topbar--leading-navigation-icon .material-symbols-outlined:active::after,
+html[data-theme="light"] .rdm-topbar--trailing-icon .material-symbols-rounded:active::after,
+html[data-theme="light"] .rdm-topbar--trailing-icon .material-symbols-outlined:active::after {
+    background-color: rgba(0, 0, 0, 0.16);
+    opacity: 1;
 }
 
-html[data-theme="dark"] .rdm-topbar--leading-navigation-icon .material-symbols-rounded:active,
-html[data-theme="dark"] .rdm-topbar--leading-navigation-icon .material-symbols-outlined:active,
-html[data-theme="dark"] .rdm-topbar--trailing-icon .material-symbols-rounded:active,
-html[data-theme="dark"] .rdm-topbar--trailing-icon .material-symbols-outlined:active {
-    background-color: rgba(255, 255, 255, 0.2);
+html[data-theme="dark"] .rdm-topbar--leading-navigation-icon .material-symbols-rounded:hover::after,
+html[data-theme="dark"] .rdm-topbar--leading-navigation-icon .material-symbols-outlined:hover::after,
+html[data-theme="dark"] .rdm-topbar--trailing-icon .material-symbols-rounded:hover::after,
+html[data-theme="dark"] .rdm-topbar--trailing-icon .material-symbols-outlined:hover::after {
+    background-color: rgba(255, 255, 255, 0.10);
+    opacity: 1;
+}
+
+html[data-theme="dark"] .rdm-topbar--leading-navigation-icon .material-symbols-rounded:active::after,
+html[data-theme="dark"] .rdm-topbar--leading-navigation-icon .material-symbols-outlined:active::after,
+html[data-theme="dark"] .rdm-topbar--trailing-icon .material-symbols-rounded:active::after,
+html[data-theme="dark"] .rdm-topbar--trailing-icon .material-symbols-outlined:active::after {
+    background-color: rgba(255, 255, 255, 0.18);
+    opacity: 1;
 }

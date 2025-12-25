@@ -78,6 +78,44 @@ Autor: Danny Estrada
                 .rdm-navrail--destination-media-indicator-icon .material-symbols-rounded, 
                 .rdm-navrail--destination-media-indicator-icon .material-symbols-outlined {
                     font-size: 1.5em;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                /* State layer sobre el icono */
+                .rdm-navrail--destination-media-indicator-icon .material-symbols-rounded::after,
+                .rdm-navrail--destination-media-indicator-icon .material-symbols-outlined::after {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    border-radius: inherit;
+                    pointer-events: none;
+                    opacity: 0;
+                    transition: opacity 0.18s ease, background-color 0.18s ease;
+                }
+
+                html[data-theme="light"] .rdm-navrail--destination:hover .rdm-navrail--destination-media-indicator-icon .material-symbols-rounded::after,
+                html[data-theme="light"] .rdm-navrail--destination:hover .rdm-navrail--destination-media-indicator-icon .material-symbols-outlined::after {
+                    background-color: rgba(0, 0, 0, 0.08);
+                    opacity: 1;
+                }
+
+                html[data-theme="light"] .rdm-navrail--destination:active .rdm-navrail--destination-media-indicator-icon .material-symbols-rounded::after,
+                html[data-theme="light"] .rdm-navrail--destination:active .rdm-navrail--destination-media-indicator-icon .material-symbols-outlined::after {
+                    background-color: rgba(0, 0, 0, 0.14);
+                    opacity: 1;
+                }
+
+                html[data-theme="dark"] .rdm-navrail--destination:hover .rdm-navrail--destination-media-indicator-icon .material-symbols-rounded::after,
+                html[data-theme="dark"] .rdm-navrail--destination:hover .rdm-navrail--destination-media-indicator-icon .material-symbols-outlined::after {
+                    background-color: rgba(255, 255, 255, 0.12);
+                    opacity: 1;
+                }
+
+                html[data-theme="dark"] .rdm-navrail--destination:active .rdm-navrail--destination-media-indicator-icon .material-symbols-rounded::after,
+                html[data-theme="dark"] .rdm-navrail--destination:active .rdm-navrail--destination-media-indicator-icon .material-symbols-outlined::after {
+                    background-color: rgba(255, 255, 255, 0.18);
+                    opacity: 1;
                 }
 
 
