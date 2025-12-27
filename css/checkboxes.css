@@ -9,6 +9,18 @@ Autor: Danny Estrada / Ajustado por Copilot
   margin: 1em 0;
 }
 
+/* Fieldset reset: elimina estilos por defecto del navegador */
+.rdm-checkbox--fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rdm-checkbox--fieldset legend {
+  padding: 0;
+  margin: 0;
+}
+
 .rdm-checkbox--container {
   display: inline-flex;
   align-items: center;

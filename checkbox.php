@@ -135,28 +135,30 @@
                 </div>
 
                 <!-- CHECKBOX: Option Group -->
-                <h2 class="rdm-sys-typography--title-large">Grupo de opciones</h2>
-                <div class="rdm-checkbox--wrapper">
-                    <label class="rdm-checkbox--container">
-                        <input type="checkbox" class="rdm-checkbox--input" id="cb5" name="option1" value="javascript">
-                        <span class="rdm-checkbox--checkmark"></span>
-                        <span class="rdm-checkbox--label">JavaScript</span>
-                    </label>
-                </div>
-                <div class="rdm-checkbox--wrapper">
-                    <label class="rdm-checkbox--container">
-                        <input type="checkbox" class="rdm-checkbox--input" id="cb6" name="option2" value="python">
-                        <span class="rdm-checkbox--checkmark"></span>
-                        <span class="rdm-checkbox--label">Python</span>
-                    </label>
-                </div>
-                <div class="rdm-checkbox--wrapper">
-                    <label class="rdm-checkbox--container">
-                        <input type="checkbox" class="rdm-checkbox--input" id="cb7" name="option3" value="php">
-                        <span class="rdm-checkbox--checkmark"></span>
-                        <span class="rdm-checkbox--label">PHP</span>
-                    </label>
-                </div>
+                <fieldset class="rdm-checkbox--fieldset">
+                    <legend class="rdm-sys-typography--title-large">Grupo de opciones</legend>
+                    <div class="rdm-checkbox--wrapper">
+                        <label class="rdm-checkbox--container">
+                            <input type="checkbox" class="rdm-checkbox--input" id="cb5" name="option1" value="javascript">
+                            <span class="rdm-checkbox--checkmark"></span>
+                            <span class="rdm-checkbox--label">JavaScript</span>
+                        </label>
+                    </div>
+                    <div class="rdm-checkbox--wrapper">
+                        <label class="rdm-checkbox--container">
+                            <input type="checkbox" class="rdm-checkbox--input" id="cb6" name="option2" value="python">
+                            <span class="rdm-checkbox--checkmark"></span>
+                            <span class="rdm-checkbox--label">Python</span>
+                        </label>
+                    </div>
+                    <div class="rdm-checkbox--wrapper">
+                        <label class="rdm-checkbox--container">
+                            <input type="checkbox" class="rdm-checkbox--input" id="cb7" name="option3" value="php">
+                            <span class="rdm-checkbox--checkmark"></span>
+                            <span class="rdm-checkbox--label">PHP</span>
+                        </label>
+                    </div>
+                </fieldset>
 
             </div>
 
