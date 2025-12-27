@@ -114,14 +114,14 @@
                 </div>
 
                 <h2 class="rdm-sys-typography--title-large">Error state</h2>
-                <div class="rdm-checkbox--wrapper error">
+                <div class="rdm-checkbox--wrapper has-error">
                     <label class="rdm-checkbox--container">
                         <input type="checkbox" class="rdm-checkbox--input" id="cb_error1" name="checkbox_error1">
                         <span class="rdm-checkbox--checkmark"></span>
                         <span class="rdm-checkbox--label">Debe aceptar los términos y condiciones</span>
                     </label>
                 </div>
-                <div class="rdm-checkbox--wrapper error">
+                <div class="rdm-checkbox--wrapper has-error">
                     <label class="rdm-checkbox--container">
                         <input type="checkbox" class="rdm-checkbox--input" id="cb_error2" name="checkbox_error2" checked>
                         <span class="rdm-checkbox--checkmark"></span>
