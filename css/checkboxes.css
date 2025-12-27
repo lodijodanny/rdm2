@@ -21,6 +21,19 @@ Autor: Danny Estrada / Ajustado por Copilot
   margin: 0;
 }
 
+/* Support text para mensajes de error/ayuda */
+.rdm-checkbox--support {
+  display: block;
+  font-size: 0.875em; /* 14px aproximadamente */
+  color: var(--md-sys-color-on-surface-variant);
+  margin-top: 0.5em; /* separación desde el checkbox */
+  padding-left: 1.875em; /* alineado con el label del checkbox */
+}
+
+.rdm-checkbox--wrapper.has-error .rdm-checkbox--support {
+  color: var(--md-sys-color-error);
+}
+
 .rdm-checkbox--container {
   display: inline-flex;
   align-items: center;

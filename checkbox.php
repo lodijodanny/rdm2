@@ -125,6 +125,7 @@
                         <span class="rdm-checkbox--checkmark"></span>
                         <span class="rdm-checkbox--label">Debe aceptar los términos y condiciones</span>
                     </label>
+                    <span class="rdm-checkbox--support">Este campo es obligatorio</span>
                 </div>
                 <div class="rdm-checkbox--wrapper has-error">
                     <label class="rdm-checkbox--container">
@@ -132,6 +133,7 @@
                         <span class="rdm-checkbox--checkmark"></span>
                         <span class="rdm-checkbox--label">Error marcado</span>
                     </label>
+                    <span class="rdm-checkbox--support">Revisa esta selección</span>
                 </div>
 
                 <!-- CHECKBOX: Option Group -->
