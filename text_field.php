@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="rdm-textfield--support">
-                        <span id="tf_enabled_empty_help">Supporting text</span>
+                        <span class="rdm-textfield--support-text" id="tf_enabled_empty_help">Supporting text</span>
                     </div>
                 </div>
 
@@ -92,7 +92,7 @@
                         </div>
                     </div>
                     <div class="rdm-textfield--support">
-                        <span id="tf_enabled_populated_help">Supporting text</span>
+                        <span class="rdm-textfield--support-text" id="tf_enabled_populated_help">Supporting text</span>
                     </div>
                 </div>
 
@@ -112,7 +112,7 @@
                         </div>
                     </div>
                     <div class="rdm-textfield--support">
-                        <span id="tf_disabled_empty_help">Supporting text</span>
+                        <span class="rdm-textfield--support-text" id="tf_disabled_empty_help">Supporting text</span>
                     </div>
                 </div>
 
@@ -132,7 +132,7 @@
                         </div>
                     </div>
                     <div class="rdm-textfield--support">
-                        <span id="tf_disabled_populated_help">Supporting text</span>
+                        <span class="rdm-textfield--support-text" id="tf_disabled_populated_help">Supporting text</span>
                     </div>
                 </div>
 
@@ -154,7 +154,7 @@
                         </div>
                     </div>
                     <div class="rdm-textfield--support">
-                        <span id="tf_nombre_help">Ingresa tu nombre completo</span>
+                        <span class="rdm-textfield--support-text" id="tf_nombre_help">Ingresa tu nombre completo</span>
                     </div>
                 </div>
 
@@ -168,7 +168,22 @@
                         </div>
                     </div>
                     <div class="rdm-textfield--support">
-                        <span id="tf_correo_help">Usa un correo válido</span>
+                        <span class="rdm-textfield--support-text" id="tf_correo_help">Usa un correo válido</span>
+                    </div>
+                </div>
+
+                <h2 class="rdm-sys-typography--title-large">Input con contador de caracteres</h2>
+                <!-- Text Field: Input with character counter -->
+                <div class="rdm-textfield--wrapper">
+                    <div class="rdm-textfield--container rdm-textfield--outlined">
+                        <div class="rdm-textfield--control">
+                            <input id="tf_username" type="text" name="username" placeholder=" " maxlength="20" aria-describedby="tf_username_help">
+                            <label class="rdm-textfield--label" for="tf_username">Username</label>
+                        </div>
+                    </div>
+                    <div class="rdm-textfield--support">
+                        <span class="rdm-textfield--support-text" id="tf_username_help">Elige tu nombre de usuario</span>
+                        <span class="rdm-textfield--support-counter" data-counter-for="tf_username">0/20</span>
                     </div>
                 </div>
 
@@ -177,12 +192,13 @@
                 <div class="rdm-textfield--wrapper">
                     <div class="rdm-textfield--container rdm-textfield--outlined">
                         <div class="rdm-textfield--control">
-                            <textarea id="tf_mensaje" name="mensaje" placeholder=" " aria-describedby="tf_mensaje_help"></textarea>
+                            <textarea id="tf_mensaje" name="mensaje" placeholder=" " aria-describedby="tf_mensaje_help" maxlength="500"></textarea>
                             <label class="rdm-textfield--label" for="tf_mensaje">Mensaje</label>
                         </div>
                     </div>
                     <div class="rdm-textfield--support">
-                        <span id="tf_mensaje_help">Máximo 500 caracteres</span>
+                        <span class="rdm-textfield--support-text" id="tf_mensaje_help">Máximo 500 caracteres</span>
+                        <span class="rdm-textfield--support-counter" data-counter-for="tf_mensaje">0/500</span>
                     </div>
                 </div>
 

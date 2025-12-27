@@ -172,10 +172,23 @@ Autor: Danny Estrada / Ajustado por Copilot
 
 /* Support text (fuera del contenedor) */
 .rdm-textfield--support {
-  padding: 0.25em 0.75em 0;
+  padding: 0.25em 1em 0; /* 4px top, 16px horizontal */
   color: var(--md-sys-color-on-surface-variant);
   font-size: 0.875em; /* ~label/ayuda */
-  margin-top: 0.25em;
+  margin-top: 0.25em; /* 4px separación desde el campo */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5em;
+}
+
+.rdm-textfield--support-text {
+  flex: 1;
+}
+
+.rdm-textfield--support-counter {
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 /* Estados: focus y con contenido */
