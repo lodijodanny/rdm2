@@ -27,7 +27,7 @@ Autor: Danny Estrada / Ajustado por Copilot
 }
 
 /* Hover state */
-.rdm-textfield--outlined:hover:not(:focus-within) {
+.rdm-textfield--outlined:hover:not(:focus-within):not(:has(input:disabled)):not(:has(textarea:disabled)) {
   border-color: var(--md-sys-color-on-surface);
 }
 
@@ -225,8 +225,42 @@ Autor: Danny Estrada / Ajustado por Copilot
 /* Disabled */
 .rdm-textfield--control input:disabled,
 .rdm-textfield--control textarea:disabled {
-  opacity: 0.6;
+  opacity: 0.65;
   cursor: not-allowed;
+}
+
+/* Disabled: borde más claro */
+.rdm-textfield--outlined:has(input:disabled),
+.rdm-textfield--outlined:has(textarea:disabled) {
+  opacity: 0.65;
+}
+
+/* Disabled: label más claro pero con background opaco para el notch */
+.rdm-textfield--outlined:has(input:disabled) .rdm-textfield--label,
+.rdm-textfield--outlined:has(textarea:disabled) .rdm-textfield--label {
+  opacity: 1; /* label en outlined maneja su propia opacidad */
+  color: color-mix(in srgb, var(--md-sys-color-on-surface-variant) 65%, transparent);
+  background-color: var(--md-sys-color-surface) !important;
+}
+
+/* Disabled: label sin outlined */
+.rdm-textfield--control:has(input:disabled) .rdm-textfield--label:not(.rdm-textfield--outlined .rdm-textfield--label),
+.rdm-textfield--control:has(textarea:disabled) .rdm-textfield--label:not(.rdm-textfield--outlined .rdm-textfield--label) {
+  opacity: 0.65;
+}
+
+/* Disabled: iconos más claros */
+.rdm-textfield--control:has(input:disabled) .rdm-textfield--leading-icon,
+.rdm-textfield--control:has(input:disabled) .rdm-textfield--trailing-icon,
+.rdm-textfield--control:has(textarea:disabled) .rdm-textfield--leading-icon,
+.rdm-textfield--control:has(textarea:disabled) .rdm-textfield--trailing-icon {
+  opacity: 0.65;
+}
+
+/* Disabled: supporting text más claro */
+.rdm-textfield--wrapper:has(input:disabled) .rdm-textfield--support,
+.rdm-textfield--wrapper:has(textarea:disabled) .rdm-textfield--support {
+  opacity: 0.65;
 }
 
 /* Remover estilos por defecto del autofill del navegador */
