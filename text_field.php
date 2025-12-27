@@ -55,6 +55,90 @@
 
             <!-- Body section -->
             <div class="rdm-form--body">
+                
+                <h2 class="rdm-sys-typography--title-large">Enabled (empty)</h2>
+                <!-- Text Field: Outlined -->
+                <div class="rdm-textfield--wrapper">
+                    <div class="rdm-textfield--container rdm-textfield--outlined">
+                        <div class="rdm-textfield--control">
+                            <div class="rdm-textfield--leading-icon">
+                                <span class="material-symbols-rounded">search</span>
+                            </div>
+                            <input id="tf_enabled_empty" type="text" name="enabled_empty" placeholder=" " aria-describedby="tf_enabled_empty_help">
+                            <label class="rdm-textfield--label" for="tf_enabled_empty">Label text</label>
+                            <div class="rdm-textfield--trailing-icon" data-clear-input="tf_enabled_empty">
+                                <span class="material-symbols-rounded">close</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rdm-textfield--support">
+                        <span id="tf_enabled_empty_help">Supporting text</span>
+                    </div>
+                </div>
+
+                <h2 class="rdm-sys-typography--title-large">Enabled (populated)</h2>
+                <!-- Text Field: Outlined with content -->
+                <div class="rdm-textfield--wrapper">
+                    <div class="rdm-textfield--container rdm-textfield--outlined">
+                        <div class="rdm-textfield--control">
+                            <div class="rdm-textfield--leading-icon">
+                                <span class="material-symbols-rounded">search</span>
+                            </div>
+                            <input id="tf_enabled_populated" type="text" name="enabled_populated" placeholder=" " value="Input text" aria-describedby="tf_enabled_populated_help">
+                            <label class="rdm-textfield--label" for="tf_enabled_populated">Label text</label>
+                            <div class="rdm-textfield--trailing-icon" data-clear-input="tf_enabled_populated">
+                                <span class="material-symbols-rounded">close</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rdm-textfield--support">
+                        <span id="tf_enabled_populated_help">Supporting text</span>
+                    </div>
+                </div>
+
+                <h2 class="rdm-sys-typography--title-large">Disabled (empty)</h2>
+                <!-- Text Field: Disabled empty -->
+                <div class="rdm-textfield--wrapper">
+                    <div class="rdm-textfield--container rdm-textfield--outlined">
+                        <div class="rdm-textfield--control">
+                            <div class="rdm-textfield--leading-icon">
+                                <span class="material-symbols-rounded">search</span>
+                            </div>
+                            <input id="tf_disabled_empty" type="text" name="disabled_empty" placeholder=" " disabled aria-describedby="tf_disabled_empty_help">
+                            <label class="rdm-textfield--label" for="tf_disabled_empty">Label text</label>
+                            <div class="rdm-textfield--trailing-icon" data-clear-input="tf_disabled_empty">
+                                <span class="material-symbols-rounded">close</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rdm-textfield--support">
+                        <span id="tf_disabled_empty_help">Supporting text</span>
+                    </div>
+                </div>
+
+                <h2 class="rdm-sys-typography--title-large">Disabled (populated)</h2>
+                <!-- Text Field: Disabled with content -->
+                <div class="rdm-textfield--wrapper">
+                    <div class="rdm-textfield--container rdm-textfield--outlined">
+                        <div class="rdm-textfield--control">
+                            <div class="rdm-textfield--leading-icon">
+                                <span class="material-symbols-rounded">search</span>
+                            </div>
+                            <input id="tf_disabled_populated" type="text" name="disabled_populated" placeholder=" " value="Input text" disabled aria-describedby="tf_disabled_populated_help">
+                            <label class="rdm-textfield--label" for="tf_disabled_populated">Label text</label>
+                            <div class="rdm-textfield--trailing-icon" data-clear-input="tf_disabled_populated">
+                                <span class="material-symbols-rounded">close</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rdm-textfield--support">
+                        <span id="tf_disabled_populated_help">Supporting text</span>
+                    </div>
+                </div>
+
+                <h2 class="rdm-sys-typography--title-large">Focused & Hovered</h2>
+                <p class="rdm-sys-typography--body-medium">Haz click en el campo para ver el estado focused (borde primary 2px). Pasa el cursor sobre el campo para ver el estado hovered (borde más oscuro).</p>
+
                 <!-- Text Field: Outlined -->
                 <div class="rdm-textfield--wrapper">
                     <div class="rdm-textfield--container rdm-textfield--outlined">
@@ -74,18 +158,13 @@
                     </div>
                 </div>
 
-                <!-- Text Field: Outlined -->
+                <h2 class="rdm-sys-typography--title-large">Sin iconos</h2>
+                <!-- Text Field: Outlined without icons -->
                 <div class="rdm-textfield--wrapper">
                     <div class="rdm-textfield--container rdm-textfield--outlined">
                         <div class="rdm-textfield--control">
-                            <div class="rdm-textfield--leading-icon">
-                                <span class="material-symbols-rounded">search</span>
-                            </div>
                             <input id="tf_correo" type="email" name="correo" placeholder=" " aria-describedby="tf_correo_help" autocomplete="email">
                             <label class="rdm-textfield--label" for="tf_correo">Correo electrónico</label>
-                            <div class="rdm-textfield--trailing-icon" data-clear-input="tf_correo">
-                                <span class="material-symbols-rounded">close</span>
-                            </div>
                         </div>
                     </div>
                     <div class="rdm-textfield--support">
@@ -93,6 +172,7 @@
                     </div>
                 </div>
 
+                <h2 class="rdm-sys-typography--title-large">Textarea</h2>
                 <!-- Text Area: Outlined -->
                 <div class="rdm-textfield--wrapper">
                     <div class="rdm-textfield--container rdm-textfield--outlined">
