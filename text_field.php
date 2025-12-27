@@ -54,9 +54,9 @@
 
             <!-- Body section -->
             <div class="rdm-form--body">
-                <!-- Text Field: Filled -->
+                <!-- Text Field: Outlined -->
                 <div class="rdm-textfield--wrapper">
-                    <div class="rdm-textfield--container rdm-textfield--filled">
+                    <div class="rdm-textfield--container rdm-textfield--outlined">
                         <div class="rdm-textfield--control">
                             <input id="tf_nombre" type="text" name="nombre" placeholder=" " aria-describedby="tf_nombre_help" autocomplete="name">
                             <label class="rdm-textfield--label" for="tf_nombre">Nombre</label>
@@ -72,7 +72,7 @@
                     <div class="rdm-textfield--container rdm-textfield--outlined">
                         <div class="rdm-textfield--control">
                             <input id="tf_correo" type="email" name="correo" placeholder=" " aria-describedby="tf_correo_help" autocomplete="email">
-                            <label class="rdm-textfield--label" for="tf_correo">Nombre completo</label>
+                            <label class="rdm-textfield--label" for="tf_correo">Correo electrónico</label>
                         </div>
                     </div>
                     <div class="rdm-textfield--support">

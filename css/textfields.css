@@ -15,18 +15,6 @@ Autor: Danny Estrada / Ajustado por Copilot
   width: 100%;
 }
 
-/* Filled */
-.rdm-textfield--filled {
-  position: relative;
-  /* MD: extra-small top shape */
-  border-radius: 0.25em 0.25em 0 0;
-  background-color: var(--md-sys-color-surface-variant);
-  color: var(--md-sys-color-on-surface);
-  /* MD: active indicator underline */
-  border-bottom: 0.0625em solid var(--md-sys-color-on-surface-variant);
-  transition: border-color 160ms ease;
-}
-
 /* Outlined */
 .rdm-textfield--outlined {
   position: relative;
@@ -49,13 +37,9 @@ Autor: Danny Estrada / Ajustado por Copilot
 /* Outlined: altura y padding según MD (56 alto, 16/8 padding) */
 .rdm-textfield--outlined .rdm-textfield--control {
   min-height: 3.5em; /* 56px */
-  padding: 0.5em 1em; /* 8px vertical, 16px horizontal */
+  padding: 0em 1em; /* 8px vertical, 16px horizontal */
 }
 
-/* Filled: ajustar vertical para alinear contenido tras flotación del label */
-.rdm-textfield--filled .rdm-textfield--control {
-  padding: 0.75em 0.75em; /* simétrico arriba/abajo para centrar visualmente */
-}
 .rdm-textfield--control input {
   display: block;
   width: 100%;
@@ -108,12 +92,6 @@ Autor: Danny Estrada / Ajustado por Copilot
   transform: translateY(-0.85em) scale(0.85);
 }
 
-/* Filled: elevar ligeramente más el label flotante para balance visual */
-.rdm-textfield--filled:focus-within .rdm-textfield--label,
-.rdm-textfield--filled .rdm-textfield--control input:not(:placeholder-shown) ~ .rdm-textfield--label {
-  transform: translateY(-1.10em) scale(0.85); /* eleva un poco más para balance con el contenido */
-}
-
 /* Ajuste específico para outlined: notch y posición del label flotante */
 .rdm-textfield--outlined:focus-within .rdm-textfield--label,
 .rdm-textfield--outlined .rdm-textfield--control input:not(:placeholder-shown) ~ .rdm-textfield--label {
@@ -123,14 +101,10 @@ Autor: Danny Estrada / Ajustado por Copilot
   padding: 0.25em 0.25em; /* 4px arriba/abajo y 4px laterales para el notch */
 }
 
-/* Resaltar borde/contorno en focus */
-.rdm-textfield--filled:focus-within {
-  border-bottom-color: var(--md-sys-color-primary);
-}
-
 .rdm-textfield--outlined:focus-within {
   border-color: var(--md-sys-color-primary);
 }
+
 
 /* Error state (manual): aplicar en wrapper .is-error */
 .rdm-textfield--wrapper.is-error .rdm-textfield--label,
@@ -139,9 +113,6 @@ Autor: Danny Estrada / Ajustado por Copilot
 }
 .rdm-textfield--wrapper.is-error .rdm-textfield--outlined {
   border-color: var(--md-sys-color-error);
-}
-.rdm-textfield--wrapper.is-error .rdm-textfield--filled {
-  border-bottom-color: var(--md-sys-color-error);
 }
 
 /* Disabled */
