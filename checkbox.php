@@ -8,6 +8,15 @@
 	<!-- Script que cambia los atributos de la top bar al hacer scroll -->
 	<script src="js/topbar_scroll.js"></script>
     <script src="js/theme_toggle.js"></script>
+    <script>
+        // Establecer estado indeterminate al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            const indeterminateCheckbox = document.getElementById('cb_indeterminate');
+            if (indeterminateCheckbox) {
+                indeterminateCheckbox.indeterminate = true;
+            }
+        });
+    </script>
 </head>
 <body>
 
@@ -76,6 +85,16 @@
                     </label>
                 </div>
 
+                <h2 class="rdm-sys-typography--title-large">Indeterminate</h2>
+                <p class="rdm-sys-typography--body-medium">Haz click para ver el estado hover, focus y pressed</p>
+                <div class="rdm-checkbox--wrapper">
+                    <label class="rdm-checkbox--container">
+                        <input type="checkbox" class="rdm-checkbox--input" id="cb_indeterminate" name="checkbox_indeterminate">
+                        <span class="rdm-checkbox--checkmark"></span>
+                        <span class="rdm-checkbox--label">Selección parcial (indeterminate)</span>
+                    </label>
+                </div>
+
                 <h2 class="rdm-sys-typography--title-large">Disabled (unchecked)</h2>
                 <div class="rdm-checkbox--wrapper">
                     <label class="rdm-checkbox--container">
@@ -91,6 +110,22 @@
                         <input type="checkbox" class="rdm-checkbox--input" id="cb4" name="checkbox4" checked disabled>
                         <span class="rdm-checkbox--checkmark"></span>
                         <span class="rdm-checkbox--label">Opción deshabilitada marcada</span>
+                    </label>
+                </div>
+
+                <h2 class="rdm-sys-typography--title-large">Error state</h2>
+                <div class="rdm-checkbox--wrapper error">
+                    <label class="rdm-checkbox--container">
+                        <input type="checkbox" class="rdm-checkbox--input" id="cb_error1" name="checkbox_error1">
+                        <span class="rdm-checkbox--checkmark"></span>
+                        <span class="rdm-checkbox--label">Debe aceptar los términos y condiciones</span>
+                    </label>
+                </div>
+                <div class="rdm-checkbox--wrapper error">
+                    <label class="rdm-checkbox--container">
+                        <input type="checkbox" class="rdm-checkbox--input" id="cb_error2" name="checkbox_error2" checked>
+                        <span class="rdm-checkbox--checkmark"></span>
+                        <span class="rdm-checkbox--label">Error marcado</span>
                     </label>
                 </div>
 
