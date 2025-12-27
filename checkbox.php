@@ -8,6 +8,7 @@
 	<!-- Script que cambia los atributos de la top bar al hacer scroll -->
 	<script src="js/topbar_scroll.js"></script>
     <script src="js/theme_toggle.js"></script>
+    <script src="js/textfield.js"></script>
     <script>
         // Establecer estado indeterminate al cargar la página
         document.addEventListener('DOMContentLoaded', function() {
@@ -67,6 +68,7 @@
             <!-- Body section -->
             <div class="rdm-form--body">
                 
+                <!-- CHECKBOX: Enabled States -->
                 <h2 class="rdm-sys-typography--title-large">Enabled (unchecked)</h2>
                 <div class="rdm-checkbox--wrapper">
                     <label class="rdm-checkbox--container">
@@ -85,6 +87,7 @@
                     </label>
                 </div>
 
+                <!-- CHECKBOX: Indeterminate State -->
                 <h2 class="rdm-sys-typography--title-large">Indeterminate</h2>
                 <p class="rdm-sys-typography--body-medium">Haz click para ver el estado hover, focus y pressed</p>
                 <div class="rdm-checkbox--wrapper">
@@ -95,6 +98,7 @@
                     </label>
                 </div>
 
+                <!-- CHECKBOX: Disabled States -->
                 <h2 class="rdm-sys-typography--title-large">Disabled (unchecked)</h2>
                 <div class="rdm-checkbox--wrapper">
                     <label class="rdm-checkbox--container">
@@ -113,6 +117,7 @@
                     </label>
                 </div>
 
+                <!-- CHECKBOX: Error State -->
                 <h2 class="rdm-sys-typography--title-large">Error state</h2>
                 <div class="rdm-checkbox--wrapper has-error">
                     <label class="rdm-checkbox--container">
@@ -129,6 +134,7 @@
                     </label>
                 </div>
 
+                <!-- CHECKBOX: Option Group -->
                 <h2 class="rdm-sys-typography--title-large">Grupo de opciones</h2>
                 <div class="rdm-checkbox--wrapper">
                     <label class="rdm-checkbox--container">
