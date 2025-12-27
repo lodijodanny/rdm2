@@ -23,8 +23,14 @@ Autor: Danny Estrada / Ajustado por Copilot
   background-color: transparent;
   border: 0.0625em solid var(--md-sys-color-outline);
   color: var(--md-sys-color-on-surface);
-  transition: border-color 160ms ease;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
 }
+
+/* Hover state */
+.rdm-textfield--outlined:hover:not(:focus-within) {
+  border-color: var(--md-sys-color-on-surface);
+}
+
 
 /* Control */
 .rdm-textfield--control {
@@ -32,13 +38,72 @@ Autor: Danny Estrada / Ajustado por Copilot
   padding: 0.5em 0.75em;
   display: flex;
   align-items: center;
+  gap: 1em; /* 16px gap entre iconos y input */
 }
 
-/* Outlined: altura y padding según MD (56 alto, 16/8 padding) */
+/* Iconos leading y trailing */
+.rdm-textfield--leading-icon,
+.rdm-textfield--trailing-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--md-sys-color-on-surface-variant);
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: color 160ms ease;
+  width: 1.5em; /* 24px icono */
+  height: 1.5em; /* 24px icono */
+}
+
+.rdm-textfield--leading-icon {
+  margin-left: 0;
+}
+
+.rdm-textfield--trailing-icon {
+  margin-right: 0;
+}
+
+.rdm-textfield--trailing-icon:hover {
+  color: var(--md-sys-color-on-surface);
+}
+
+/* Ocultar trailing icon por defecto, mostrar cuando tenga .show */
+.rdm-textfield--trailing-icon {
+  display: none;
+}
+
+.rdm-textfield--trailing-icon.show {
+  display: flex;
+}
+
+
+/* Outlined: altura y padding según MD (56 alto, 12px padding con iconos) */
 .rdm-textfield--outlined .rdm-textfield--control {
   min-height: 3.5em; /* 56px */
-  padding: 0em 1em; /* 8px vertical, 16px horizontal */
+  padding: 0em 0.75em; /* 12px horizontal */
+  align-items: center; /* centrado por defecto */
 }
+
+/* Solo textarea alineado arriba */
+.rdm-textfield--outlined .rdm-textfield--control:has(textarea) {
+  align-items: flex-start;
+}
+
+/* Con iconos: mantener padding de 12px */
+.rdm-textfield--outlined .rdm-textfield--control:has(.rdm-textfield--leading-icon) {
+  padding-left: 0.75em; /* 12px */
+}
+
+.rdm-textfield--outlined .rdm-textfield--control:has(.rdm-textfield--trailing-icon) {
+  padding-right: 0.75em; /* 12px */
+}
+
+
+/* Textarea outlined: altura mínima y padding superior para label */
+.rdm-textfield--outlined .rdm-textfield--control textarea {
+  padding-top: 0.5em; /* espacio desde el borde para el label flotante */
+}
+
 
 .rdm-textfield--control input {
   display: block;
@@ -51,7 +116,29 @@ Autor: Danny Estrada / Ajustado por Copilot
   font: inherit;
   padding: 0.5em 0;
   caret-color: var(--md-sys-color-primary);
+  flex: 1; /* ocupar espacio disponible sin tapar iconos */
+  min-width: 0; /* permitir shrink */
 }
+
+/* Textarea: estilos base */
+.rdm-textfield--control textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  outline: none !important;
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+  font: inherit;
+  padding: 0.5em 0;
+  caret-color: var(--md-sys-color-primary);
+  resize: vertical;
+  min-height: 5.5em; /* ~88px para 4 líneas */
+  line-height: 1.5em;
+  flex: 1; /* ocupar espacio disponible sin tapar iconos */
+  min-width: 0; /* permitir shrink */
+}
+
 
 /* Outlined: el texto queda exactamente centrado verticalmente */
 .rdm-textfield--outlined .rdm-textfield--control input {
@@ -66,10 +153,16 @@ Autor: Danny Estrada / Ajustado por Copilot
   top: 50%; /* centrado vertical en reposo */
   transform: translateY(-50%);
   transform-origin: left top;
-  transition: transform 160ms ease, color 160ms ease, background-color 160ms ease, top 160ms ease;
+  transition: transform 160ms ease, color 160ms ease, background-color 160ms ease, top 160ms ease, left 160ms ease;
   color: var(--md-sys-color-on-surface-variant);
   pointer-events: none;
 }
+
+/* Label con leading icon: mover a la derecha del icono */
+.rdm-textfield--control:has(.rdm-textfield--leading-icon) .rdm-textfield--label {
+  left: 3.25em; /* 52px: 12px padding + 24px icono + 16px gap */
+}
+
 /* etiqueta sobre un fondo para outlined (simula notch) */
 .rdm-textfield--outlined .rdm-textfield--label {
   background-color: var(--md-sys-color-surface);
@@ -103,6 +196,7 @@ Autor: Danny Estrada / Ajustado por Copilot
 
 .rdm-textfield--outlined:focus-within {
   border-color: var(--md-sys-color-primary);
+  box-shadow: inset 0 0 0 0.0625em var(--md-sys-color-primary); /* borde adicional interno de 1px */
 }
 
 
@@ -116,7 +210,8 @@ Autor: Danny Estrada / Ajustado por Copilot
 }
 
 /* Disabled */
-.rdm-textfield--control input:disabled {
+.rdm-textfield--control input:disabled,
+.rdm-textfield--control textarea:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
@@ -139,8 +234,23 @@ Autor: Danny Estrada / Ajustado por Copilot
   -webkit-text-fill-color: var(--md-sys-color-on-surface) !important;
 }
 
+/* Scrollbar styling para textarea */
+.rdm-textfield--control textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.rdm-textfield--control textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.rdm-textfield--control textarea::-webkit-scrollbar-thumb {
+  background-color: var(--md-sys-color-outline);
+  border-radius: 4px;
+}
+
 /* Placeholder para la técnica :placeholder-shown */
-.rdm-textfield--control input::placeholder {
+.rdm-textfield--control input::placeholder,
+.rdm-textfield--control textarea::placeholder {
   color: transparent;
 }
 

@@ -8,6 +8,7 @@
 	<!-- Script que cambia los atributos de la top bar al hacer scroll -->
 	<script src="js/topbar_scroll.js"></script>
     <script src="js/theme_toggle.js"></script>
+    <script src="js/textfield.js"></script>
 </head>
 <body>
 
@@ -58,8 +59,14 @@
                 <div class="rdm-textfield--wrapper">
                     <div class="rdm-textfield--container rdm-textfield--outlined">
                         <div class="rdm-textfield--control">
+                            <div class="rdm-textfield--leading-icon">
+                                <span class="material-symbols-rounded">search</span>
+                            </div>
                             <input id="tf_nombre" type="text" name="nombre" placeholder=" " aria-describedby="tf_nombre_help" autocomplete="name">
                             <label class="rdm-textfield--label" for="tf_nombre">Nombre</label>
+                            <div class="rdm-textfield--trailing-icon" data-clear-input="tf_nombre">
+                                <span class="material-symbols-rounded">close</span>
+                            </div>
                         </div>
                     </div>
                     <div class="rdm-textfield--support">
@@ -71,12 +78,31 @@
                 <div class="rdm-textfield--wrapper">
                     <div class="rdm-textfield--container rdm-textfield--outlined">
                         <div class="rdm-textfield--control">
+                            <div class="rdm-textfield--leading-icon">
+                                <span class="material-symbols-rounded">search</span>
+                            </div>
                             <input id="tf_correo" type="email" name="correo" placeholder=" " aria-describedby="tf_correo_help" autocomplete="email">
                             <label class="rdm-textfield--label" for="tf_correo">Correo electrónico</label>
+                            <div class="rdm-textfield--trailing-icon" data-clear-input="tf_correo">
+                                <span class="material-symbols-rounded">close</span>
+                            </div>
                         </div>
                     </div>
                     <div class="rdm-textfield--support">
                         <span id="tf_correo_help">Usa un correo válido</span>
+                    </div>
+                </div>
+
+                <!-- Text Area: Outlined -->
+                <div class="rdm-textfield--wrapper">
+                    <div class="rdm-textfield--container rdm-textfield--outlined">
+                        <div class="rdm-textfield--control">
+                            <textarea id="tf_mensaje" name="mensaje" placeholder=" " aria-describedby="tf_mensaje_help"></textarea>
+                            <label class="rdm-textfield--label" for="tf_mensaje">Mensaje</label>
+                        </div>
+                    </div>
+                    <div class="rdm-textfield--support">
+                        <span id="tf_mensaje_help">Máximo 500 caracteres</span>
                     </div>
                 </div>
 
