@@ -171,7 +171,7 @@
                     <button type="reset" class="rdm-button--text">
                     <div class="rdm-button--container">
                         <div class="rdm-button--media">
-                            <span class="material-symbols-rounded">refresh</span>
+                            <div class="rdm-button--icon"><span class="material-symbols-rounded">refresh</span></div>
                         </div>
                         <div class="rdm-button--body">
                             <span class="rdm-sys-typography--label-large">Limpiar</span>
@@ -183,7 +183,7 @@
                     <button type="submit" class="rdm-button--filled">
                     <div class="rdm-button--container">
                         <div class="rdm-button--media">
-                            <span class="material-symbols-rounded">send</span>
+                            <div class="rdm-button--icon"><span class="material-symbols-rounded">send</span></div>
                         </div>
                         <div class="rdm-button--body">
                             <span class="rdm-sys-typography--label-large">Enviar</span>

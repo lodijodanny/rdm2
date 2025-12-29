@@ -60,28 +60,25 @@
             </div>
 
             <!-- Action section aligment: left, center, right -->
-            <div class="rdm-form--action-right">
+            <div class="rdm-form--action-left">
             <p>
-                <!-- reset (tonal recomendado para secundaria) -->
-                <button type="reset" class="rdm-button--text">
+                <!-- button con tanaño correcto -->
+                <button type="submit" class="rdm-button--filled">
                 <div class="rdm-button--container">
                     <div class="rdm-button--media">
-                        <span class="material-symbols-rounded">clear</span>
+                        <div class="rdm-button--icon"><span class="material-symbols-rounded">send</span></div>
                     </div>
                     <div class="rdm-button--body">
-                        <span class="rdm-sys-typography--label-large">Limpiar</span>
+                        <span class="rdm-sys-typography--label-large">Enviar</span>
                     </div>
                 </div>
                 </button>
 
-                <!-- submit (filled primario recomendado) -->
-                <button type="submit" class="rdm-button--filled">
-                <div class="rdm-button--container">
-                    <div class="rdm-button--media">
-                        <span class="material-symbols-rounded">send</span>
-                    </div>
+                <!-- submit (filled primario recomendado) boton que se ve mas grande -->
+                <button type="reset" class="rdm-button--outlined">
+                <div class="rdm-button--container">                    
                     <div class="rdm-button--body">
-                        <span class="rdm-sys-typography--label-large">Enviar</span>
+                        <span class="rdm-sys-typography--label-large">Limpiar</span>
                     </div>
                 </div>
                 </button>
@@ -116,32 +113,29 @@
 
             <!-- Action section aligment: left, center, right -->
             <div class="rdm-form--action-right">
-                <p>
-                    <!-- reset -->
-                    <button type="reset" class="rdm-button--text">
-                    <div class="rdm-button--container">
-                        <div class="rdm-button--media">
-                            <span class="material-symbols-rounded">refresh</span>
-                        </div>
-                        <div class="rdm-button--body">
-                            <span class="rdm-sys-typography--label-large">Limpiar</span>
-                        </div>
+            <p>
+                <!-- button con tanaño correcto -->
+                <button type="submit" class="rdm-button--filled">
+                <div class="rdm-button--container">
+                    <div class="rdm-button--media">
+                        <div class="rdm-button--icon"><span class="material-symbols-rounded">send</span></div>
                     </div>
-                    </button>
+                    <div class="rdm-button--body">
+                        <span class="rdm-sys-typography--label-large">Enviar</span>
+                    </div>
+                </div>
+                </button>
 
-                    <!-- submit -->
-                    <button type="submit" class="rdm-button--filled">
-                    <div class="rdm-button--container">
-                        <div class="rdm-button--media">
-                            <span class="material-symbols-rounded">send</span>
-                        </div>
-                        <div class="rdm-button--body">
-                            <span class="rdm-sys-typography--label-large">Enviar</span>
-                        </div>
+                <!-- submit (filled primario recomendado) boton que se ve mas grande -->
+                <button type="reset" class="rdm-button--outlined">
+                <div class="rdm-button--container">                    
+                    <div class="rdm-button--body">
+                        <span class="rdm-sys-typography--label-large">Limpiar</span>
                     </div>
-                    </button>
-                
-                </p> 
+                </div>
+                </button>
+			
+            </p> 
             </div>
             
         </div>
@@ -176,7 +170,7 @@
                     <button type="reset" class="rdm-button--text">
                     <div class="rdm-button--container">
                         <div class="rdm-button--media">
-                            <span class="material-symbols-rounded">refresh</span>
+                            <div class="rdm-button--icon"><span class="material-symbols-rounded">refresh</span></div>
                         </div>
                         <div class="rdm-button--body">
                             <span class="rdm-sys-typography--label-large">Limpiar</span>
@@ -188,7 +182,7 @@
                     <button type="submit" class="rdm-button--filled">
                     <div class="rdm-button--container">
                         <div class="rdm-button--media">
-                            <span class="material-symbols-rounded">send</span>
+                            <div class="rdm-button--icon"><span class="material-symbols-rounded">send</span></div>
                         </div>
                         <div class="rdm-button--body">
                             <span class="rdm-sys-typography--label-large">Enviar</span>
@@ -226,32 +220,29 @@
 
             <!-- Action section aligment: left, center, right -->
             <div class="rdm-form--action-left">
-                <p>
-                    <!-- reset -->
-                    <button type="reset" class="rdm-button--text">
-                    <div class="rdm-button--container">
-                        <div class="rdm-button--media">
-                            <span class="material-symbols-rounded">refresh</span>
-                        </div>
-                        <div class="rdm-button--body">
-                            <span class="rdm-sys-typography--label-large">Limpiar</span>
-                        </div>
+            <p>
+                <!-- button con tanaño correcto -->
+                <button type="submit" class="rdm-button--filled">
+                <div class="rdm-button--container">
+                    <div class="rdm-button--media">
+                        <div class="rdm-button--icon"><span class="material-symbols-rounded">send</span></div>
                     </div>
-                    </button>
+                    <div class="rdm-button--body">
+                        <span class="rdm-sys-typography--label-large">Enviar</span>
+                    </div>
+                </div>
+                </button>
 
-                    <!-- submit -->
-                    <button type="submit" class="rdm-button--filled">
-                    <div class="rdm-button--container">
-                        <div class="rdm-button--media">
-                            <span class="material-symbols-rounded">send</span>
-                        </div>
-                        <div class="rdm-button--body">
-                            <span class="rdm-sys-typography--label-large">Enviar</span>
-                        </div>
+                <!-- submit (filled primario recomendado) boton que se ve mas grande -->
+                <button type="reset" class="rdm-button--outlined">
+                <div class="rdm-button--container">                    
+                    <div class="rdm-button--body">
+                        <span class="rdm-sys-typography--label-large">Limpiar</span>
                     </div>
-                    </button>
-                
-                </p> 
+                </div>
+                </button>
+			
+            </p> 
             </div>
 			
         </div>
