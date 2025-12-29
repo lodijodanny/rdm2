@@ -81,7 +81,7 @@
                 </button>
 
                 <!-- button -->
-                <button class="rdm-button--filled">
+                <button class="rdm-button--text">
                 <div class="rdm-button--container">
                     <div class="rdm-button--body">
                         <span class="rdm-sys-typography--label-large">Button</span>
@@ -133,7 +133,7 @@
                     </button>
 
                     <!-- button -->
-                    <button class="rdm-button--filled">
+                    <button class="rdm-button--text">
                     <div class="rdm-button--container">
                         <div class="rdm-button--body">
                             <span class="rdm-sys-typography--label-large">Button</span>
@@ -185,7 +185,7 @@
                     </button>
 
                     <!-- button -->
-                    <button class="rdm-button--filled">
+                    <button class="rdm-button--text">
                     <div class="rdm-button--container">
                         <div class="rdm-button--body">
                             <span class="rdm-sys-typography--label-large">Button</span>
@@ -237,7 +237,7 @@
                     </button>
 
                     <!-- button -->
-                    <button class="rdm-button--filled">
+                    <button class="rdm-button--text">
                     <div class="rdm-button--container">
                         <div class="rdm-button--body">
                             <span class="rdm-sys-typography--label-large">Button</span>

@@ -74,9 +74,12 @@
                 </div>
                 </button>
 
-                <!-- submit (filled primario recomendado) boton que se ve mas grande -->
-                <button type="reset" class="rdm-button--outlined">
-                <div class="rdm-button--container">                    
+                <!-- reset -->
+                <button type="reset" class="rdm-button--text">
+                <div class="rdm-button--container">
+                    <div class="rdm-button--media">
+                        <div class="rdm-button--icon"><span class="material-symbols-rounded">refresh</span></div>
+                    </div>
                     <div class="rdm-button--body">
                         <span class="rdm-sys-typography--label-large">Limpiar</span>
                     </div>
@@ -126,9 +129,12 @@
                 </div>
                 </button>
 
-                <!-- submit (filled primario recomendado) boton que se ve mas grande -->
-                <button type="reset" class="rdm-button--outlined">
-                <div class="rdm-button--container">                    
+                <!-- reset -->
+                <button type="reset" class="rdm-button--text">
+                <div class="rdm-button--container">
+                    <div class="rdm-button--media">
+                        <div class="rdm-button--icon"><span class="material-symbols-rounded">refresh</span></div>
+                    </div>
                     <div class="rdm-button--body">
                         <span class="rdm-sys-typography--label-large">Limpiar</span>
                     </div>
@@ -233,9 +239,12 @@
                 </div>
                 </button>
 
-                <!-- submit (filled primario recomendado) boton que se ve mas grande -->
-                <button type="reset" class="rdm-button--outlined">
-                <div class="rdm-button--container">                    
+                <!-- reset -->
+                <button type="reset" class="rdm-button--text">
+                <div class="rdm-button--container">
+                    <div class="rdm-button--media">
+                        <div class="rdm-button--icon"><span class="material-symbols-rounded">refresh</span></div>
+                    </div>
                     <div class="rdm-button--body">
                         <span class="rdm-sys-typography--label-large">Limpiar</span>
                     </div>
