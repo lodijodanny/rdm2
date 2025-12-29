@@ -193,14 +193,16 @@ Autor: Danny Estrada / Ajustado por Copilot
 
 /* Estados: focus y con contenido */
 .rdm-textfield--container:focus-within .rdm-textfield--label,
-.rdm-textfield--container .rdm-textfield--control input:not(:placeholder-shown) ~ .rdm-textfield--label {
+.rdm-textfield--container .rdm-textfield--control input:not(:placeholder-shown) ~ .rdm-textfield--label,
+.rdm-textfield--container .rdm-textfield--control textarea:not(:placeholder-shown) ~ .rdm-textfield--label {
   color: var(--md-sys-color-primary);
   transform: translateY(-0.85em) scale(0.85);
 }
 
 /* Ajuste específico para outlined: notch y posición del label flotante */
 .rdm-textfield--outlined:focus-within .rdm-textfield--label,
-.rdm-textfield--outlined .rdm-textfield--control input:not(:placeholder-shown) ~ .rdm-textfield--label {
+.rdm-textfield--outlined .rdm-textfield--control input:not(:placeholder-shown) ~ .rdm-textfield--label,
+.rdm-textfield--outlined .rdm-textfield--control textarea:not(:placeholder-shown) ~ .rdm-textfield--label {
   top: -0.8em; /* notch a ~8px desde el borde superior */
   transform: scale(0.85); /* sin translate: usamos top para posición */
   left: 1em; /* 16px desde el borde izquierdo */
