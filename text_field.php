@@ -207,11 +207,11 @@
             <!-- Action section aligment: left, center, right -->
             <div class="rdm-form--action-right">
             <p>
-                <!-- reset (tonal recomendado para secundaria) -->
+                <!-- reset -->
                 <button type="reset" class="rdm-button--text">
                 <div class="rdm-button--container">
                     <div class="rdm-button--media">
-                        <span class="material-symbols-rounded">clear</span>
+                        <div class="rdm-button--icon"><span class="material-symbols-rounded">refresh</span></div>
                     </div>
                     <div class="rdm-button--body">
                         <span class="rdm-sys-typography--label-large">Limpiar</span>
@@ -219,11 +219,11 @@
                 </div>
                 </button>
 
-                <!-- submit (filled primario recomendado) -->
+                <!-- submit -->
                 <button type="submit" class="rdm-button--filled">
                 <div class="rdm-button--container">
                     <div class="rdm-button--media">
-                        <span class="material-symbols-rounded">send</span>
+                        <div class="rdm-button--icon"><span class="material-symbols-rounded">send</span></div>
                     </div>
                     <div class="rdm-button--body">
                         <span class="rdm-sys-typography--label-large">Enviar</span>
