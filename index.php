@@ -251,6 +251,17 @@
 					</div>
 				</article>
 			</a>
+
+			<!-- Item -->			
+			<a href="switch.php">
+				<article class="rdm-list--container">
+					<div class="rdm-list--media">
+						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">toggle_on</span></div>
+					</div>
+					<div class="rdm-list--body">
+						<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Switch</div></div>	
+					</div>
+				</article>
 			</a>
 
 		</div>
