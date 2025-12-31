@@ -57,7 +57,7 @@
 					
 					<div class="rdm-badge--container">
 						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">chat</span></div>
-                        <div class="rdm-badge--small-badge"></div>
+                        <div class="rdm-badge"></div>
                     </div>
 				</div>
 
@@ -69,7 +69,7 @@
 				<div class="rdm-list--action">
                     <div class="rdm-badge--container">
 						<div class="rdm-list--trailing-icon"><span class="material-symbols-rounded">archive</span></div>
-                        <div class="rdm-badge--small-badge"></div>
+                        <div class="rdm-badge"></div>
                     </div>
 				</div>					
 
@@ -83,7 +83,7 @@
 					
 					<div class="rdm-badge--container">
 						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">chat</span></div>
-                        <div class="rdm-badge--large-badge"><span class="rdm-sys-typography--label-small">8</span></div>
+                        <div class="rdm-badge--content"><span class="rdm-sys-typography--label-small">8</span></div>
                     </div>
 				</div>
 
@@ -95,7 +95,7 @@
 				<div class="rdm-list--action">
                     <div class="rdm-badge--container">
 						<div class="rdm-list--trailing-icon"><span class="material-symbols-rounded">archive</span></div>
-                        <div class="rdm-badge--large-badge"><span class="rdm-sys-typography--label-small">8</span></div>
+                        <div class="rdm-badge--content"><span class="rdm-sys-typography--label-small">8</span></div>
                     </div>
 				</div>					
 
@@ -109,7 +109,7 @@
 					
 					<div class="rdm-badge--container">
 						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">chat</span></div>
-                        <div class="rdm-badge--large-badge"><span class="rdm-sys-typography--label-small">99+</span></div>
+                        <div class="rdm-badge--content"><span class="rdm-sys-typography--label-small">99+</span></div>
                     </div>
 				</div>
 
@@ -121,7 +121,7 @@
 				<div class="rdm-list--action">
                     <div class="rdm-badge--container">
 						<div class="rdm-list--trailing-icon"><span class="material-symbols-rounded">archive</span></div>
-                        <div class="rdm-badge--large-badge"><span class="rdm-sys-typography--label-small">99+</span></div>
+                        <div class="rdm-badge--content"><span class="rdm-sys-typography--label-small">99+</span></div>
                     </div>
 				</div>					
 
@@ -137,7 +137,7 @@
 						<div class="rdm-list--avatar" style="background-image: url(img/2x.jpg);">
 							<div class="rdm-sys-typography--title-medium">S</div>
 						</div>
-                        <div class="rdm-badge--small-badge"></div>
+                        <div class="rdm-badge"></div>
                     </div>
 				</div>
 
@@ -149,7 +149,7 @@
 				<div class="rdm-list--action">
                     <div class="rdm-badge--container">
 						<div class="rdm-list--trailing-icon"><span class="material-symbols-rounded">archive</span></div>
-                        <div class="rdm-badge--small-badge"></div>
+                        <div class="rdm-badge"></div>
                     </div>
 				</div>					
 
@@ -164,7 +164,7 @@
 						<div class="rdm-list--avatar" style="background-image: url(img/2.jpg);">
 							<div class="rdm-sys-typography--title-medium">S</div>
 						</div>
-						<div class="rdm-badge--large-badge"><span class="rdm-sys-typography--label-small">8</span></div>
+						<div class="rdm-badge--content"><span class="rdm-sys-typography--label-small">8</span></div>
 					</div>
 				</div>
 
@@ -175,7 +175,7 @@
 				<div class="rdm-list--action">
                     <div class="rdm-badge--container">
 						<div class="rdm-list--trailing-icon"><span class="material-symbols-rounded">archive</span></div>
-                        <div class="rdm-badge--large-badge"><span class="rdm-sys-typography--label-small">8</span></div>
+                        <div class="rdm-badge--content"><span class="rdm-sys-typography--label-small">8</span></div>
                     </div>
 				</div>				
 
@@ -191,7 +191,7 @@
 						<div class="rdm-list--avatar" style="background-image: url(img/3.jpg);">
 							<div class="rdm-sys-typography--title-medium">S</div>
 						</div>
-						<div class="rdm-badge--large-badge"><span class="rdm-sys-typography--label-small">10</span></div>
+						<div class="rdm-badge--content"><span class="rdm-sys-typography--label-small">10</span></div>
                     </div>
 				</div>
 
@@ -203,7 +203,7 @@
 				<div class="rdm-list--action">
                     <div class="rdm-badge--container">
 						<div class="rdm-list--trailing-icon"><span class="material-symbols-rounded">archive</span></div>
-                        <div class="rdm-badge--large-badge"><span class="rdm-sys-typography--label-small">10</span></div>
+                        <div class="rdm-badge--content"><span class="rdm-sys-typography--label-small">10</span></div>
                     </div>
 				</div>						
 
@@ -218,7 +218,7 @@
 						<div class="rdm-list--leading-image" style="background-image: url(img/1cx.jpg);">
 							<div class="rdm-sys-typography--title-medium">S</div>
 						</div>
-						<div class="rdm-badge--small-badge"><span class="rdm-sys-typography--label-small"></span></div>
+						<div class="rdm-badge"><span class="rdm-sys-typography--label-small"></span></div>
                     </div>
 				</div>
 
@@ -230,7 +230,7 @@
 				<div class="rdm-list--action">
                     <div class="rdm-badge--container">
 						<div class="rdm-list--trailing-icon"><span class="material-symbols-rounded">archive</span></div>
-                        <div class="rdm-badge--large-badge"><span class="rdm-sys-typography--label-small">99+</span></div>
+                        <div class="rdm-badge--content"><span class="rdm-sys-typography--label-small">99+</span></div>
                     </div>
 				</div>						
 
@@ -245,7 +245,7 @@
 						<div class="rdm-list--leading-image" style="background-image: url(img/1cx.jpg);">
 							<div class="rdm-sys-typography--title-medium">S</div>
 						</div>
-						<div class="rdm-badge--large-badge"><span class="rdm-sys-typography--label-small">99+</span></div>
+						<div class="rdm-badge--content"><span class="rdm-sys-typography--label-small">99+</span></div>
                     </div>
 				</div>
 
@@ -257,7 +257,7 @@
 				<div class="rdm-list--action">
                     <div class="rdm-badge--container">
 						<div class="rdm-list--trailing-icon"><span class="material-symbols-rounded">archive</span></div>
-                        <div class="rdm-badge--large-badge"><span class="rdm-sys-typography--label-small">99+</span></div>
+                        <div class="rdm-badge--content"><span class="rdm-sys-typography--label-small">99+</span></div>
                     </div>
 				</div>						
 
@@ -272,7 +272,7 @@
 						<div class="rdm-list--leading-image" style="background-image: url(img/1c.jpg);">
 							<div class="rdm-sys-typography--title-medium">S</div>
 						</div>
-						<div class="rdm-badge--large-badge"><span class="rdm-sys-typography--label-small">99+</span></div>
+						<div class="rdm-badge--content"><span class="rdm-sys-typography--label-small">99+</span></div>
                     </div>
 				</div>
 
@@ -284,7 +284,7 @@
 				<div class="rdm-list--action">
                     <div class="rdm-badge--container">
 						<div class="rdm-list--trailing-icon"><span class="material-symbols-rounded">archive</span></div>
-                        <div class="rdm-badge--large-badge"><span class="rdm-sys-typography--label-small">99+</span></div>
+                        <div class="rdm-badge--content"><span class="rdm-sys-typography--label-small">99+</span></div>
                     </div>
 				</div>						
 
