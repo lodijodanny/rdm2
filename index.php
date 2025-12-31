@@ -229,7 +229,7 @@
 			</a>
 
 			<!-- Item -->
-			<a href="text_field.php">
+			<a href="textfields.php">
 				<article class="rdm-list--container">
 					<div class="rdm-list--media">
 						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">text_fields</span></div>
@@ -241,7 +241,7 @@
 			</a>
 
 			<!-- Item -->			
-			<a href="checkbox.php">
+			<a href="checkboxes.php">
 				<article class="rdm-list--container">
 					<div class="rdm-list--media">
 						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">check_box</span></div>
@@ -253,7 +253,7 @@
 			</a>
 
 			<!-- Item -->			
-			<a href="switch.php">
+			<a href="switches.php">
 				<article class="rdm-list--container">
 					<div class="rdm-list--media">
 						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">toggle_on</span></div>

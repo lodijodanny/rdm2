@@ -8,21 +8,21 @@ Autor: Danny Estrada
 @import url(normalize.css);
 @import url(typography.css);
 @import url(icons.css);
-@import url(shapes.css);
-@import url(buttons.css);
-@import url(cards.css);
-@import url(lists.css);
-@import url(badges.css);
+@import url(shape.css);
+@import url(button.css);
+@import url(card.css);
+@import url(list.css);
+@import url(badge.css);
 @import url(topbar.css);
 @import url(bottombar.css);
 @import url(navigation_bar.css);
 @import url(navigation_drawer.css);
 @import url(navigation_rail.css);
-@import url(tabs.css);
-@import url(forms.css);
-@import url(textfields.css);
-@import url(checkboxes.css);
-@import url(switch.css);
+@import url(tab.css);
+@import url(form.css);
+@import url(textfield.css);
+@import url(checkbox.css);
+@import url(switches.css);
 
 
 /* Colores base de ripple por tema */
