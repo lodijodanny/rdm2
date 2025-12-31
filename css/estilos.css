@@ -81,7 +81,9 @@ html.theme-transition, body.theme-transition {
 .theme-transition .rdm-button--outlined,
 .theme-transition .rdm-button--text,
 .theme-transition .rdm-button--fab,
-.theme-transition .rdm-button--fab-small {
+.theme-transition .rdm-button--fab-small,
+.theme-transition .rdm-switch--track,
+.theme-transition .rdm-switch--handle {
 	transition: background-color 400ms ease, color 400ms ease, border-color 400ms ease, box-shadow 400ms ease;
 }
 
