@@ -48,6 +48,8 @@
 	<section class="rdm-card--container">
 		<div class="rdm-card--outlined">
 			
+			<!-- FUNDAMENTOS -->
+			
 			<!-- Item -->			
 			<a href="container.php">
 				<article class="rdm-list--container">
@@ -96,6 +98,8 @@
 				</article>			
 			</a>
 
+			<!-- COMPONENTES BASE -->
+
 			<!-- Item -->			
 			<a href="buttons.php">
 				<article class="rdm-list--container">
@@ -107,6 +111,58 @@
 					</div>
 				</article>			
 			</a>
+
+			<!-- Item -->			
+			<a href="badges.php">
+				<article class="rdm-list--container">
+					<div class="rdm-list--media">
+					<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">check_circle</span></div>
+					</div>
+					<div class="rdm-list--body">
+						<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Badges</div></div>
+					</div>
+				</article>			
+			</a>
+
+			<!-- COMPONENTES DE ENTRADA -->
+
+			<!-- Item -->
+			<a href="textfields.php">
+				<article class="rdm-list--container">
+					<div class="rdm-list--media">
+						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">text_fields</span></div>
+					</div>
+					<div class="rdm-list--body">
+						<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Text Field</div></div>
+					</div>
+				</article>
+			</a>
+
+			<!-- Item -->			
+			<a href="checkboxes.php">
+				<article class="rdm-list--container">
+					<div class="rdm-list--media">
+						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">check_box</span></div>
+					</div>
+					<div class="rdm-list--body">
+						<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Checkbox</div></div>	
+					</div>
+				</article>
+			</a>
+
+			<!-- Item -->			
+			<a href="switches.php">
+				<article class="rdm-list--container">
+					<div class="rdm-list--media">
+						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">toggle_on</span></div>
+					</div>
+					<div class="rdm-list--body">
+						<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Switch</div></div>	
+					</div>
+				</article>
+			</a>
+
+			<!-- COMPONENTES DE CONTENIDO -->
 
 			<!-- Item -->			
 			<a href="cards.php">
@@ -133,15 +189,29 @@
 			</a>
 
 			<!-- Item -->			
-			<a href="badges.php">
+			<a href="forms.php">
 				<article class="rdm-list--container">
 					<div class="rdm-list--media">
-					<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">check_circle</span></div>
+						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">dynamic_form</span></div>
 					</div>
 					<div class="rdm-list--body">
-						<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Badges</div></div>
+						<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Forms</div></div>	
 					</div>
-				</article>			
+				</article>
+			</a>
+
+			<!-- NAVEGACIÓN -->
+
+			<!-- Item -->			
+			<a href="tabs.php">
+				<article class="rdm-list--container">
+					<div class="rdm-list--media">
+						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">tabs</span></div>
+					</div>
+					<div class="rdm-list--body">
+						<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Tabs</div></div>	
+					</div>
+				</article>
 			</a>
 
 			<!-- Item -->			
@@ -200,66 +270,6 @@
 					</div>
 					<div class="rdm-list--body">
 						<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Navigation rail</div></div>	
-					</div>
-				</article>
-			</a>
-
-			<!-- Item -->			
-			<a href="tabs.php">
-				<article class="rdm-list--container">
-					<div class="rdm-list--media">
-						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">tabs</span></div>
-					</div>
-					<div class="rdm-list--body">
-						<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Tabs</div></div>	
-					</div>
-				</article>
-			</a>
-
-			<!-- Item -->			
-			<a href="forms.php">
-				<article class="rdm-list--container">
-					<div class="rdm-list--media">
-						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">dynamic_form</span></div>
-					</div>
-					<div class="rdm-list--body">
-						<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Forms</div></div>	
-					</div>
-				</article>
-			</a>
-
-			<!-- Item -->
-			<a href="textfields.php">
-				<article class="rdm-list--container">
-					<div class="rdm-list--media">
-						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">text_fields</span></div>
-					</div>
-					<div class="rdm-list--body">
-						<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Text Field</div></div>
-					</div>
-				</article>
-			</a>
-
-			<!-- Item -->			
-			<a href="checkboxes.php">
-				<article class="rdm-list--container">
-					<div class="rdm-list--media">
-						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">check_box</span></div>
-					</div>
-					<div class="rdm-list--body">
-						<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Checkbox</div></div>	
-					</div>
-				</article>
-			</a>
-
-			<!-- Item -->			
-			<a href="switches.php">
-				<article class="rdm-list--container">
-					<div class="rdm-list--media">
-						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">toggle_on</span></div>
-					</div>
-					<div class="rdm-list--body">
-						<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Switch</div></div>	
 					</div>
 				</article>
 			</a>
