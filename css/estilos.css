@@ -22,6 +22,7 @@ Autor: Danny Estrada
 @import url(forms.css);
 @import url(textfields.css);
 @import url(checkboxes.css);
+@import url(switch.css);
 
 
 /* Colores base de ripple por tema */
