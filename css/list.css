@@ -120,6 +120,12 @@ Autor: Danny Estrada
     .rdm-list--trailing-icon .material-symbols-rounded, .rdm-list--trailing-icon .material-symbols-outlined {
         font-size: 1.5em;
         align-self: center;
+        transition: font-variation-settings 0.3s ease;
+    }
+
+    .rdm-list--container:hover .rdm-list--trailing-icon .material-symbols-rounded,
+    .rdm-list--container:hover .rdm-list--trailing-icon .material-symbols-outlined {
+        font-variation-settings: 'FILL' 1;
     }
 
     /* trailing suporting text */

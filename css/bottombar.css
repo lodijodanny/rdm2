@@ -56,7 +56,7 @@ Autor: Danny Estrada
         border-radius: 50em;
         padding: 0.4em;
         margin: -0.4em;
-        transition: color 0.3s ease; 
+        transition: color 0.3s ease, background-color 0.3s ease, font-variation-settings 0.3s ease;
     }
 
         /*light theme*/
@@ -66,13 +66,27 @@ Autor: Danny Estrada
             .rdm-bottombar--leading-navigation-icon .material-symbols-rounded:hover, 
             .rdm-bottombar--leading-navigation-icon .material-symbols-outlined:hover {
                 background-color: rgba(0, 0, 0, 0.1);
-
+                font-variation-settings: 'FILL' 1;
             }
 
             /*Icon state active*/
             .rdm-bottombar--leading-navigation-icon .material-symbols-rounded:active, 
             .rdm-bottombar--leading-navigation-icon .material-symbols-outlined:active {
                 background-color: rgba(0, 0, 0, 0.2);
+                font-variation-settings: 'FILL' 1;
+            }
+
+            /* Para cuando está dentro de <a> */
+            a:hover .rdm-bottombar--leading-navigation-icon .material-symbols-rounded,
+            a:hover .rdm-bottombar--leading-navigation-icon .material-symbols-outlined {
+                background-color: rgba(0, 0, 0, 0.1);
+                font-variation-settings: 'FILL' 1;
+            }
+
+            a:active .rdm-bottombar--leading-navigation-icon .material-symbols-rounded,
+            a:active .rdm-bottombar--leading-navigation-icon .material-symbols-outlined {
+                background-color: rgba(0, 0, 0, 0.2);
+                font-variation-settings: 'FILL' 1;
             }
         }
 
@@ -82,12 +96,27 @@ Autor: Danny Estrada
             .rdm-bottombar--leading-navigation-icon .material-symbols-rounded:hover, 
             .rdm-bottombar--leading-navigation-icon .material-symbols-outlined:hover {
                 background-color: rgba(255, 255, 255, 0.1);
+                font-variation-settings: 'FILL' 1;
             }
 
             /*Icon state active*/
             .rdm-bottombar--leading-navigation-icon .material-symbols-rounded:active, 
             .rdm-bottombar--leading-navigation-icon .material-symbols-outlined:active {
                 background-color: rgba(255, 255, 255, 0.2);
+                font-variation-settings: 'FILL' 1;
+            }
+
+            /* Para cuando está dentro de <a> */
+            a:hover .rdm-bottombar--leading-navigation-icon .material-symbols-rounded,
+            a:hover .rdm-bottombar--leading-navigation-icon .material-symbols-outlined {
+                background-color: rgba(255, 255, 255, 0.1);
+                font-variation-settings: 'FILL' 1;
+            }
+
+            a:active .rdm-bottombar--leading-navigation-icon .material-symbols-rounded,
+            a:active .rdm-bottombar--leading-navigation-icon .material-symbols-outlined {
+                background-color: rgba(255, 255, 255, 0.2);
+                font-variation-settings: 'FILL' 1;
             }
 
         }
@@ -148,6 +177,12 @@ Autor: Danny Estrada
     .rdm-bottombar--trailing-icon .material-symbols-rounded, .rdm-bottombar--trailing-icon .material-symbols-outlined {
         font-size: 1.5em;
         align-self: center;
+        transition: font-variation-settings 0.3s ease;
+    }
+
+    .rdm-bottombar--trailing-icon:hover .material-symbols-rounded,
+    .rdm-bottombar--trailing-icon:hover .material-symbols-outlined {
+        font-variation-settings: 'FILL' 1;
     }
 
 /* ManGo! logo */
