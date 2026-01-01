@@ -151,19 +151,18 @@
 			</a>
 
 			<!-- Item -->			
-			<a href="switches.php">
-				<article class="rdm-list--container">
-					<div class="rdm-list--media">
-						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">toggle_on</span></div>
-					</div>
-					<div class="rdm-list--body">
-						<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Switch</div></div>	
-					</div>
-				</article>
-			</a>
+		<a href="radiobuttons.php">
+			<article class="rdm-list--container">
+				<div class="rdm-list--media">
+					<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">radio_button_checked</span></div>
+				</div>
+				<div class="rdm-list--body">
+					<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Radio Button</div></div>	
+				</div>
+			</article>
+		</a>
 
-			<!-- COMPONENTES DE CONTENIDO -->
-
+		<!-- Item -->			
 			<!-- Item -->			
 			<a href="cards.php">
 				<article class="rdm-list--container">

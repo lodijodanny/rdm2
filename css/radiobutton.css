@@ -1,0 +1,139 @@
+/*
+CSS para ManGoApp
+Radio Button Component - Material Design 3
+Autor: Danny Estrada
+Especificaciones MD3:
+- Radio size: 20dp (1.25em)
+- Icon size: 10dp cuando selected
+- States: enabled, hover, focused, pressed, disabled
+- Colors: primary (selected), on-surface-variant (unselected)
+*/
+
+/* Fieldset reset: elimina estilos por defecto del navegador */
+.rdm-radio--fieldset {
+    border: none;
+    padding: 0;
+    margin: 2em 0;
+}
+
+.rdm-radio--fieldset legend {
+    margin-bottom: 1em;
+}
+
+/* Container del radio button */
+.rdm-radio {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    margin: 1em 0;
+}
+
+/* Input nativo (oculto pero funcional) */
+.rdm-radio input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 1.25em;
+    height: 1.25em;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Icon container */
+.rdm-radio__icon {
+    width: 1.25em;
+    height: 1.25em;
+    border: 2px solid var(--md-sys-color-on-surface-variant);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    position: relative;
+}
+
+/* Inner circle (cuando está seleccionado) */
+.rdm-radio__icon::after {
+    content: '';
+    width: 0.625em;
+    height: 0.625em;
+    border-radius: 50%;
+    background-color: var(--md-sys-color-primary);
+    transform: scale(0);
+    transition: transform 0.2s ease;
+}
+
+/* Estado checked */
+.rdm-radio input[type="radio"]:checked + .rdm-radio__icon {
+    border-color: var(--md-sys-color-primary);
+}
+
+.rdm-radio input[type="radio"]:checked + .rdm-radio__icon::after {
+    transform: scale(1);
+}
+
+/* State layer (hover/focus) */
+.rdm-radio::before {
+    content: '';
+    position: absolute;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+    pointer-events: none;
+}
+
+/* Hover state */
+.rdm-radio:hover::before {
+    background-color: var(--md-sys-color-on-surface);
+    opacity: 0.08;
+}
+
+.rdm-radio input[type="radio"]:checked:hover::before {
+    background-color: var(--md-sys-color-primary);
+    opacity: 0.08;
+}
+
+/* Focus state */
+.rdm-radio input[type="radio"]:focus-visible + .rdm-radio__icon {
+    outline: 2px solid var(--md-sys-color-primary);
+    outline-offset: 2px;
+}
+
+/* Pressed state */
+.rdm-radio:active::before {
+    background-color: var(--md-sys-color-on-surface);
+    opacity: 0.12;
+}
+
+.rdm-radio input[type="radio"]:checked:active::before {
+    background-color: var(--md-sys-color-primary);
+    opacity: 0.12;
+}
+
+/* Disabled state */
+.rdm-radio input[type="radio"]:disabled + .rdm-radio__icon {
+    border-color: var(--md-sys-color-on-surface);
+    opacity: 0.38;
+    cursor: not-allowed;
+}
+
+.rdm-radio input[type="radio"]:disabled:checked + .rdm-radio__icon::after {
+    background-color: var(--md-sys-color-on-surface);
+    opacity: 0.38;
+}
+
+.rdm-radio input[type="radio"]:disabled ~ .rdm-radio__label {
+    color: var(--md-sys-color-on-surface);
+    opacity: 0.38;
+    cursor: not-allowed;
+}
+
+/* Label */
+.rdm-radio__label {
+    margin-left: 0.5em;
+    user-select: none;
+    cursor: pointer;
+}
