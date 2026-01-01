@@ -33,10 +33,13 @@ Especificaciones MD3:
 .rdm-radio input[type="radio"] {
     position: absolute;
     opacity: 0;
-    width: 1.25em;
-    height: 1.25em;
+    width: 3em;
+    height: 3em;
     margin: 0;
     cursor: pointer;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Icon container */
@@ -51,6 +54,21 @@ Especificaciones MD3:
     box-sizing: border-box;
     transition: border-color 0.2s ease, background-color 0.2s ease;
     position: relative;
+}
+
+/* State layer (hover/focus) - ahora sobre el icon */
+.rdm-radio__icon::before {
+    content: '';
+    position: absolute;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+    pointer-events: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Inner circle (cuando está seleccionado) */
@@ -83,15 +101,19 @@ Especificaciones MD3:
     background-color: transparent;
     transition: background-color 0.2s ease;
     pointer-events: none;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-/* Hover state */
-.rdm-radio:hover::before {
+/* Hover state - unselected */
+.rdm-radio:hover .rdm-radio__icon::before {
     background-color: var(--md-sys-color-on-surface);
     opacity: 0.08;
 }
 
-.rdm-radio input[type="radio"]:checked:hover::before {
+/* Hover state - selected */
+.rdm-radio:has(input[type="radio"]:checked):hover .rdm-radio__icon::before {
     background-color: var(--md-sys-color-primary);
     opacity: 0.08;
 }
@@ -102,13 +124,26 @@ Especificaciones MD3:
     outline-offset: 2px;
 }
 
-/* Pressed state */
-.rdm-radio:active::before {
+/* Focus state layer - unselected */
+.rdm-radio:has(input[type="radio"]:focus-visible) .rdm-radio__icon::before {
     background-color: var(--md-sys-color-on-surface);
     opacity: 0.12;
 }
 
-.rdm-radio input[type="radio"]:checked:active::before {
+/* Focus state layer - selected */
+.rdm-radio:has(input[type="radio"]:checked:focus-visible) .rdm-radio__icon::before {
+    background-color: var(--md-sys-color-primary);
+    opacity: 0.12;
+}
+
+/* Pressed state - unselected */
+.rdm-radio:active .rdm-radio__icon::before {
+    background-color: var(--md-sys-color-on-surface);
+    opacity: 0.12;
+}
+
+/* Pressed state - selected */
+.rdm-radio:has(input[type="radio"]:checked):active .rdm-radio__icon::before {
     background-color: var(--md-sys-color-primary);
     opacity: 0.12;
 }
@@ -136,4 +171,5 @@ Especificaciones MD3:
     margin-left: 0.5em;
     user-select: none;
     cursor: pointer;
+    color: var(--md-sys-color-on-surface);
 }
