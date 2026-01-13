@@ -50,31 +50,110 @@ RDM 2.0 es un sistema de componentes moderno basado en Material Design 3 (MD3) i
 
 ## 2. ESTRUCTURA DE COMPONENTES
 
-### Estructura Base HTML - Radio Button/Checkbox
+### Estructura Base - Patrón Uniforme (Checkbox + Radio Button)
+
+**Estructura semántica idéntica para checkbox y radiobutton:**
+
 ```html
-<label class="rdm-radio">
-    <input type="radio" name="groupname" value="value">
-    <span class="rdm-radio__icon"></span>
-    <span class="rdm-radio__label">Etiqueta</span>
-</label>
+<div class="rdm-[component]--wrapper">
+    <label class="rdm-[component]--container">
+        <input type="[checkbox|radio]" class="rdm-[component]--input" name="name" value="value">
+        <span class="rdm-[component]--icon"></span>
+        <span class="rdm-[component]--label">Etiqueta</span>
+    </label>
+</div>
 ```
 
-### Estructura Grupo de Opciones (Fieldset)
+**Ejemplo Checkbox:**
+```html
+<div class="rdm-checkbox--wrapper">
+    <label class="rdm-checkbox--container">
+        <input type="checkbox" class="rdm-checkbox--input" id="cb1" name="option1">
+        <span class="rdm-checkbox--checkmark"></span>
+        <span class="rdm-checkbox--label">Opción 1</span>
+    </label>
+</div>
+```
+
+**Ejemplo Radio Button:**
+```html
+<div class="rdm-radio--wrapper">
+    <label class="rdm-radio--container">
+        <input type="radio" class="rdm-radio--input" name="language" value="javascript">
+        <span class="rdm-radio--icon"></span>
+        <span class="rdm-radio--label">JavaScript</span>
+    </label>
+</div>
+```
+
+### Estructura Grupo de Opciones (Fieldset) - Patrón Uniforme
+
+**Ambos componentes usan el mismo patrón con fieldset:**
+
+```html
+<fieldset class="rdm-[component]--fieldset">
+    <legend class="rdm-sys-typography--title-large">Grupo de opciones</legend>
+    
+    <div class="rdm-[component]--wrapper">
+        <label class="rdm-[component]--container">
+            <input type="[checkbox|radio]" class="rdm-[component]--input" name="group" value="option1">
+            <span class="rdm-[component]--icon"></span>
+            <span class="rdm-[component]--label">Opción 1</span>
+        </label>
+    </div>
+    
+    <div class="rdm-[component]--wrapper">
+        <label class="rdm-[component]--container">
+            <input type="[checkbox|radio]" class="rdm-[component]--input" name="group" value="option2">
+            <span class="rdm-[component]--icon"></span>
+            <span class="rdm-[component]--label">Opción 2</span>
+        </label>
+    </div>
+</fieldset>
+```
+
+**Ejemplo Radio Button - Grupo de opciones:**
 ```html
 <fieldset class="rdm-radio--fieldset">
     <legend class="rdm-sys-typography--title-large">Grupo de opciones</legend>
-    <label class="rdm-radio">
-        <input type="radio" name="language" value="javascript">
-        <span class="rdm-radio__icon"></span>
-        <span class="rdm-radio__label">JavaScript</span>
-    </label>
-    <label class="rdm-radio">
-        <input type="radio" name="language" value="python">
-        <span class="rdm-radio__icon"></span>
-        <span class="rdm-radio__label">Python</span>
-    </label>
+    
+    <div class="rdm-radio--wrapper">
+        <label class="rdm-radio--container">
+            <input type="radio" class="rdm-radio--input" name="language" value="javascript">
+            <span class="rdm-radio--icon"></span>
+            <span class="rdm-radio--label">JavaScript</span>
+        </label>
+    </div>
+    
+    <div class="rdm-radio--wrapper">
+        <label class="rdm-radio--container">
+            <input type="radio" class="rdm-radio--input" name="language" value="python">
+            <span class="rdm-radio--icon"></span>
+            <span class="rdm-radio--label">Python</span>
+        </label>
+    </div>
+    
+    <div class="rdm-radio--wrapper">
+        <label class="rdm-radio--container">
+            <input type="radio" class="rdm-radio--input" name="language" value="php">
+            <span class="rdm-radio--icon"></span>
+            <span class="rdm-radio--label">PHP</span>
+        </label>
+    </div>
 </fieldset>
 ```
+
+### Nomenclatura de Clases - Patrón Uniforme
+
+Para cualquier nuevo componente binario (checkbox, radio, switch, etc.), usa:
+
+- `.rdm-[component]--wrapper` - Contenedor bloque del elemento
+- `.rdm-[component]--container` - Label contenedor con flexbox
+- `.rdm-[component]--input` - Input nativo invisible
+- `.rdm-[component]--icon` - Icono visual (o `.rdm-[component]--checkmark` para checkbox)
+- `.rdm-[component]--label` - Texto de la etiqueta
+- `.rdm-[component]--fieldset` - Contenedor de grupo de opciones
+- `.rdm-[component]--support` - Texto de soporte/error (opcional)
 
 ### Estructura Página de Demostración
 ```html
@@ -172,26 +251,92 @@ RDM 2.0 es un sistema de componentes moderno basado en Material Design 3 (MD3) i
 
 ---
 
-## 4. PATRONES CSS
+## 4. PATRONES CSS - Estructura Uniforme
 
-### Input Nativo Invisible pero Interactivo
+### 1. Input Nativo Invisible pero Interactivo
+
+Para checkbox:
 ```css
-.rdm-radio input[type="radio"] {
+.rdm-checkbox--input {
     position: absolute;
     opacity: 0;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+}
+```
+
+Para radio button:
+```css
+.rdm-radio--input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
     width: 3em;      /* 48dp - target size */
     height: 3em;
     margin: 0;
-    cursor: pointer;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
 ```
 
-### State Layer Centrado en Icon
+### 2. Container Flex - Idéntico para ambos
+
 ```css
-.rdm-radio__icon::before {
+.rdm-[component]--container {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75em;     /* 12px entre icono y label */
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    min-height: 3em; /* 48dp - target size */
+}
+```
+
+### 3. Icono Visual - Características específicas
+
+**Checkbox (cuadrado):**
+```css
+.rdm-checkbox--checkmark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.125em;  /* 18px */
+    height: 1.125em;
+    border: 0.125em solid var(--md-sys-color-on-surface-variant);
+    border-radius: 0.125em; /* 2px - squared */
+    background-color: transparent;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    position: relative;
+    flex-shrink: 0;
+}
+```
+
+**Radio Button (circular):**
+```css
+.rdm-radio--icon {
+    width: 1.25em;   /* 20dp */
+    height: 1.25em;
+    border: 0.125em solid var(--md-sys-color-on-surface-variant);
+    border-radius: 50%; /* circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    position: relative;
+    flex-shrink: 0;
+}
+```
+
+### 4. State Layer - Idéntico para ambos
+
+Ubicado en el pseudo-elemento `::before` del icono:
+
+```css
+.rdm-[component]--[checkmark|icon]::before {
     content: '';
     position: absolute;
     width: 2.5em;    /* 40dp */
@@ -201,27 +346,47 @@ RDM 2.0 es un sistema de componentes moderno basado en Material Design 3 (MD3) i
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    transition: background-color 0.2s ease;
 }
 ```
 
-### State Layer con Color Diferenciado
+### 5. State Layer con Color Diferenciado
+
 ```css
 /* Hover - unselected */
-.rdm-radio:hover .rdm-radio__icon::before {
+.rdm-[component]--container:hover .rdm-[component]--[checkmark|icon]::before {
     background-color: var(--md-sys-color-on-surface);
     opacity: 0.08;
 }
 
 /* Hover - selected */
-.rdm-radio:has(input[type="radio"]:checked):hover .rdm-radio__icon::before {
+.rdm-[component]--container:has(.rdm-[component]--input:checked):hover .rdm-[component]--[checkmark|icon]::before {
     background-color: var(--md-sys-color-primary);
     opacity: 0.08;
 }
+
+/* Pressed - unselected */
+.rdm-[component]--container:active .rdm-[component]--[checkmark|icon]::before {
+    background-color: var(--md-sys-color-on-surface);
+    opacity: 0.12;
+}
+
+/* Pressed - selected */
+.rdm-[component]--container:has(.rdm-[component]--input:checked):active .rdm-[component]--[checkmark|icon]::before {
+    background-color: var(--md-sys-color-primary);
+    opacity: 0.12;
+}
 ```
 
-### Fieldset con Gap Consistente
+### 6. Wrapper y Fieldset
+
 ```css
-.rdm-radio--fieldset {
+.rdm-[component]--wrapper {
+    display: block;
+    margin: 1em 0;
+}
+
+.rdm-[component]--fieldset {
     border: none;
     padding: 0;
     margin: 0;
@@ -230,10 +395,21 @@ RDM 2.0 es un sistema de componentes moderno basado en Material Design 3 (MD3) i
     gap: 0.5em;  /* Espaciado consistente entre elementos */
 }
 
-.rdm-radio--fieldset legend {
+.rdm-[component]--fieldset legend {
     padding: 0;
     margin: 0;
     margin-bottom: 0.5em;
+}
+```
+
+### 7. Label Text
+
+```css
+.rdm-[component]--label {
+    margin-left: 0;  /* margin ya está en gap del container */
+    user-select: none;
+    cursor: pointer;
+    color: var(--md-sys-color-on-surface);
 }
 ```
 
