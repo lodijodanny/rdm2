@@ -59,55 +59,85 @@
 				<!-- RADIO: Enabled States -->
 				<h2 class="rdm-sys-typography--title-large">Enabled (unselected)</h2>
 				<p class="rdm-sys-typography--body-medium">Haz click para ver el estado hover, focus y pressed</p>
-				<label class="rdm-radio">
-					<input type="radio" name="radio1" value="1">
-					<span class="rdm-radio__icon"></span>
-					<span class="rdm-radio__label">Opción sin seleccionar</span>
+			<div class="rdm-radio--wrapper">
+				<label class="rdm-radio--container">
+					<input type="radio" class="rdm-radio--input" name="radio1" value="1">
+					<span class="rdm-radio--icon"></span>
+					<span class="rdm-radio--label">Opción sin seleccionar</span>
 				</label>
-
-				<h2 class="rdm-sys-typography--title-large">Enabled (selected)</h2>
-				<label class="rdm-radio">
-					<input type="radio" name="radio2" value="1" checked>
-					<span class="rdm-radio__icon"></span>
-					<span class="rdm-radio__label">Opción seleccionada</span>
-				</label>
-
-				<!-- RADIO: Disabled States -->
-				<h2 class="rdm-sys-typography--title-large">Disabled (unselected)</h2>
-				<label class="rdm-radio">
-					<input type="radio" name="radio3" value="1" disabled>
-					<span class="rdm-radio__icon"></span>
-					<span class="rdm-radio__label">Opción deshabilitada sin seleccionar</span>
-				</label>
-
-				<h2 class="rdm-sys-typography--title-large">Disabled (selected)</h2>
-				<label class="rdm-radio">
-					<input type="radio" name="radio4" value="1" checked disabled>
-					<span class="rdm-radio__icon"></span>
-					<span class="rdm-radio__label">Opción deshabilitada seleccionada</span>
-				</label>
-
-				<!-- RADIO: Option Group -->
-				<fieldset class="rdm-radio--fieldset">
-					<legend class="rdm-sys-typography--title-large">Grupo de opciones</legend>
-					<label class="rdm-radio">
-						<input type="radio" name="language" value="javascript">
-						<span class="rdm-radio__icon"></span>
-						<span class="rdm-radio__label">JavaScript</span>
-					</label>
-					<label class="rdm-radio">
-						<input type="radio" name="language" value="python">
-						<span class="rdm-radio__icon"></span>
-						<span class="rdm-radio__label">Python</span>
-					</label>
-					<label class="rdm-radio">
-						<input type="radio" name="language" value="php">
-						<span class="rdm-radio__icon"></span>
-						<span class="rdm-radio__label">PHP</span>
-					</label>
-				</fieldset>
-
 			</div>
+
+			<h2 class="rdm-sys-typography--title-large">Enabled (selected)</h2>
+			<div class="rdm-radio--wrapper">
+				<label class="rdm-radio--container">
+					<input type="radio" class="rdm-radio--input" name="radio2" value="1" checked>
+					<span class="rdm-radio--icon"></span>
+					<span class="rdm-radio--label">Opción seleccionada</span>
+				</label>
+			</div>
+
+			<h2 class="rdm-sys-typography--title-large">Disabled (unselected)</h2>
+			<div class="rdm-radio--wrapper">
+				<label class="rdm-radio--container">
+					<input type="radio" class="rdm-radio--input" name="radio3" value="1" disabled>
+					<span class="rdm-radio--icon"></span>
+					<span class="rdm-radio--label">Opción deshabilitada sin seleccionar</span>
+				</label>
+			</div>
+
+			<h2 class="rdm-sys-typography--title-large">Disabled (selected)</h2>
+			<div class="rdm-radio--wrapper">
+				<label class="rdm-radio--container">
+					<input type="radio" class="rdm-radio--input" name="radio4" value="1" checked disabled>
+					<span class="rdm-radio--icon"></span>
+					<span class="rdm-radio--label">Opción deshabilitada seleccionada</span>
+				</label>
+			</div>
+
+			<!-- RADIO: Error State -->
+			<h2 class="rdm-sys-typography--title-large">Error state</h2>
+			<div class="rdm-radio--wrapper has-error">
+				<label class="rdm-radio--container">
+					<input type="radio" class="rdm-radio--input" name="radio_error1" value="1">
+					<span class="rdm-radio--icon"></span>
+					<span class="rdm-radio--label">Debes aceptar los términos y condiciones</span>
+				</label>
+				<span class="rdm-radio--support">Este campo es obligatorio</span>
+			</div>
+			<div class="rdm-radio--wrapper has-error">
+				<label class="rdm-radio--container">
+					<input type="radio" class="rdm-radio--input" name="radio_error2" value="1" checked>
+					<span class="rdm-radio--icon"></span>
+					<span class="rdm-radio--label">Error seleccionado</span>
+				</label>
+				<span class="rdm-radio--support">Revisa esta selección</span>
+			</div>
+
+			<!-- RADIO: Option Group -->
+			<fieldset class="rdm-radio--fieldset">
+				<legend class="rdm-sys-typography--title-large">Grupo de opciones</legend>
+				<div class="rdm-radio--wrapper">
+					<label class="rdm-radio--container">
+						<input type="radio" class="rdm-radio--input" name="language" value="javascript">
+						<span class="rdm-radio--icon"></span>
+						<span class="rdm-radio--label">JavaScript</span>
+					</label>
+				</div>
+				<div class="rdm-radio--wrapper">
+					<label class="rdm-radio--container">
+						<input type="radio" class="rdm-radio--input" name="language" value="python">
+						<span class="rdm-radio--icon"></span>
+						<span class="rdm-radio--label">Python</span>
+					</label>
+				</div>
+				<div class="rdm-radio--wrapper">
+					<label class="rdm-radio--container">
+						<input type="radio" class="rdm-radio--input" name="language" value="php">
+						<span class="rdm-radio--icon"></span>
+						<span class="rdm-radio--label">PHP</span>
+					</label>
+				</div>
+			</fieldset>
 
 			<!-- Action section alignment: left, center, right -->
 			<div class="rdm-form--action-left">
