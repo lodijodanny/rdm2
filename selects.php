@@ -262,6 +262,169 @@
                     </div>
                 </div>
 
+                <h2 class="rdm-sys-typography--title-large">Select con Optgroup</h2>
+                <p class="rdm-sys-typography--body-medium">Agrupación de opciones con separadores</p>
+                <!-- Select: With optgroup -->
+                <div class="rdm-select--wrapper">
+                    <div class="rdm-select--container rdm-select--outlined">
+                        <div class="rdm-select--control">
+                            <div class="rdm-select--leading-icon">
+                                <span class="material-symbols-rounded">devices</span>
+                            </div>
+                            <select id="select_optgroup" name="dispositivo" required>
+                                <option value="" disabled selected></option>
+                                <optgroup label="Móviles">
+                                    <option value="iphone">iPhone</option>
+                                    <option value="android">Android</option>
+                                </optgroup>
+                                <optgroup label="Computadoras">
+                                    <option value="mac">Mac</option>
+                                    <option value="windows">Windows</option>
+                                    <option value="linux">Linux</option>
+                                </optgroup>
+                                <optgroup label="Tablets">
+                                    <option value="ipad">iPad</option>
+                                    <option value="android_tablet">Tablet Android</option>
+                                </optgroup>
+                            </select>
+                            <label class="rdm-select--label" for="select_optgroup">Dispositivo</label>
+                            <div class="rdm-select--trailing-icon">
+                                <span class="material-symbols-rounded">arrow_drop_down</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rdm-select--support">
+                        <span class="rdm-select--support-text">Opciones agrupadas por categoría</span>
+                    </div>
+                </div>
+
+                <h2 class="rdm-sys-typography--title-large">Validación HTML5 automática</h2>
+                <p class="rdm-sys-typography--body-medium">Campo requerido que muestra error automáticamente si no se selecciona (sin clase .is-error)</p>
+                <!-- Select: HTML5 validation -->
+                <div class="rdm-select--wrapper">
+                    <div class="rdm-select--container rdm-select--outlined">
+                        <div class="rdm-select--control">
+                            <div class="rdm-select--leading-icon">
+                                <span class="material-symbols-rounded">star</span>
+                            </div>
+                            <select id="select_validation" name="rating" required>
+                                <option value="" disabled selected></option>
+                                <option value="5">★★★★★ Excelente</option>
+                                <option value="4">★★★★☆ Muy bueno</option>
+                                <option value="3">★★★☆☆ Bueno</option>
+                                <option value="2">★★☆☆☆ Regular</option>
+                                <option value="1">★☆☆☆☆ Malo</option>
+                            </select>
+                            <label class="rdm-select--label" for="select_validation">Calificación</label>
+                            <div class="rdm-select--trailing-icon">
+                                <span class="material-symbols-rounded">arrow_drop_down</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rdm-select--support">
+                        <span class="rdm-select--support-text">Este campo es requerido (se valida automáticamente)</span>
+                    </div>
+                </div>
+
+                <h2 class="rdm-sys-typography--title-large">Fieldset - Agrupación de selects relacionados</h2>
+                <p class="rdm-sys-typography--body-medium">Múltiples selects con espaciado consistente usando fieldset</p>
+                <!-- Fieldset: Multiple selects -->
+                <fieldset class="rdm-select--fieldset">
+                    <legend class="rdm-sys-typography--title-medium">Fecha de nacimiento</legend>
+                    
+                    <!-- Día -->
+                    <div class="rdm-select--wrapper">
+                        <div class="rdm-select--container rdm-select--outlined">
+                            <div class="rdm-select--control">
+                                <select id="select_dia" name="dia" required>
+                                    <option value="" disabled selected></option>
+                                    <option value="01">1</option>
+                                    <option value="02">2</option>
+                                    <option value="03">3</option>
+                                    <option value="04">4</option>
+                                    <option value="05">5</option>
+                                    <option value="15">15</option>
+                                    <option value="31">31</option>
+                                </select>
+                                <label class="rdm-select--label" for="select_dia">Día</label>
+                                <div class="rdm-select--trailing-icon">
+                                    <span class="material-symbols-rounded">arrow_drop_down</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mes -->
+                    <div class="rdm-select--wrapper">
+                        <div class="rdm-select--container rdm-select--outlined">
+                            <div class="rdm-select--control">
+                                <select id="select_mes_fieldset" name="mes_fieldset" required>
+                                    <option value="" disabled selected></option>
+                                    <option value="01">Enero</option>
+                                    <option value="02">Febrero</option>
+                                    <option value="03">Marzo</option>
+                                    <option value="06">Junio</option>
+                                    <option value="12">Diciembre</option>
+                                </select>
+                                <label class="rdm-select--label" for="select_mes_fieldset">Mes</label>
+                                <div class="rdm-select--trailing-icon">
+                                    <span class="material-symbols-rounded">arrow_drop_down</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Año -->
+                    <div class="rdm-select--wrapper">
+                        <div class="rdm-select--container rdm-select--outlined">
+                            <div class="rdm-select--control">
+                                <select id="select_anio" name="anio" required>
+                                    <option value="" disabled selected></option>
+                                    <option value="2000">2000</option>
+                                    <option value="1995">1995</option>
+                                    <option value="1990">1990</option>
+                                    <option value="1985">1985</option>
+                                    <option value="1980">1980</option>
+                                </select>
+                                <label class="rdm-select--label" for="select_anio">Año</label>
+                                <div class="rdm-select--trailing-icon">
+                                    <span class="material-symbols-rounded">arrow_drop_down</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+            </div>
+
+            <!-- Action section aligment: left, center, right -->
+            <div class="rdm-form--action-right">
+            <p>
+                <!-- reset -->
+                <button type="reset" class="rdm-button--text">
+                <div class="rdm-button--container">
+                    <div class="rdm-button--media">
+                        <div class="rdm-button--icon"><span class="material-symbols-rounded">refresh</span></div>
+                    </div>
+                    <div class="rdm-button--body">
+                        <span class="rdm-sys-typography--label-large">Limpiar</span>
+                    </div>
+                </div>
+                </button>
+
+                <!-- submit -->
+                <button type="submit" class="rdm-button--filled">
+                <div class="rdm-button--container">
+                    <div class="rdm-button--media">
+                        <div class="rdm-button--icon"><span class="material-symbols-rounded">send</span></div>
+                    </div>
+                    <div class="rdm-button--body">
+                        <span class="rdm-sys-typography--label-large">Enviar</span>
+                    </div>
+                </div>
+                </button>
+			
+            </p> 
             </div>
 
         </div>

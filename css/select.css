@@ -52,6 +52,10 @@ Autor: Danny Estrada
   height: 1.5em;
 }
 
+.rdm-select--leading-icon .material-symbols-rounded {
+  font-variation-settings: 'FILL' 0;
+}
+
 /* Trailing icon (arrow) - SIEMPRE visible */
 .rdm-select--trailing-icon {
   display: flex;
@@ -63,6 +67,10 @@ Autor: Danny Estrada
   height: 1.5em;
   pointer-events: none; /* el click pasa al select */
   transition: transform 160ms ease;
+}
+
+.rdm-select--trailing-icon .material-symbols-rounded {
+  font-variation-settings: 'FILL' 0;
 }
 
 /* Rotar flecha cuando está abierto */
@@ -101,6 +109,22 @@ Autor: Danny Estrada
   background-color: var(--md-sys-color-surface);
   color: var(--md-sys-color-on-surface);
   padding: 0.75em 1em;
+}
+
+/* Optgroup styling */
+.rdm-select--control select optgroup {
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface-variant);
+  font-weight: 600;
+  font-size: 0.875em;
+  padding: 0.5em 1em;
+}
+
+.rdm-select--control select optgroup option {
+  padding-left: 1.5em; /* indent para opciones dentro del grupo */
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--md-sys-color-on-surface);
 }
 
 /* Label flotante */
@@ -165,6 +189,24 @@ Autor: Danny Estrada
   border-color: var(--md-sys-color-error);
 }
 
+/* Validación HTML5: estado invalid automático */
+.rdm-select--outlined:has(select:invalid:not(:focus)) {
+  border-color: var(--md-sys-color-error);
+}
+
+.rdm-select--container:has(select:invalid:not(:focus)) .rdm-select--label {
+  color: var(--md-sys-color-error);
+}
+
+/* No mostrar error en disabled */
+.rdm-select--outlined:has(select:invalid:disabled) {
+  border-color: var(--md-sys-color-outline);
+}
+
+.rdm-select--container:has(select:invalid:disabled) .rdm-select--label {
+  color: color-mix(in srgb, var(--md-sys-color-on-surface-variant) 65%, transparent);
+}
+
 /* Disabled state */
 .rdm-select--control select:disabled {
   opacity: 0.65;
@@ -188,4 +230,26 @@ Autor: Danny Estrada
 
 .rdm-select--wrapper:has(select:disabled) .rdm-select--support {
   opacity: 0.65;
+}
+
+/* Fieldset pattern para agrupar múltiples selects */
+.rdm-select--fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.rdm-select--fieldset legend {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.5em;
+  color: var(--md-sys-color-on-surface);
+  font-weight: 500;
+}
+
+.rdm-select--fieldset .rdm-select--wrapper {
+  margin: 0; /* el gap del fieldset maneja el espaciado */
 }
