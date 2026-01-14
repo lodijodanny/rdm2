@@ -21,6 +21,7 @@ Autor: Danny Estrada
 @import url(tab.css);
 @import url(form.css);
 @import url(textfield.css);
+@import url(select.css);
 @import url(checkbox.css);
 @import url(radiobutton.css);
 @import url(switches.css);

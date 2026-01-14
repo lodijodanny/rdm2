@@ -138,17 +138,17 @@
 				</article>
 			</a>
 
-			<!-- Item -->			
-			<a href="checkboxes.php">
-				<article class="rdm-list--container">
-					<div class="rdm-list--media">
-						<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">check_box</span></div>
-					</div>
-					<div class="rdm-list--body">
-						<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Checkbox</div></div>	
-					</div>
-				</article>
-			</a>
+		<!-- Item -->
+		<a href="selects.php">
+			<article class="rdm-list--container">
+				<div class="rdm-list--media">
+					<div class="rdm-list--leading-icon"><span class="material-symbols-rounded">arrow_drop_down_circle</span></div>
+				</div>
+				<div class="rdm-list--body">
+					<div class="rdm-sys-typography--body-large"><div class="rdm-list--body-headline">Select</div></div>
+				</div>
+			</article>
+		</a>
 
 			<!-- Item -->			
 		<a href="radiobuttons.php">
