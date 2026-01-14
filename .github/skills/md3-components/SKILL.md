@@ -143,6 +143,108 @@ RDM 2.0 es un sistema de componentes moderno basado en Material Design 3 (MD3) i
 </fieldset>
 ```
 
+### Estructura Text Field + Select
+
+**Text Field (input de texto):**
+```html
+<div class="rdm-textfield--wrapper">
+    <div class="rdm-textfield--container rdm-textfield--outlined">
+        <div class="rdm-textfield--control">
+            <div class="rdm-textfield--leading-icon">
+                <span class="material-symbols-rounded">search</span>
+            </div>
+            <input id="tf1" type="text" placeholder=" ">
+            <label class="rdm-textfield--label" for="tf1">Buscar</label>
+            <div class="rdm-textfield--trailing-icon">
+                <span class="material-symbols-rounded">close</span>
+            </div>
+        </div>
+    </div>
+    <div class="rdm-textfield--support">
+        <span class="rdm-textfield--support-text">Supporting text</span>
+    </div>
+</div>
+```
+
+**Select (desplegable) - Estructura idéntica a textfield:**
+```html
+<div class="rdm-select--wrapper">
+    <div class="rdm-select--container rdm-select--outlined">
+        <div class="rdm-select--control">
+            <div class="rdm-select--leading-icon">
+                <span class="material-symbols-rounded">category</span>
+            </div>
+            <select id="select1" name="categoria" required>
+                <option value="" disabled selected>Seleccionar...</option>
+                <option value="1">Opción 1</option>
+                <option value="2">Opción 2</option>
+            </select>
+            <label class="rdm-select--label" for="select1">Categoría</label>
+            <div class="rdm-select--trailing-icon">
+                <span class="material-symbols-rounded">arrow_drop_down</span>
+            </div>
+        </div>
+    </div>
+    <div class="rdm-select--support">
+        <span class="rdm-select--support-text">Selecciona una opción</span>
+    </div>
+</div>
+```
+
+**Select con Optgroup (grupos de opciones):**
+```html
+<select id="select_devices" name="device" required>
+    <option value="" disabled selected>Seleccionar...</option>
+    <optgroup label="Móviles">
+        <option value="iphone">iPhone</option>
+        <option value="android">Android</option>
+    </optgroup>
+    <optgroup label="Computadoras">
+        <option value="mac">Mac</option>
+        <option value="windows">Windows</option>
+    </optgroup>
+</select>
+```
+
+**Fieldset - Múltiples Select Relacionados:**
+```html
+<fieldset class="rdm-select--fieldset">
+    <legend class="rdm-sys-typography--title-medium">Fecha de nacimiento</legend>
+    
+    <div class="rdm-select--wrapper">
+        <div class="rdm-select--container rdm-select--outlined">
+            <div class="rdm-select--control">
+                <select id="select_day" name="day" required>
+                    <option value="" disabled selected>Día</option>
+                    <option value="01">1</option>
+                    <option value="02">2</option>
+                </select>
+                <label class="rdm-select--label" for="select_day">Día</label>
+                <div class="rdm-select--trailing-icon">
+                    <span class="material-symbols-rounded">arrow_drop_down</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rdm-select--wrapper">
+        <div class="rdm-select--container rdm-select--outlined">
+            <div class="rdm-select--control">
+                <select id="select_month" name="month" required>
+                    <option value="" disabled selected>Mes</option>
+                    <option value="01">Enero</option>
+                    <option value="02">Febrero</option>
+                </select>
+                <label class="rdm-select--label" for="select_month">Mes</label>
+                <div class="rdm-select--trailing-icon">
+                    <span class="material-symbols-rounded">arrow_drop_down</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>
+```
+
 ### Nomenclatura de Clases - Patrón Uniforme
 
 Para cualquier nuevo componente binario (checkbox, radio, switch, etc.), usa:
@@ -195,6 +297,22 @@ Para cualquier nuevo componente binario (checkbox, radio, switch, etc.), usa:
 - **Borde**: 2px
 - **Border radius**: 2dp = `0.125em`
 - **Checkmark stroke width**: 2px
+
+#### Text Field
+- **Altura outlined**: 56dp = `3.5em`
+- **Padding horizontal**: 12px = `0.75em`
+- **Gap icono-input**: 16px = `1em`
+- **Icono size**: 24dp = `1.5em`
+- **Label size (flotante)**: 0.85 scale de 16px
+
+#### Select (basado en Text Field)
+- **Altura outlined**: 56dp = `3.5em` (idéntico a textfield)
+- **Padding horizontal**: 12px = `0.75em`
+- **Gap icono-select**: 16px = `1em`
+- **Icono size**: 24dp = `1.5em` (leading + trailing arrow)
+- **Label size (flotante)**: 0.85 scale de 16px
+- **Trailing icon (arrow)**: Rota 180° al abrir
+- **Border radius**: 4dp = `0.25em`
 
 #### Badge
 - **Small badge**: 0.625em × 0.625em
@@ -413,6 +531,70 @@ Ubicado en el pseudo-elemento `::before` del icono:
 }
 ```
 
+### 8. Select - Características Especiales
+
+**Input nativo sin apariencia personalizada:**
+```css
+.rdm-select--control select {
+    appearance: none;           /* Remover apariencia nativa */
+    -webkit-appearance: none;   /* Safari */
+    -moz-appearance: none;      /* Firefox */
+}
+
+.rdm-select--control select::-ms-expand {
+    display: none;              /* IE/Edge */
+}
+```
+
+**Placeholder visual - Select sin valor:**
+```css
+.rdm-select--control select:invalid {
+    color: var(--md-sys-color-on-surface-variant);  /* Más tenue */
+}
+
+.rdm-select--control select:valid {
+    color: var(--md-sys-color-on-surface);          /* Color normal */
+}
+```
+
+**Trailing icon (arrow) que rota:**
+```css
+.rdm-select--trailing-icon {
+    transition: transform 160ms ease;
+}
+
+.rdm-select--container:focus-within .rdm-select--trailing-icon {
+    transform: rotate(180deg);  /* Rota cuando está abierto */
+}
+```
+
+**Validación HTML5 automática:**
+```css
+.rdm-select--outlined:has(select:invalid:not(:focus)) {
+    border-color: var(--md-sys-color-error);
+}
+
+.rdm-select--container:has(select:invalid:not(:focus)) .rdm-select--label {
+    color: var(--md-sys-color-error);
+}
+```
+
+**Optgroup styling:**
+```css
+.rdm-select--control select optgroup {
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface-variant);
+    font-weight: 600;
+    font-size: 0.875em;
+}
+
+.rdm-select--control select optgroup option {
+    padding-left: 1.5em;        /* Indentar opciones del grupo */
+    font-weight: 400;
+    color: var(--md-sys-color-on-surface);
+}
+```
+
 ---
 
 ## 5. CHECKLIST PARA NUEVOS COMPONENTES
@@ -485,6 +667,7 @@ En `css/estilos.css`, los componentes se importan en orden de dependencia:
 @import url(tab.css);                /* Tabs */
 @import url(form.css);               /* Formularios */
 @import url(textfield.css);          /* Text fields */
+@import url(select.css);             /* Selects */
 @import url(checkbox.css);           /* Checkboxes */
 @import url(radiobutton.css);        /* Radio buttons */
 @import url(switches.css);           /* Switches */
@@ -547,6 +730,7 @@ rdm2/
 │   ├── navigation_rail.css
 │   ├── normalize.css
 │   ├── radiobutton.css
+│   ├── select.css
 │   ├── shapes.css
 │   ├── switches.css
 │   ├── tabs.css
@@ -575,9 +759,11 @@ rdm2/
 ├── navigation_drawer.php
 ├── navigation_rail.php
 ├── radiobuttons.php
+├── selects.php
 ├── shapes.php
 ├── switches.php
 ├── tabs.php
+├── textfields.php
 ├── topbar.php
 └── typography.php
 ```
@@ -618,6 +804,6 @@ rdm2/
 
 ---
 
-**Última actualización**: 9 de enero, 2026
-**Versión**: 1.0
+**Última actualización**: 14 de enero, 2026
+**Versión**: 1.1
 **Status**: En desarrollo activo
