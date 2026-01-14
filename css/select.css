@@ -99,6 +99,16 @@ Autor: Danny Estrada
   -moz-appearance: none;
 }
 
+/* Select sin valor = texto como placeholder (más tenue) */
+.rdm-select--control select:invalid {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* Cuando tiene valor = texto normal */
+.rdm-select--control select:valid {
+  color: var(--md-sys-color-on-surface);
+}
+
 /* Ocultar flecha nativa en IE */
 .rdm-select--control select::-ms-expand {
   display: none;

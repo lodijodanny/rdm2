@@ -64,7 +64,7 @@
                                 <span class="material-symbols-rounded">category</span>
                             </div>
                             <select id="select_empty" name="categoria" required>
-                                <option value="" disabled selected></option>
+                                <option value="" disabled selected>Seleccionar...</option>
                                 <option value="1">Opción 1</option>
                                 <option value="2">Opción 2</option>
                                 <option value="3">Opción 3</option>
@@ -118,7 +118,7 @@
                                 <span class="material-symbols-rounded">shopping_cart</span>
                             </div>
                             <select id="select_disabled_empty" name="producto" disabled required>
-                                <option value="" disabled selected></option>
+                                <option value="" disabled selected>Seleccionar...</option>
                                 <option value="1">Producto 1</option>
                                 <option value="2">Producto 2</option>
                             </select>
@@ -165,7 +165,7 @@
                     <div class="rdm-select--container rdm-select--outlined">
                         <div class="rdm-select--control">
                             <select id="select_focus" name="prioridad" required>
-                                <option value="" disabled selected></option>
+                                <option value="" disabled selected>Seleccionar...</option>
                                 <option value="alta">Alta</option>
                                 <option value="media">Media</option>
                                 <option value="baja">Baja</option>
@@ -187,7 +187,7 @@
                     <div class="rdm-select--container rdm-select--outlined">
                         <div class="rdm-select--control">
                             <select id="select_no_icon" name="estado" required>
-                                <option value="" disabled selected></option>
+                                <option value="" disabled selected>Seleccionar...</option>
                                 <option value="activo">Activo</option>
                                 <option value="inactivo">Inactivo</option>
                                 <option value="pendiente">Pendiente</option>
@@ -213,7 +213,7 @@
                                 <span class="material-symbols-rounded">error</span>
                             </div>
                             <select id="select_error" name="tipo" required>
-                                <option value="" disabled selected></option>
+                                <option value="" disabled selected>Seleccionar...</option>
                                 <option value="1">Tipo 1</option>
                                 <option value="2">Tipo 2</option>
                             </select>
@@ -237,7 +237,7 @@
                                 <span class="material-symbols-rounded">calendar_month</span>
                             </div>
                             <select id="select_mes" name="mes" required>
-                                <option value="" disabled selected></option>
+                                <option value="" disabled selected>Seleccionar...</option>
                                 <option value="01">Enero</option>
                                 <option value="02">Febrero</option>
                                 <option value="03">Marzo</option>
@@ -272,7 +272,7 @@
                                 <span class="material-symbols-rounded">devices</span>
                             </div>
                             <select id="select_optgroup" name="dispositivo" required>
-                                <option value="" disabled selected></option>
+                                <option value="" disabled selected>Seleccionar...</option>
                                 <optgroup label="Móviles">
                                     <option value="iphone">iPhone</option>
                                     <option value="android">Android</option>
@@ -308,7 +308,7 @@
                                 <span class="material-symbols-rounded">star</span>
                             </div>
                             <select id="select_validation" name="rating" required>
-                                <option value="" disabled selected></option>
+                                <option value="" disabled selected>Seleccionar...</option>
                                 <option value="5">★★★★★ Excelente</option>
                                 <option value="4">★★★★☆ Muy bueno</option>
                                 <option value="3">★★★☆☆ Bueno</option>
@@ -337,7 +337,7 @@
                         <div class="rdm-select--container rdm-select--outlined">
                             <div class="rdm-select--control">
                                 <select id="select_dia" name="dia" required>
-                                    <option value="" disabled selected></option>
+                                    <option value="" disabled selected>Día</option>
                                     <option value="01">1</option>
                                     <option value="02">2</option>
                                     <option value="03">3</option>
@@ -359,7 +359,7 @@
                         <div class="rdm-select--container rdm-select--outlined">
                             <div class="rdm-select--control">
                                 <select id="select_mes_fieldset" name="mes_fieldset" required>
-                                    <option value="" disabled selected></option>
+                                    <option value="" disabled selected>Mes</option>
                                     <option value="01">Enero</option>
                                     <option value="02">Febrero</option>
                                     <option value="03">Marzo</option>
@@ -379,7 +379,7 @@
                         <div class="rdm-select--container rdm-select--outlined">
                             <div class="rdm-select--control">
                                 <select id="select_anio" name="anio" required>
-                                    <option value="" disabled selected></option>
+                                    <option value="" disabled selected>Año</option>
                                     <option value="2000">2000</option>
                                     <option value="1995">1995</option>
                                     <option value="1990">1990</option>
