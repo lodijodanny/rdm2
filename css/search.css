@@ -1,0 +1,167 @@
+/*
+CSS para ManGoApp
+SEARCH BAR (MD3-inspired) - Básico
+Autor: Danny Estrada
+*/
+
+.rdm-search--wrapper {
+  display: block;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.rdm-search--container {
+  display: block;
+  width: 100%;
+}
+
+/* Search bar - Fully rounded */
+.rdm-search--bar {
+  position: relative;
+  border-radius: 1.75em; /* 28px - fully rounded MD3 */
+  background-color: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface);
+  transition: background-color 200ms ease, box-shadow 200ms ease;
+  /* Elevation 1 */
+  box-shadow: 
+    0px 1px 2px rgba(0, 0, 0, 0.3),
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* Elevation aumenta al focus */
+.rdm-search--bar:focus-within {
+  box-shadow: 
+    0px 1px 3px rgba(0, 0, 0, 0.3),
+    0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover state */
+.rdm-search--bar:hover:not(:focus-within):not(:has(input:disabled)) {
+  background-color: var(--md-sys-color-surface-container-highest);
+}
+
+/* Control container */
+.rdm-search--control {
+  position: relative;
+  padding: 0em 1em; /* 16px horizontal */
+  display: flex;
+  align-items: center;
+  gap: 0.75em; /* 12px gap */
+  min-height: 3.5em; /* 56px */
+}
+
+/* Leading icon - SIEMPRE VISIBLE (lupa) */
+.rdm-search--leading-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--md-sys-color-on-surface);
+  flex-shrink: 0;
+  width: 1.5em; /* 24px */
+  height: 1.5em;
+}
+
+.rdm-search--leading-icon .material-symbols-rounded {
+  font-variation-settings: 'FILL' 1;
+}
+
+/* Input */
+.rdm-search--control input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  outline: none !important;
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+  font: inherit;
+  padding: 0;
+  line-height: 1.5em;
+  caret-color: var(--md-sys-color-primary);
+  flex: 1;
+  min-width: 0;
+}
+
+/* Placeholder */
+.rdm-search--control input::placeholder {
+  color: var(--md-sys-color-on-surface-variant);
+  opacity: 1;
+}
+
+/* Trailing icon (clear) */
+.rdm-search--trailing-icon {
+  display: none; /* Oculto por defecto */
+  align-items: center;
+  justify-content: center;
+  color: var(--md-sys-color-on-surface-variant);
+  cursor: pointer;
+  transition: color 160ms ease, background-color 160ms ease;
+  width: 1.5em; /* 24px */
+  height: 1.5em;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Mostrar cuando tenga clase .show */
+.rdm-search--trailing-icon.show {
+  display: flex;
+}
+
+.rdm-search--trailing-icon .material-symbols-rounded {
+  font-variation-settings: 'FILL' 1;
+}
+
+/* State layer en trailing icon */
+.rdm-search--trailing-icon::before {
+  content: '';
+  position: absolute;
+  width: 2.5em; /* 40dp */
+  height: 2.5em;
+  border-radius: 50%;
+  background-color: transparent;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color 160ms ease;
+  z-index: -1;
+}
+
+.rdm-search--trailing-icon:hover::before {
+  background-color: var(--md-sys-color-on-surface);
+  opacity: 0.08;
+}
+
+.rdm-search--trailing-icon:active::before {
+  background-color: var(--md-sys-color-on-surface);
+  opacity: 0.12;
+}
+
+.rdm-search--trailing-icon:hover {
+  color: var(--md-sys-color-on-surface);
+}
+
+/* Disabled state */
+.rdm-search--control input:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.rdm-search--bar:has(input:disabled) {
+  opacity: 0.65;
+}
+
+.rdm-search--bar:has(input:disabled) .rdm-search--leading-icon,
+.rdm-search--bar:has(input:disabled) .rdm-search--trailing-icon {
+  opacity: 0.65;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Support text */
+.rdm-search--support {
+  padding: 0.25em 1em 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 0.875em;
+  margin-top: 0.25em;
+}
