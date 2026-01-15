@@ -795,15 +795,475 @@ rdm2/
 
 ---
 
+## 12. COMPORTAMIENTOS JAVASCRIPT
+
+### Text Field (`textfield.js`)
+
+**Clear Button (Trailing Icon):**
+```javascript
+// Mostrar icono clear solo si hay contenido
+field.addEventListener('input', updateClearIcon);
+
+// Limpiar campo al hacer click
+trailingIcon.addEventListener('click', function() {
+    field.value = '';
+    field.focus();
+    updateClearIcon();
+    field.dispatchEvent(new Event('input', { bubbles: true }));
+});
+```
+
+**Contador de caracteres:**
+```javascript
+// Atributo data-counter-for="[field-id]"
+const counter = wrapper.querySelector('[data-counter-for="' + field.id + '"]');
+// Actualiza: "15/50" al escribir
+field.addEventListener('input', updateCounter);
+```
+
+**Evento Input:**
+- Se dispara al escribir, focus, blur
+- Permite actualizar estado visual del label en tiempo real
+- Compatible con contador y clear button
+
+### Switch (`switch.js`)
+
+**Icon Both (cambio de icono):**
+```javascript
+// Clase: .rdm-switch--container.icon-both
+// Cambia icono según estado checked
+
+input.addEventListener('change', function() {
+    icon.textContent = input.checked ? 'check' : 'close';
+});
+```
+
+**Usos:**
+- Off: icono `close`
+- On: icono `check`
+- Animación suave por CSS (200ms)
+
+### Selectores CSS-in-JS
+
+**Input visible pero transparent:**
+```css
+/* El cursor entra porque el input es 100% del area */
+.rdm-switch--input {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+```
+
+---
+
+## 13. VALIDACIÓN HTML5 AUTOMÁTICA
+
+### Select - Validación Nativa
+
+```css
+/* Option vacía = required inválido */
+select:invalid {
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+select:valid {
+    color: var(--md-sys-color-on-surface);
+}
+
+/* Mostrar borde rojo si es invalid pero no está focused */
+.rdm-select--outlined:has(select:invalid:not(:focus)) {
+    border-color: var(--md-sys-color-error);
+}
+
+.rdm-select--container:has(select:invalid:not(:focus)) .rdm-select--label {
+    color: var(--md-sys-color-error);
+}
+
+/* No mostrar error si está disabled */
+.rdm-select--outlined:has(select:invalid:disabled) {
+    border-color: var(--md-sys-color-outline);
+}
+```
+
+### Attributes HTML5
+
+```html
+<!-- Required (invalid sin selección) -->
+<select id="select1" name="categoria" required>
+    <option value="" disabled selected>Seleccionar...</option>
+    <option value="1">Opción 1</option>
+</select>
+
+<!-- Maxlength para textfield (contador integrado) -->
+<input id="tf1" type="text" maxlength="50">
+
+<!-- Disabled (automáticamente opacity 0.65) -->
+<select id="select2" name="pais" disabled>
+```
+
+---
+
+## 14. ACCESIBILIDAD AVANZADA
+
+### ARIA Attributes
+
+```html
+<!-- Text Field con support text -->
+<input id="tf1" type="text" aria-describedby="tf1_help">
+<span id="tf1_help">Supporting text</span>
+
+<!-- Select con error support -->
+<select id="select1" required aria-describedby="select1_error">
+<span id="select1_error">Selecciona una opción</span>
+
+<!-- Switch accesible -->
+<label class="rdm-switch--wrapper">
+    <input type="checkbox" class="rdm-switch--input" 
+           aria-label="Activar notificaciones">
+    <!-- ... rest of switch -->
+</label>
+```
+
+### Focus Management
+
+- **Todos los inputs nativo**: mantienen `:focus-visible` automático
+- **Outline personalizado**: `2px solid --md-sys-color-primary`
+- **Outline-offset**: `2px` (visible fuera del elemento)
+- **Tab order**: HTML natural (sin tabindex)
+
+### Label Association
+
+```html
+<!-- CORRECTO: label anidado -->
+<label class="rdm-[component]--container">
+    <input type="[type]">
+    <span class="rdm-[component]--label">Texto</span>
+</label>
+
+<!-- O con for + id -->
+<label for="input_id">Texto</label>
+<input id="input_id">
+```
+
+---
+
+## 15. COMPORTAMIENTOS ESPECIALES POR COMPONENTE
+
+### Select - Trailing Icon Rotación
+
+```css
+/* Arrow (triangle) por defecto apunta DOWN */
+.rdm-select--trailing-icon {
+    transition: transform 160ms ease;
+}
+
+/* Al focus, rota 180° (apunta UP) */
+.rdm-select--container:focus-within .rdm-select--trailing-icon {
+    transform: rotate(180deg);
+}
+```
+
+**Visual:**
+- Sin focus: ⬇️ (down)
+- Con focus: ⬆️ (up)
+- Transición suave 160ms
+
+### Text Field - Label Flotante
+
+```css
+/* Estado inicial: posicionado en el centro */
+.rdm-textfield--label {
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+/* Al focus o con valor: flota arriba y escala */
+.rdm-textfield--outlined:focus-within .rdm-textfield--label,
+.rdm-textfield--control input:not([value=""]) ~ .rdm-textfield--label {
+    top: -0.8em;
+    transform: scale(0.85);
+    color: var(--md-sys-color-primary);
+}
+```
+
+**Transición:** `160ms ease` en `transform`, `color`, `top`
+
+### Switch - Handle Animation
+
+```css
+/* OFF: handle pequeño a la izquierda */
+.rdm-switch--handle {
+    width: 1em;      /* 16px */
+    height: 1em;
+    left: 0.25em;    /* 4px */
+    background-color: var(--md-sys-color-outline);
+}
+
+/* ON: handle grande a la derecha */
+.rdm-switch--input:checked + .rdm-switch--track .rdm-switch--handle {
+    width: 1.5em;    /* 24px - crece */
+    height: 1.5em;
+    left: calc(100% - 1.75em);  /* se mueve */
+    background-color: var(--md-sys-color-on-primary);
+}
+```
+
+**Transición:** `200ms ease` en `width`, `height`, `left`, `background-color`
+
+### Form Types - Variantes
+
+```css
+/* Elevated: con sombra */
+.rdm-form--elevated {
+    background-color: var(--md-sys-color-surface);
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), /* z-elevation 1 */
+                0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+                0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+/* Filled: color de fondo */
+.rdm-form--filled {
+    background-color: var(--md-sys-color-surface-variant);
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+/* Outlined: solo borde */
+.rdm-form--outlined {
+    background-color: var(--md-sys-color-surface);
+    border: solid 0.0625em var(--md-sys-color-outline);
+}
+
+/* Flat: sin borde ni sombra */
+.rdm-form--flat {
+    background-color: var(--md-sys-color-surface);
+}
+```
+
+---
+
+## 16. COLOR-MIX UNIFORME
+
+Todos los componentes interactivos usan `color-mix` para opacidades consistentes:
+
+```css
+/* 8% opacidad - Hover */
+background-color: color-mix(in srgb, var(--md-sys-color-primary) 8%, transparent);
+
+/* 12% opacidad - Pressed/Focus */
+background-color: color-mix(in srgb, var(--md-sys-color-primary) 12%, transparent);
+
+/* 20% opacidad - Focus seleccionado */
+background-color: color-mix(in srgb, var(--md-sys-color-primary) 20%, transparent);
+
+/* Error state */
+background-color: color-mix(in srgb, var(--md-sys-color-error) 8%, transparent);
+
+/* Disabled (65%) */
+color: color-mix(in srgb, var(--md-sys-color-on-surface-variant) 65%, transparent);
+```
+
+**Ventajas:**
+- Consistencia visual
+- Adaptación automática a temas
+- Sin hardcodear rgba()
+
+---
+
+## 17. TROUBLESHOOTING EXPANDIDO
+
+### Select - Arrow no Rota
+
+**Problema:** El trailing icon no gira al hacer focus
+**Soluciones:**
+```css
+/* Verificar selector correcto */
+.rdm-select--container:focus-within .rdm-select--trailing-icon {
+    transform: rotate(180deg);
+}
+
+/* NO funciona: */
+.rdm-select--trailing-icon:focus-within { /* ❌ no tiene focus */
+    transform: rotate(180deg);
+}
+
+/* Alternativa: usar has() */
+.rdm-select--container:has(select:focus) .rdm-select--trailing-icon {
+    transform: rotate(180deg);
+}
+```
+
+### Text Field - Label no Flota
+
+**Problema:** El label no se mueve al escribir
+**Soluciones:**
+```css
+/* Verificar que el label use ~ selector (siguiente hermano) */
+.rdm-textfield--control input ~ .rdm-textfield--label { /* ✅ correcto */
+    /* estilos flotante */
+}
+
+/* NO funciona si está dentro del input: */
+<input><label></label> <!-- ✅ orden HTML correcto -->
+
+/* El selector `:not([value=""])` solo funciona en algunos navegadores */
+/* Preferir enfoque con :valid o :focus */
+input:valid ~ .rdm-textfield--label,
+input:focus ~ .rdm-textfield--label {
+    /* float */ }
+```
+
+### Switch - Handle no se Mueve Suavemente
+
+**Problema:** El handle no anima, solo aparece al otro lado
+**Soluciones:**
+```css
+/* Verificar transition en .rdm-switch--handle */
+.rdm-switch--handle {
+    transition: left 200ms ease, width 200ms ease; /* ✅ include left */
+}
+
+/* NO funciona: */
+.rdm-switch--handle {
+    transition: all 200ms ease; /* ❌ puede no animar left correctamente */
+}
+
+/* Usar calc() para la posición */
+.rdm-switch--input:checked + .rdm-switch--track .rdm-switch--handle {
+    left: calc(100% - 1.75em); /* ✅ relativo al parent */
+}
+```
+
+### Clear Button no Aparece
+
+**Problema:** El icono close no se muestra al escribir
+**Soluciones:**
+```javascript
+// Verificar que trailing-icon tenga clase .show
+trailingIcon.classList.add('show'); // ✅
+
+// CSS debe mostrar .show
+.rdm-textfield--trailing-icon.show {
+    display: flex; /* ✅ debe estar visible */
+}
+
+.rdm-textfield--trailing-icon {
+    display: none; /* por defecto */
+}
+
+// Si el evento no dispara:
+field.addEventListener('input', updateClearIcon); // ✅
+```
+
+### Validación HTML5 no Funciona
+
+**Problema:** El borde error no se muestra aunque sea invalid
+**Soluciones:**
+```css
+/* Verificar que select tenga required */
+<select required> <!-- ✅ -->
+
+/* Validación solo se muestra si :not(:focus) */
+.rdm-select--outlined:has(select:invalid:not(:focus)) {
+    border-color: var(--md-sys-color-error);
+}
+
+/* Si está focused, no muestra error (experiencia UX) */
+
+/* Para forzar error siempre: */
+.rdm-select--wrapper.is-error .rdm-select--outlined {
+    border-color: var(--md-sys-color-error); /* clase manual */
+}
+```
+
+---
+
+## 18. PATTERNS CSS AVANZADOS
+
+### Appearance: None y sus Variantes
+
+```css
+/* Select/dropdown */
+select {
+    appearance: none;           /* Chrome/Edge/Safari */
+    -webkit-appearance: none;   /* Safari */
+    -moz-appearance: none;      /* Firefox */
+}
+
+/* Internet Explorer */
+select::-ms-expand {
+    display: none; /* oculta flecha nativa IE */
+}
+
+/* Resultado: permite icono personalizado */
+```
+
+### Fieldset Pattern Uniforme
+
+```css
+/* Todos los fieldsets usan el mismo patrón */
+.rdm-[component]--fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em; /* espaciado consistente */
+}
+
+.rdm-[component]--fieldset legend {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0.5em;
+}
+
+.rdm-[component]--fieldset .rdm-[component]--wrapper {
+    margin: 0; /* gap del fieldset lo maneja */
+}
+```
+
+### Support Text (Ayuda + Error Unificado)
+
+```html
+<div class="rdm-[component]--wrapper">
+    <label class="rdm-[component]--container">
+        <input type="[type]">
+        <span class="rdm-[component]--label">Etiqueta</span>
+    </label>
+    <span class="rdm-[component]--support">Texto de ayuda o error</span>
+</div>
+```
+
+```css
+.rdm-[component]--support {
+    display: block;
+    font-size: 0.875em;
+    color: var(--md-sys-color-on-surface-variant);
+    margin-top: 0.5em;
+    padding-left: 1.875em; /* alineado con label */
+}
+
+.rdm-[component]--wrapper.has-error .rdm-[component]--support {
+    color: var(--md-sys-color-error);
+}
+```
+
+---
+
 ## 11. RECURSOS ÚTILES
 
 - **Material Design 3**: https://m3.material.io
 - **Radio Button specs**: https://m3.material.io/components/radio-button
 - **Checkbox specs**: https://m3.material.io/components/checkbox
+- **Select specs**: https://m3.material.io/components/menus
+- **Text Field specs**: https://m3.material.io/components/text-fields
 - **Accessibility**: https://www.w3.org/WAI/tutorials/forms/
+- **HTML5 Validation**: https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation
 
 ---
 
 **Última actualización**: 14 de enero, 2026
-**Versión**: 1.1
+**Versión**: 1.2
 **Status**: En desarrollo activo
