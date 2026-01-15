@@ -668,6 +668,7 @@ En `css/estilos.css`, los componentes se importan en orden de dependencia:
 @import url(form.css);               /* Formularios */
 @import url(textfield.css);          /* Text fields */
 @import url(select.css);             /* Selects */
+@import url(search.css);             /* Search */
 @import url(checkbox.css);           /* Checkboxes */
 @import url(radiobutton.css);        /* Radio buttons */
 @import url(switches.css);           /* Switches */
@@ -686,7 +687,327 @@ Los tokens de color cambian automáticamente según el tema en `css/md/`:
 
 ---
 
+## 7.1 SEARCH - Componente de Búsqueda
+
+**Ubicación**: `css/search.css` y `searches.php`
+
+**Diferencias con TextFields:**
+- Search está completamente redondeado (border-radius: 28px)
+- Search tiene elevación que aumenta en focus (1 → 3)
+- Search tiene icono de búsqueda (lupa) fijo al inicio
+- Search tiene icono de limpiar (close) dinámico al final
+- Search es semánticamente diferente (búsqueda vs entrada de datos)
+- Search no tiene label flotante (placeholder estático)
+
+### Especificaciones MD3 Search
+
+```
+Height: 56px (3.5em)
+Border-radius: 28px (1.75em) - Fully rounded
+Elevation base: 1 (0.5px, 2px)
+Elevation focus: 3 (1px, 8px)
+Padding horizontal: 16px (1em)
+Gap entre elementos: 12px (0.75em)
+Icon size: 24px (1.5em)
+Leading icon: Siempre visible (search)
+Trailing icon: Visible solo si hay contenido (close)
+State layer: 40dp (2.5em) en trailing icon
+Background: surface-container-high
+Background hover: surface-container-highest
+Color texto: on-surface
+Color placeholder: on-surface-variant
+Icon FILL: 1 (completamente lleno)
+```
+
+### Estructura HTML
+
+```html
+<div class="rdm-search--wrapper">
+    <div class="rdm-search--bar">
+        <div class="rdm-search--control">
+            <!-- Leading icon - siempre visible -->
+            <div class="rdm-search--leading-icon">
+                <span class="material-symbols-rounded">search</span>
+            </div>
+            
+            <!-- Input nativo -->
+            <input 
+                type="search" 
+                placeholder="Buscar..."
+                aria-label="Buscar"
+            >
+            
+            <!-- Trailing icon - dinámico con JavaScript -->
+            <div class="rdm-search--trailing-icon">
+                <span class="material-symbols-rounded">close</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Support text opcional -->
+    <div class="rdm-search--support">Texto de ayuda</div>
+</div>
+```
+
+### CSS Pattern
+
+**Contenedor principal:**
+```css
+.rdm-search--wrapper {
+    display: block;
+    width: 100%;
+    margin: 1em 0;
+}
+
+.rdm-search--bar {
+    position: relative;
+    border-radius: 1.75em;
+    background-color: var(--md-sys-color-surface-container-high);
+    transition: background-color 200ms ease, box-shadow 200ms ease;
+    /* Elevation 1 */
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+.rdm-search--bar:focus-within {
+    /* Elevation 3 */
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+}
+
+.rdm-search--bar:hover:not(:focus-within) {
+    background-color: var(--md-sys-color-surface-container-highest);
+}
+```
+
+**Control y espaciado:**
+```css
+.rdm-search--control {
+    position: relative;
+    padding: 0em 1em;
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+    min-height: 3.5em;
+}
+```
+
+**Leading icon (búsqueda):**
+```css
+.rdm-search--leading-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--md-sys-color-on-surface);
+    flex-shrink: 0;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.rdm-search--leading-icon .material-symbols-rounded {
+    font-variation-settings: 'FILL' 1;
+}
+```
+
+**Input:**
+```css
+.rdm-search--control input {
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none !important;
+    background: transparent;
+    color: var(--md-sys-color-on-surface);
+    flex: 1;
+    caret-color: var(--md-sys-color-primary);
+}
+
+/* Ocultar icono nativo de HTML5 */
+.rdm-search--control input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+}
+
+.rdm-search--control input[type="search"]::-moz-search-cancel-button {
+    display: none;
+}
+
+.rdm-search--control input::placeholder {
+    color: var(--md-sys-color-on-surface-variant);
+}
+```
+
+**Trailing icon (limpiar) - Con transición suave:**
+```css
+.rdm-search--trailing-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--md-sys-color-on-surface-variant);
+    cursor: pointer;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: color 160ms ease, opacity 240ms ease;
+}
+
+/* Mostrar cuando tiene clase .show */
+.rdm-search--trailing-icon.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.rdm-search--trailing-icon .material-symbols-rounded {
+    font-variation-settings: 'FILL' 1;
+}
+
+/* State layer en trailing icon */
+.rdm-search--trailing-icon::before {
+    content: '';
+    position: absolute;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    background-color: transparent;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: background-color 160ms ease;
+    z-index: -1;
+}
+
+.rdm-search--trailing-icon:hover::before {
+    background-color: var(--md-sys-color-on-surface);
+    opacity: 0.08;
+}
+
+.rdm-search--trailing-icon:active::before {
+    background-color: var(--md-sys-color-on-surface);
+    opacity: 0.12;
+}
+
+.rdm-search--trailing-icon:hover {
+    color: var(--md-sys-color-on-surface);
+}
+```
+
+**Estados deshabilitados:**
+```css
+.rdm-search--control input:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.rdm-search--bar:has(input:disabled) {
+    opacity: 0.65;
+}
+```
+
+### JavaScript - Comportamiento Dinámico
+
+**Archivo**: `js/search.js`
+
+```javascript
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleccionar todos los inputs de búsqueda
+    const searchInputs = document.querySelectorAll('.rdm-search--control input[type="search"]');
+    
+    searchInputs.forEach(input => {
+        const wrapper = input.closest('.rdm-search--wrapper');
+        const trailingIcon = wrapper.querySelector('.rdm-search--trailing-icon');
+        
+        // Función para actualizar visibilidad del icono
+        function updateClearIcon() {
+            if (input.value.trim().length > 0) {
+                trailingIcon.classList.add('show');
+            } else {
+                trailingIcon.classList.remove('show');
+            }
+        }
+        
+        // Actualizar en eventos
+        input.addEventListener('input', updateClearIcon);
+        input.addEventListener('change', updateClearIcon);
+        
+        // Click en icono de limpiar
+        trailingIcon.addEventListener('click', function(e) {
+            e.preventDefault();
+            input.value = '';
+            input.focus();
+            updateClearIcon();
+        });
+        
+        // Inicializar en carga
+        updateClearIcon();
+    });
+});
+```
+
+**Comportamiento:**
+- Icono aparece con fade-in (opacity 240ms) cuando hay texto
+- Icono desaparece con fade-out cuando el campo está vacío
+- Click en icono limpia el campo y mantiene el focus
+- Compatible con múltiples búsquedas en la misma página
+
+### Estados
+
+```
+1. Empty (vacío)
+   - Input sin contenido
+   - Leading icon visible (on-surface)
+   - Trailing icon oculto (opacity: 0)
+   - Background: surface-container-high
+   - Elevation: 1
+
+2. Filled (con contenido)
+   - Input con texto
+   - Leading icon visible
+   - Trailing icon visible con fade-in (opacity: 1)
+   - Background: surface-container-high
+   - Elevation: 1
+
+3. Hovered
+   - Background cambia a surface-container-highest
+   - Elevation: 1
+   - State layer en trailing icon (8%)
+
+4. Focused
+   - Elevation aumenta a 3
+   - Caret color: primary
+   - State layer en trailing icon si hay hover
+
+5. Disabled
+   - Input disabled attribute
+   - Opacity: 0.65 en todo el componente
+   - Cursor: not-allowed
+   - No interactive
+```
+
+### Integración
+
+**En `css/estilos.css`:**
+```css
+@import url(search.css);
+```
+
+**En `index.php`:**
+```html
+<a href="searches.php" class="rdm-list--item">
+    <span class="material-symbols-rounded">search</span>
+    <span>Search</span>
+</a>
+```
+
+**En la página demo (`searches.php`):**
+```html
+<script src="js/search.js"></script>
+```
+
+---
+
 ## 8. MEJORES PRÁCTICAS
+
 
 ### ✅ HACER
 - Usar em para todas las medidas (escalabilidad)
@@ -731,6 +1052,7 @@ rdm2/
 │   ├── normalize.css
 │   ├── radiobutton.css
 │   ├── select.css
+│   ├── search.css
 │   ├── shapes.css
 │   ├── switches.css
 │   ├── tabs.css
@@ -745,6 +1067,7 @@ rdm2/
 │       ├── tokens.css
 │       └── typography.module.css
 ├── js/
+│   ├── search.js
 │   ├── topbar_scroll.js
 │   └── theme_toggle.js
 ├── img/
@@ -759,6 +1082,7 @@ rdm2/
 ├── navigation_drawer.php
 ├── navigation_rail.php
 ├── radiobuttons.php
+├── searches.php
 ├── selects.php
 ├── shapes.php
 ├── switches.php
@@ -1264,6 +1588,6 @@ select::-ms-expand {
 
 ---
 
-**Última actualización**: 14 de enero, 2026
-**Versión**: 1.2
+**Última actualización**: 15 de enero, 2026
+**Versión**: 1.3
 **Status**: En desarrollo activo
