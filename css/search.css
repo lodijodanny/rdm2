@@ -99,22 +99,25 @@ Autor: Danny Estrada
 
 /* Trailing icon (clear) */
 .rdm-search--trailing-icon {
-  display: none; /* Oculto por defecto */
+  display: flex;
   align-items: center;
   justify-content: center;
   color: var(--md-sys-color-on-surface-variant);
   cursor: pointer;
-  transition: color 160ms ease, background-color 160ms ease;
+  transition: color 160ms ease, background-color 160ms ease, opacity 240ms ease;
   width: 1.5em; /* 24px */
   height: 1.5em;
   border-radius: 50%;
   position: relative;
   flex-shrink: 0;
+  opacity: 0; /* Oculto por defecto con opacidad */
+  pointer-events: none; /* No clickeable cuando está oculto */
 }
 
 /* Mostrar cuando tenga clase .show */
 .rdm-search--trailing-icon.show {
-  display: flex;
+  opacity: 1;
+  pointer-events: auto; /* Permite interacción cuando es visible */
 }
 
 .rdm-search--trailing-icon .material-symbols-rounded {
