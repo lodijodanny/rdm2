@@ -167,7 +167,7 @@ Autor: Danny Estrada / Ajustado por Copilot
 .rdm-textfield--outlined .rdm-textfield--label {
   background-color: var(--md-sys-color-surface);
   padding: 0 0.25em;
-  z-index: 1; /* cubrir el borde superior para simular notch */
+  z-index: 0; /* cubrir el borde superior para simular notch */
 }
 
 /* Support text (fuera del contenedor) */

@@ -149,7 +149,7 @@ Autor: Danny Estrada
   pointer-events: none;
   background-color: var(--md-sys-color-surface);
   padding: 0 0.25em;
-  z-index: 1;
+  z-index: 0;
 }
 
 /* Label con leading icon: mover a la derecha */
