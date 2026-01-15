@@ -82,6 +82,15 @@ Autor: Danny Estrada
   min-width: 0;
 }
 
+/* Ocultar icono nativo de input type="search" */
+.rdm-search--control input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.rdm-search--control input[type="search"]::-moz-search-cancel-button {
+  display: none;
+}
+
 /* Placeholder */
 .rdm-search--control input::placeholder {
   color: var(--md-sys-color-on-surface-variant);

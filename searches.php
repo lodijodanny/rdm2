@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="css/estilos.css">
 	<script src="js/topbar_scroll.js"></script>
     <script src="js/theme_toggle.js"></script>
+    <script src="js/search.js"></script>
 </head>
 <body>
 
