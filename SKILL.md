@@ -2,6 +2,7 @@
 
 ## Historial de Versiones
 
+- **v1.4.1** - Search Bar refinements: state layers removidos, leading icon cambiado a search
 - **v1.4** - Search Bar 6 mejoras MD3: transiciones 160ms, keyboard nav, error states, helper text, cursor selection, active states
 - **v1.3** - Search Bar MD3 compliance complete (avatar, multiple trailing icons, leading button)
 - **v1.2** - Radio button normalization, z-index hierarchy
@@ -34,15 +35,15 @@ Componente de búsqueda siguiendo especificaciones de Material Design 3 (MD3). S
 
 ```
 ┌─────────────────────────────────────────────┐
-│ ╱─╲                    [🎤] [🔍] [👤]      │  Leading icon + Input + Trailing icons + Avatar
-│ │ │  Buscar...                              │
-│ ╲─╱                                          │
+│ 🔍                    [🎤] [🔍] [👤]      │  Leading lupa + Input + Trailing icons + Avatar
+│      Buscar...                              │
+│                                              │
 └─────────────────────────────────────────────┘
- Menu  Text Field             Voice Search + Avatar
+ Search  Text Field             Voice Search + Avatar
 ```
 
 **Componentes**:
-1. **Leading Icon** (opcional): Botón interactivo, típicamente "menu"
+1. **Leading Icon** (siempre visible): Lupa "search", botón interactivo
 2. **Input**: Campo de texto nativo HTML5 search
 3. **Trailing Icons** (0-2): Botones interactivos (search, voice, clear, etc.)
 4. **Avatar** (opcional): Imagen circular 30dp, siempre a la derecha
@@ -50,13 +51,13 @@ Componente de búsqueda siguiendo especificaciones de Material Design 3 (MD3). S
 ### Configuraciones MD3
 
 #### Config 1: With Avatar
-- Leading icon: menu
+- Leading icon: search (lupa)
 - Input: búsqueda
 - Trailing: solo avatar
 - **Caso de uso**: Búsqueda con perfil de usuario visible
 
 ```html
-<button class="rdm-search--leading-icon">menu</button>
+<button class="rdm-search--leading-icon">search</button>
 <input type="search">
 <div class="rdm-search--trailing">
   <img class="rdm-search--avatar" src="...">
@@ -64,13 +65,13 @@ Componente de búsqueda siguiendo especificaciones de Material Design 3 (MD3). S
 ```
 
 #### Config 2: With One Trailing Icon
-- Leading icon: menu
+- Leading icon: search (lupa)
 - Input: búsqueda
 - Trailing: 1 icono (search, voice o clear)
 - **Caso de uso**: Búsqueda estándar con acción
 
 ```html
-<button class="rdm-search--leading-icon">menu</button>
+<button class="rdm-search--leading-icon">search</button>
 <input type="search">
 <div class="rdm-search--trailing">
   <button class="rdm-search--trailing-icon">search</button>
@@ -78,13 +79,13 @@ Componente de búsqueda siguiendo especificaciones de Material Design 3 (MD3). S
 ```
 
 #### Config 3: With Two Trailing Icons
-- Leading icon: menu
+- Leading icon: search (lupa)
 - Input: búsqueda
 - Trailing: 2 iconos (típicamente voice + search)
 - **Caso de uso**: Búsqueda avanzada con voz y texto
 
 ```html
-<button class="rdm-search--leading-icon">menu</button>
+<button class="rdm-search--leading-icon">search</button>
 <input type="search">
 <div class="rdm-search--trailing">
   <button class="rdm-search--trailing-icon">mic</button>
@@ -93,13 +94,13 @@ Componente de búsqueda siguiendo especificaciones de Material Design 3 (MD3). S
 ```
 
 #### Config 4: Avatar + Trailing Icon
-- Leading icon: menu
+- Leading icon: search (lupa)
 - Input: búsqueda
 - Trailing: 1 icono + avatar
 - **Caso de uso**: Búsqueda con perfil y acciones
 
 ```html
-<button class="rdm-search--leading-icon">menu</button>
+<button class="rdm-search--leading-icon">search</button>
 <input type="search">
 <div class="rdm-search--trailing">
   <button class="rdm-search--trailing-icon">search</button>
@@ -254,6 +255,11 @@ Todas las transiciones: 160ms cubic-bezier(0.2, 0, 0, 1) (MD3 standard)
 - **Cursor**: text (input), not-allowed (disabled)
 
 ### Estados Avanzados
+
+#### Visual Refinements (v1.4.1)
+- **State layers removidos**: Los círculos redondos en hover de iconos fueron eliminados para una interfaz más limpia
+- **Outline y box-shadow desactivados**: `outline: none !important;` y `box-shadow: none !important;` en leading e trailing icons
+- **Leading icon**: Cambio de "menu" a "search" (lupa) para consistencia semántica
 
 #### Error State
 Detectado automáticamente por caracteres especiales (!@#$%^&*+=[]{}...etc)
