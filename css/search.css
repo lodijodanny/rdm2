@@ -21,11 +21,24 @@ Autor: Danny Estrada
   border-radius: 1.75em; /* 28px - fully rounded MD3 */
   background-color: var(--md-sys-color-surface-container-high);
   color: var(--md-sys-color-on-surface);
-  transition: background-color 200ms ease, box-shadow 200ms ease;
+  transition: background-color 160ms cubic-bezier(0.2, 0, 0, 1), box-shadow 160ms cubic-bezier(0.2, 0, 0, 1);
   /* Elevation 1 */
   box-shadow: 
     0px 1px 2px rgba(0, 0, 0, 0.3),
     0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* Error state */
+.rdm-search--bar.has-error {
+  background-color: color-mix(in srgb, var(--md-sys-color-error) 12%, var(--md-sys-color-surface-container-high));
+}
+
+.rdm-search--bar.has-error:focus-within {
+  background-color: color-mix(in srgb, var(--md-sys-color-error) 12%, var(--md-sys-color-surface-container-high));
+}
+
+.rdm-search--bar.has-error .rdm-search--leading-icon {
+  color: var(--md-sys-color-error);
 }
 
 /* Elevation aumenta al focus */
@@ -37,7 +50,7 @@ Autor: Danny Estrada
 
 /* Hover state */
 .rdm-search--bar:hover:not(:focus-within):not(:has(input:disabled)) {
-  background-color: var(--md-sys-color-surface-container-highest);
+  background-color: var(--md-sys-color-surface-container-high);
 }
 
 /* Control container */
@@ -50,19 +63,40 @@ Autor: Danny Estrada
   min-height: 3.5em; /* 56px */
 }
 
-/* Leading icon - SIEMPRE VISIBLE (lupa) */
+/* Leading icon button - SIEMPRE VISIBLE y clickeable */
 .rdm-search--leading-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--md-sys-color-on-surface);
+  color: var(--md-sys-color-on-surface-variant);
   flex-shrink: 0;
   width: 1.5em; /* 24px */
   height: 1.5em;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  transition: color 160ms ease, background-color 160ms ease;
+  position: relative;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .rdm-search--leading-icon .material-symbols-rounded {
   font-variation-settings: 'FILL' 1;
+}
+
+.rdm-search--leading-icon:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+  transition: outline 160ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.rdm-search--leading-icon:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* Input */
@@ -80,6 +114,14 @@ Autor: Danny Estrada
   caret-color: var(--md-sys-color-primary);
   flex: 1;
   min-width: 0;
+  cursor: text;
+  transition: color 160ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Selección de texto con color primary */
+.rdm-search--control input::selection {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
 }
 
 /* Ocultar icono nativo de input type="search" */
@@ -97,7 +139,15 @@ Autor: Danny Estrada
   opacity: 1;
 }
 
-/* Trailing icon (clear) */
+/* Trailing icons container */
+.rdm-search--trailing {
+  display: flex;
+  align-items: center;
+  gap: 0.5em; /* 8dp entre trailing icons */
+  flex-shrink: 0;
+}
+
+/* Trailing icon (close, search, voice, etc.) */
 .rdm-search--trailing-icon {
   display: flex;
   align-items: center;
@@ -107,11 +157,29 @@ Autor: Danny Estrada
   transition: color 160ms ease, background-color 160ms ease, opacity 240ms ease;
   width: 1.5em; /* 24px */
   height: 1.5em;
-  border-radius: 50%;
   position: relative;
   flex-shrink: 0;
   opacity: 0; /* Oculto por defecto con opacidad */
   pointer-events: none; /* No clickeable cuando está oculto */
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.rdm-search--trailing-icon:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+  transition: outline 160ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.rdm-search--trailing-icon:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* Mostrar cuando tenga clase .show */
@@ -120,37 +188,22 @@ Autor: Danny Estrada
   pointer-events: auto; /* Permite interacción cuando es visible */
 }
 
+.rdm-search--trailing-icon.show:hover {
+  color: var(--md-sys-color-on-surface);
+}
+
+/* Avatar en trailing */
+.rdm-search--avatar {
+  width: 1.875em; /* 30dp */
+  height: 1.875em; /* 30dp */
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+  margin-left: 0.5em; /* 8dp space before avatar */
+}
+
 .rdm-search--trailing-icon .material-symbols-rounded {
   font-variation-settings: 'FILL' 1;
-}
-
-/* State layer en trailing icon */
-.rdm-search--trailing-icon::before {
-  content: '';
-  position: absolute;
-  width: 2.5em; /* 40dp */
-  height: 2.5em;
-  border-radius: 50%;
-  background-color: transparent;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  transition: background-color 160ms ease;
-  z-index: -1;
-}
-
-.rdm-search--trailing-icon:hover::before {
-  background-color: var(--md-sys-color-on-surface);
-  opacity: 0.08;
-}
-
-.rdm-search--trailing-icon:active::before {
-  background-color: var(--md-sys-color-on-surface);
-  opacity: 0.12;
-}
-
-.rdm-search--trailing-icon:hover {
-  color: var(--md-sys-color-on-surface);
 }
 
 /* Disabled state */
@@ -176,4 +229,15 @@ Autor: Danny Estrada
   color: var(--md-sys-color-on-surface-variant);
   font-size: 0.875em;
   margin-top: 0.25em;
+  transition: color 160ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Error support text */
+.rdm-search--wrapper.has-error .rdm-search--support {
+  color: var(--md-sys-color-error);
+}
+
+.rdm-search--wrapper.has-error .rdm-search--support::before {
+  content: '⚠ ';
+  margin-right: 0.25em;
 }

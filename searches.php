@@ -54,6 +54,104 @@
             <!-- Body section -->
             <div class="rdm-form--body">
                 
+                <h2 class="rdm-sys-typography--title-large">Config 1: With avatar</h2>
+                <p class="rdm-sys-typography--body-medium">Search bar con avatar del usuario</p>
+                <!-- Search: With avatar -->
+                <div class="rdm-search--wrapper">
+                    <div class="rdm-search--container">
+                        <div class="rdm-search--bar">
+                            <div class="rdm-search--control">
+                                <button class="rdm-search--leading-icon" type="button" aria-label="Buscar">
+                                    <span class="material-symbols-rounded">search</span>
+                                </button>
+                                <input type="search" id="search_avatar" name="search_avatar" placeholder="Buscar...">
+                                <div class="rdm-search--trailing">
+                                    <img class="rdm-search--avatar" src="img/a1.jpg" alt="Avatar usuario">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rdm-search--support">
+                        <span>Búsqueda con perfil de usuario</span>
+                    </div>
+                </div>
+
+                <h2 class="rdm-sys-typography--title-large">Config 2: With one trailing icon (search)</h2>
+                <p class="rdm-sys-typography--body-medium">Search bar estándar con icono búsqueda</p>
+                <!-- Search: With search icon -->
+                <div class="rdm-search--wrapper">
+                    <div class="rdm-search--container">
+                        <div class="rdm-search--bar">
+                            <div class="rdm-search--control">
+                                <button class="rdm-search--leading-icon" type="button" aria-label="Buscar">
+                                    <span class="material-symbols-rounded">search</span>
+                                </button>
+                                <input type="search" id="search_icon1" name="search_icon1" placeholder="Buscar...">
+                                <div class="rdm-search--trailing">
+                                    <button class="rdm-search--trailing-icon show" type="button" aria-label="Buscar">
+                                        <span class="material-symbols-rounded">search</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rdm-search--support">
+                        <span>Buscar con icono de búsqueda</span>
+                    </div>
+                </div>
+
+                <h2 class="rdm-sys-typography--title-large">Config 3: With two trailing icon buttons</h2>
+                <p class="rdm-sys-typography--body-medium">Search avanzada con voz + búsqueda</p>
+                <!-- Search: With voice and search icons -->
+                <div class="rdm-search--wrapper">
+                    <div class="rdm-search--container">
+                        <div class="rdm-search--bar">
+                            <div class="rdm-search--control">
+                                <button class="rdm-search--leading-icon" type="button" aria-label="Buscar">
+                                    <span class="material-symbols-rounded">search</span>
+                                </button>
+                                <input type="search" id="search_voice" name="search_voice" placeholder="Buscar o decir...">
+                                <div class="rdm-search--trailing">
+                                    <button class="rdm-search--trailing-icon show" type="button" aria-label="Búsqueda por voz">
+                                        <span class="material-symbols-rounded">mic</span>
+                                    </button>
+                                    <button class="rdm-search--trailing-icon show" type="button" aria-label="Buscar">
+                                        <span class="material-symbols-rounded">search</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rdm-search--support">
+                        <span>Búsqueda avanzada (voz + texto)</span>
+                    </div>
+                </div>
+
+                <h2 class="rdm-sys-typography--title-large">Config 4: With avatar and trailing icon</h2>
+                <p class="rdm-sys-typography--body-medium">Search bar con búsqueda + perfil</p>
+                <!-- Search: With search icon and avatar -->
+                <div class="rdm-search--wrapper">
+                    <div class="rdm-search--container">
+                        <div class="rdm-search--bar">
+                            <div class="rdm-search--control">
+                                <button class="rdm-search--leading-icon" type="button" aria-label="Buscar">
+                                    <span class="material-symbols-rounded">search</span>
+                                </button>
+                                <input type="search" id="search_combined" name="search_combined" placeholder="Buscar...">
+                                <div class="rdm-search--trailing">
+                                    <button class="rdm-search--trailing-icon show" type="button" aria-label="Buscar">
+                                        <span class="material-symbols-rounded">search</span>
+                                    </button>
+                                    <img class="rdm-search--avatar" src="img/a1.jpg" alt="Avatar usuario">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rdm-search--support">
+                        <span>Búsqueda con búton y perfil</span>
+                    </div>
+                </div>
+
                 <h2 class="rdm-sys-typography--title-large">Enabled (empty)</h2>
                 <p class="rdm-sys-typography--body-medium">Barra de búsqueda vacía</p>
                 <!-- Search: Empty -->
@@ -61,12 +159,14 @@
                     <div class="rdm-search--container">
                         <div class="rdm-search--bar">
                             <div class="rdm-search--control">
-                                <div class="rdm-search--leading-icon">
+                                <button class="rdm-search--leading-icon" type="button" aria-label="Buscar">
                                     <span class="material-symbols-rounded">search</span>
-                                </div>
+                                </button>
                                 <input type="search" id="search1" name="search1" placeholder="Buscar...">
-                                <div class="rdm-search--trailing-icon">
-                                    <span class="material-symbols-rounded">close</span>
+                                <div class="rdm-search--trailing">
+                                    <button class="rdm-search--trailing-icon" type="button" aria-label="Limpiar búsqueda">
+                                        <span class="material-symbols-rounded">close</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -83,12 +183,14 @@
                     <div class="rdm-search--container">
                         <div class="rdm-search--bar">
                             <div class="rdm-search--control">
-                                <div class="rdm-search--leading-icon">
+                                <button class="rdm-search--leading-icon" type="button" aria-label="Buscar">
                                     <span class="material-symbols-rounded">search</span>
-                                </div>
+                                </button>
                                 <input type="search" id="search2" name="search2" placeholder="Buscar..." value="Material Design">
-                                <div class="rdm-search--trailing-icon show">
-                                    <span class="material-symbols-rounded">close</span>
+                                <div class="rdm-search--trailing">
+                                    <button class="rdm-search--trailing-icon show" type="button" aria-label="Limpiar búsqueda">
+                                        <span class="material-symbols-rounded">close</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -105,12 +207,14 @@
                     <div class="rdm-search--container">
                         <div class="rdm-search--bar">
                             <div class="rdm-search--control">
-                                <div class="rdm-search--leading-icon">
+                                <button class="rdm-search--leading-icon" type="button" aria-label="Buscar">
                                     <span class="material-symbols-rounded">search</span>
-                                </div>
+                                </button>
                                 <input type="search" id="search3" name="search3" placeholder="Buscar productos...">
-                                <div class="rdm-search--trailing-icon">
-                                    <span class="material-symbols-rounded">close</span>
+                                <div class="rdm-search--trailing">
+                                    <button class="rdm-search--trailing-icon" type="button" aria-label="Limpiar búsqueda">
+                                        <span class="material-symbols-rounded">close</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -123,12 +227,14 @@
                     <div class="rdm-search--container">
                         <div class="rdm-search--bar">
                             <div class="rdm-search--control">
-                                <div class="rdm-search--leading-icon">
+                                <button class="rdm-search--leading-icon" type="button" aria-label="Buscar" disabled>
                                     <span class="material-symbols-rounded">search</span>
-                                </div>
+                                </button>
                                 <input type="search" id="search4" name="search4" placeholder="Búsqueda deshabilitada" disabled>
-                                <div class="rdm-search--trailing-icon">
-                                    <span class="material-symbols-rounded">close</span>
+                                <div class="rdm-search--trailing">
+                                    <button class="rdm-search--trailing-icon" type="button" aria-label="Limpiar búsqueda" disabled>
+                                        <span class="material-symbols-rounded">close</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -144,9 +250,9 @@
                     <div class="rdm-search--container">
                         <div class="rdm-search--bar">
                             <div class="rdm-search--control">
-                                <div class="rdm-search--leading-icon">
+                                <button class="rdm-search--leading-icon" type="button" aria-label="Buscar" disabled>
                                     <span class="material-symbols-rounded">search</span>
-                                </div>
+                                </button>
                                 <input type="search" id="search5" name="search5" placeholder="Buscar..." value="iPhone" disabled>
                                 <div class="rdm-search--trailing-icon show">
                                     <span class="material-symbols-rounded">close</span>
